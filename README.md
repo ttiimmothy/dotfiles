@@ -14,15 +14,15 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 ### Requirements
 
 - a terminal that support true color and *undercurl*:
-  - [iterm2](https://iterm2.com/) **(Macos)**
+  - [iterm2](https://iterm2.com/) **(macOS)**
 
 ## Shell setup
 <!-- **(macOS & Linux)** -->
 **(macOS)**
 
-### ohmyzsh shell (optional for installing, fish shell is good enough to use)
+### ohmyzsh framework for zsh shell (optional for installing, fish shell is good enough to use)
 
-- [ohmyzsh shell](https://ohmyz.sh/)
+- [ohmyzsh](https://ohmyz.sh/)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use Hack. It can be directly downloaded without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 
