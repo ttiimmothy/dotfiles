@@ -59,12 +59,12 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 
 ### Terminal color configuration for both terminal and iterm
 
-- yellow normal: #ffc83e
-- yellow bright: #ff9300
-- blue normal: #0096ff
-- blue bright: #6871ff
+- yellow normal: **#ffc83e**
+- yellow bright: **#ff9300**
+- blue normal: **#0096ff**
+- blue bright: **#6871ff**
 
-1. Need to change the color because the default color is difficult to see when using `ll` or `lla` command
+###### need to change the color because the default color is difficult to see when using `ll` or `lla` command
 
 ### Commands
 
