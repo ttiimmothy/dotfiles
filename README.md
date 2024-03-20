@@ -6,6 +6,7 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 ## Contents
 
 - [Shell setup](#shell-setup)
+- [Terminal configuration](#terminal-configuration)
 - [Dotfiles](#dotfiles-current)
 - [Reminders](#reminders)
 - [References](#references)
@@ -17,7 +18,6 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
   - [iterm2](https://iterm2.com/) **(macOS)**
 
 ## Shell setup
-<!-- **(macOS & Linux)** -->
 **(macOS)**
 
 ### ohmyzsh framework for zsh shell (optional for installing, fish shell is good enough to use)
@@ -35,10 +35,20 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use Hack. It can be directly downloaded without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 - [Exa](https://github.com/ogham/exa) - `ls` replacement
 - [Peco](https://github.com/peco/peco) - Interactive filtering
-<!-- - [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
-- [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering -->
-<!-- - [Eza](https://github.com/eza-community/eza) - `ls` replacement -->
-<!-- - [z for fish](https://github.com/jethrokuan/z) - Directory jumping -->
+
+#### Commands for installing `exa` and `peco`
+
+```bash
+brew install exa
+brew install peco
+```
+
+##### Optional installation for `fish` shell
+
+- [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
+- [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering, `peco` replacement
+- [Eza](https://github.com/eza-community/eza) - `ls` replacement, `exa` replacement
+- [z for fish](https://github.com/jethrokuan/z) - Directory jumping
 
 ### Font Installation
 
@@ -57,7 +67,8 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
    applications on your system.
 1. Set the `terminal` and `iterm` to use these fonts in the settings
 
-### Terminal color configuration for both terminal and iterm
+## Terminal configuration
+### ANSI color configuration for both `terminal` and `iterm`
 
 - yellow normal: **#ffc83e**
 - yellow bright: **#ff9300**
@@ -66,12 +77,26 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 
 ###### need to change the color because the default color is difficult to see when using `ll` or `lla` command
 
-### Commands
+### window size and font size
 
-```bash
-brew install exa
-brew install peco
-```
+- window
+  - `terminal` **147 * 46**
+  - `iterm` **178 * 50**
+
+- font
+  - `terminal` **MesloLGS NF Regular** 10
+  - `iterm` **MesloLGS NF Regular** 9
+
+### other configurations
+
+#### terminal
+
+![terminal configuration](images/terminal_configuration.png)
+
+#### iterm
+
+![iterm configuration](images/iterm_configuration.png)
+![iterm configuration](images/iterm_configuration1.png)
 
 ### Images for fish shell
 
@@ -115,11 +140,11 @@ brew install peco
 
 `peco`
 
-`git-lfs`(optional)
+[`git-lfs` (optional)](https://git-lfs.com/)
 
 ## Reminders
 
-- Need to change the iterm2 terminal color according the above configurations directly
+- Need to update the `iterm` and `terminal` **ANSI Colors** according the above configurations directly
 - [tide.fish](.config/fish/conf.d/tide.fish) is required to copy the lines and paste to terminal to make it be functional
 
 ## References
