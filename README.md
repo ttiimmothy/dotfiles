@@ -8,6 +8,7 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 - [Shell setup](#shell-setup)
 - [Terminal configuration](#terminal-configuration)
 - [Dotfiles](#dotfiles-current)
+- [Git configuration](#git-configuration)
 - [Reminders](#reminders)
 - [References](#references)
 - [License](#license)
@@ -141,6 +142,22 @@ brew install peco
 `peco`
 
 [`git-lfs (optional)`](https://git-lfs.com/)
+
+## Git configuration
+
+- [ ] generate `ssh key` in new machine
+
+```bash
+ssh-keygen
+```
+
+- [ ] the key is stored in `$HOME/.ssh/id_rsa.pub` or `~/.ssh/id_rsa/pub`, paste it to [github/gitlab settings](https://github.com/settings/keys)
+
+- [ ] [`.env.example`](.env.example) stores the `.gitconfig` configurations and `.gitconfig` is gitignored due to privacy
+
+[ssh key settings](images/sshkey_settings.png)
+
+- [ ] `GPG (GNU Privacy Guard) key` is stored in `~/.gnupg` after installation
 
 ## Reminders
 
