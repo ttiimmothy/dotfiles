@@ -5,8 +5,8 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 
 ## Contents
 
-- [fish config](#shell-setup)
-- [dotfiles](#dotfiles)
+- [Shell setup](#shell-setup)
+- [Dotfiles](#dotfiles-current)
 - [Reminders](#reminders)
 - [References](#references)
 - [License](#license)
@@ -78,7 +78,7 @@ brew install peco
 ![exa(lla) screenshot](images/lla.png)
 ![peco(control + R) screenshot](images/backward_search.png)
 
-## dotfiles
+## dotfiles current
 
 1. [.profile](.profile)
 1. [.zprofile](.zprofile)
@@ -101,7 +101,7 @@ brew install peco
 1. [go](https://go.dev/)
 1. [bun](https://bun.sh/)
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
-1. [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (for `rust` package manager)
+1. [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (`rust` package manager)
 
 #### Images showing the things installed by brew
 
