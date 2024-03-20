@@ -43,7 +43,7 @@ brew install exa
 brew install peco
 ```
 
-##### Optional installation for `fish` shell
+##### Optional installation for `fish shell`
 
 - [ghq](https://github.com/x-motemen/ghq) - Local Git repository organizer
 - [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering, `peco` replacement
@@ -140,7 +140,7 @@ brew install peco
 
 `peco`
 
-[`git-lfs` (optional)](https://git-lfs.com/)
+[`git-lfs (optional)`](https://git-lfs.com/)
 
 ## Reminders
 
