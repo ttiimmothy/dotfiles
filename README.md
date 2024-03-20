@@ -122,14 +122,15 @@ brew install peco
 - Need to change the iterm2 terminal color according the above configurations directly
 - [tide.fish](.config/fish/conf.d/tide.fish) is required to copy the lines and paste to terminal to make it be functional
 
-### Check Also
-
-[ttiimmothy/installs](https://github.com/ttiimmothy/install) - Software to install
-[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings and extensions
-
 ## References
 
 <https://github.com/craftzdog/dotfiles-public>
+
+#### Also check
+
+[ttiimmothy/installs](https://github.com/ttiimmothy/install) - Software to install
+
+[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings and extensions
 
 ## License
 
