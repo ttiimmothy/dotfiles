@@ -130,7 +130,7 @@ brew install peco
 
 [ttiimmothy/installs](https://github.com/ttiimmothy/install) - Software to install
 
-[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings and extensions
+[ttiimmothy/vscode-settings-extensions](https://github.com/ttiimmothy/vscode-settings-extensions) - My VS Code settings and extensions
 
 ## License
 
