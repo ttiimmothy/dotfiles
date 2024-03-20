@@ -20,7 +20,7 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 <!-- **(macOS & Linux)** -->
 **(macOS)**
 
-### ohmyzsh framework for zsh shellcd (optional for installing, fish shell is good enough to use)
+### ohmyzsh framework for zsh shell (optional for installing, fish shell is good enough to use)
 
 - [ohmyzsh](https://ohmyz.sh/)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
