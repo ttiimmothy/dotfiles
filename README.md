@@ -153,6 +153,8 @@ ssh-keygen
 
 - [ ] the key is stored in `$HOME/.ssh/id_rsa.pub` or `~/.ssh/id_rsa/pub`, paste it to [github/gitlab settings](https://github.com/settings/keys)
 
+- [ ] [`.env.example`](.env.example) stores the `.gitconfig` configurations and `.gitconfig` is gitignored due to privacy
+
 [ssh key settings](images/sshkey_settings.png)
 
 - [ ] `GPG (GNU Privacy Guard) key` is stored in `~/.gnupg` after installation
