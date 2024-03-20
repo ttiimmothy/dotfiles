@@ -101,7 +101,7 @@ brew install peco
 1. [go](https://go.dev/)
 1. [bun](https://bun.sh/)
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
-1. [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (for `rust` package manager)cd
+1. [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (for `rust` package manager)
 
 #### Images showing the things installed by brew
 
