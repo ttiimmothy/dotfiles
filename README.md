@@ -143,6 +143,8 @@ brew install peco
 
 [`git-lfs (optional)`](https://git-lfs.com/)
 
+###### other softwares showing in the images are default downloaded after installing `brew`, `don't` need to run `brew install $(software-name)`
+
 ## Git configuration
 
 - [ ] generate `ssh key` in new machine
