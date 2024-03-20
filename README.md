@@ -124,7 +124,8 @@ brew install peco
 
 ### Check Also
 
-[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings
+[ttiimmothy/installs](https://github.com/ttiimmothy/install) - Software to install
+[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings and extensions
 
 ## References
 
