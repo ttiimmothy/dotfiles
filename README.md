@@ -20,7 +20,7 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 <!-- **(macOS & Linux)** -->
 **(macOS)**
 
-### ohmyzsh framework for zsh shell (optional for installing, fish shell is good enough to use)
+### ohmyzsh framework for zsh shellcd (optional for installing, fish shell is good enough to use)
 
 - [ohmyzsh](https://ohmyz.sh/)
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
@@ -101,7 +101,7 @@ brew install peco
 1. [go](https://go.dev/)
 1. [bun](https://bun.sh/)
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
-1. [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (for `rust` package manager)
+1. [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) (for `rust` package manager)cd
 
 #### Images showing the things installed by brew
 
@@ -124,7 +124,8 @@ brew install peco
 
 ### Check Also
 
-[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings
+[ttiimmothy/installs](https://github.com/ttiimmothy/install) - Software to install
+[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My VS Code settings and extensions
 
 ## References
 
