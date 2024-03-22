@@ -10,7 +10,6 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 - [Dotfiles](#dotfiles-current)
 - [Git configuration](#git-configuration)
 - [Reminders](#reminders)
-- [References](#references)
 - [License](#license)
 
 ### Requirements
@@ -153,7 +152,7 @@ brew install peco
 ssh-keygen
 ```
 
-- [ ] the key is stored in `$HOME/.ssh/id_rsa.pub` or `~/.ssh/id_rsa/pub`, paste it to [github/gitlab settings](https://github.com/settings/keys)
+- [ ] the key is stored in `$HOME/.ssh/id_rsa.pub` or `~/.ssh/id_rsa/pub`, paste it to [gitlab settings](https://github.com/settings/keys) and `gitlab` (if you're using)
 
 - [ ] [`.env.example`](.env.example) stores the `.gitconfig` configurations and `.gitconfig` is gitignored due to privacy
 
@@ -164,17 +163,15 @@ ssh-keygen
 ## Reminders
 
 - Need to update the `iterm` and `terminal` **ANSI Colors** according the above configurations directly
-- [tide.fish](.config/fish/conf.d/tide.fish) is required to copy the lines and paste to terminal to make it be functional
-
-## References
-
-<https://github.com/craftzdog/dotfiles-public>
+- [`.config/fish/conf.d/tide.fish`](.config/fish/conf.d/tide.fish) is required to copy the lines and paste to terminal to make it be functional
 
 #### Also check
 
-[ttiimmothy/installs](https://github.com/ttiimmothy/install) - Software to install
+[ttiimmothy/install](https://github.com/ttiimmothy/install) - Software to install
 
-[ttiimmothy/vscode-settings-extensions](https://github.com/ttiimmothy/vscode-settings-extensions) - My VS Code settings and extensions
+[ttiimmothy/use](https://github.com/ttiimmothy/use) - Things I am using
+
+[ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My Visual Studio Code settings and extensions
 
 ## License
 
