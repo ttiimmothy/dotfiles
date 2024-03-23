@@ -102,7 +102,7 @@ brew install peco
 ### Images for fish shell
 
 ![exa(lla) screenshot](images/lla.png)
-![peco(control + R) screenshot](images/backward_search.png)
+![peco(control + R) screenshot](images/peco1.png)
 
 ## dotfiles current
 
