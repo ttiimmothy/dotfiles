@@ -9,6 +9,7 @@ Dotfiles is for storing my dotfiles for setting up a new computer.
 - [Terminal configuration](#terminal-configuration)
 - [Dotfiles](#dotfiles-current)
 - [Git configuration](#git-configuration)
+- [Create symlink (symbolic link)](#create-symlinks-in-the-home-directory-to-the-real-files-in-the-repo)
 - [Reminders](#reminders)
 - [License](#license)
 
@@ -160,10 +161,35 @@ ssh-keygen
 
 - [ ] `GPG (GNU Privacy Guard) key` is stored in `~/.gnupg` after installation
 
+## Create symlinks in the Home directory to the real files in the repo
+
+```zsh
+# There are better and less manual ways to do this;
+# investigate install scripts and bootstrapping tools.
+
+ln -s ~/.dotfiles/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.profile ~/.profile
+ln -s ~/.dotfiles/.zprofile ~/.zprofile
+ln -s ~/.dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/.dotfiles/.config/fish/config-osx.fish ~/.config/fish/config-osx.fish
+ln -s ~/.dotfiles/.config/fish/functions/fish_user_key_bindings.fish ~/.config/fish/functions/fish_user_key_bindings.fish
+ln -s ~/.dotfiles/.config/fish/functions/peco_select_history.fish ~/.config/fish/functions/peco_select_history.fish
+mkdir ~/.config/peco
+ln -s ~/.dotfiles/.config/peco/config.json ~/.config/peco/config.json
+```
+
 ## Reminders
 
 - Need to update the `iterm` and `terminal` **ANSI Colors** according the above configurations directly
 - [`.config/fish/conf.d/tide.fish`](.config/fish/conf.d/tide.fish) is required to copy the lines and paste to terminal to make it be functional
+- Need to copy the `.gitconfig` from this repo in the own machine because now it is gitignored
+
+how to get the software downloaded by `brew`
+
+```bash
+brew bundle dump --describe
+```
 
 #### Also check
 
@@ -172,6 +198,11 @@ ssh-keygen
 [ttiimmothy/use](https://github.com/ttiimmothy/use) - Things I am using
 
 [ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My Visual Studio Code settings and extensions
+
+<https://www.youtube.com/watch?v=r_MpUP6aKiQ&t=573s>
+
+- [ ] [dotfiles from others](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds)
+- [ ] [dotfiles from others](https://github.com/craftzdog/dotfiles-public)
 
 ## License
 
