@@ -177,6 +177,8 @@ ln -s ~/.dotfiles/.config/fish/functions/fish_user_key_bindings.fish ~/.config/f
 ln -s ~/.dotfiles/.config/fish/functions/peco_select_history.fish ~/.config/fish/functions/peco_select_history.fish
 mkdir ~/.config/peco
 ln -s ~/.dotfiles/.config/peco/config.json ~/.config/peco/config.json
+git clone git@github.com:ttiimmothy/vscode-settings.json ~/.vscode_settings
+ln -s ~/.vscode_settings/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ```
 
 ## Reminders
