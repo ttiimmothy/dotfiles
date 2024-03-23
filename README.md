@@ -173,6 +173,11 @@ ssh-keygen
 
 [ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My Visual Studio Code settings and extensions
 
+<https://www.youtube.com/watch?v=r_MpUP6aKiQ&t=573s>
+
+- [ ] [dotfiles from others](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds)
+- [ ] [dotfiles from others](https://github.com/craftzdog/dotfiles-public)
+
 ## License
 
 Dotfiles is licensed under [GNU General Public License v3.0](LICENSE).
