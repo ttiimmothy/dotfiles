@@ -81,23 +81,25 @@ brew install peco
 ### window size and font size
 
 - window
-  - `terminal` **147 * 46**
+  - `terminal` **176 * 49**
   - `iterm` **178 * 50**
 
 - font
-  - `terminal` **MesloLGS NF Regular** 10
-  - `iterm` **MesloLGS NF Regular** 9
+  - `terminal` **MesloLGS NF Regular *9***
+  - `iterm` **MesloLGS NF Regular *9***
 
 ### other configurations
 
 #### terminal
 
-![terminal configuration](images/terminal_configuration.png)
+![terminal configuration](images/terminal/terminal_configuration.png)
+![terminal configuration](images/terminal/terminal_configuration1.png)
 
 #### iterm
 
-![iterm configuration](images/iterm_configuration.png)
-![iterm configuration](images/iterm_configuration1.png)
+![iterm configuration](images/iterm/iterm_configuration.png)
+![iterm configuration](images/iterm/iterm_configuration1.png)
+![iterm configuration](images/iterm/iterm_configuration2.png)
 
 ### Images for fish shell
 
