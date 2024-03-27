@@ -215,10 +215,13 @@ brew bundle dump --describe
 
 [ttiimmothy/vscode-settings](https://github.com/ttiimmothy/vscode-settings) - My Visual Studio Code settings and extensions
 
-<https://www.youtube.com/watch?v=r_MpUP6aKiQ&t=573s>
+<https://www.youtube.com/watch?v=r_MpUP6aKiQ&t=573s> - Link to teach **symbolic link** and **`git` configuration**
+
+<https://www.youtube.com/watch?v=stqUbv-5u2s&t=311s> - Link to teach `neovim` configuration
 
 - [ ] [dotfiles from others](https://github.com/eieioxyz/Beyond-Dotfiles-in-100-Seconds)
 - [ ] [dotfiles from others](https://github.com/craftzdog/dotfiles-public)
+- [ ] [neovim kickstart dotfiles](https://github.com/nvim-lua/kickstart.nvim)
 
 ## License
 
