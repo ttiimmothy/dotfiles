@@ -124,15 +124,22 @@ brew install peco
 1. [.profile](.profile)
 1. [.zprofile](.zprofile)
 1. [.zshrc](.zshrc)
+1. [fish_user_key_bindings.fish](.config/fish/functions/fish_user_key_bindings.fish)
+1. [peco_select_history.fish](.config/fish/functions/peco_select_history.fish)
+1. [config-osx.fish](.config/fish/config-osx.fish)
+1. [config.fish](.config/fish/config.fish)
+1. [nvim/init.lua](.config/nvim/init.lua)
+1. [peco/config.json](.config/peco/config.json)
 
 ### Old versions of dotfiles
 
-1. [.profile](.profile)
-1. [.zprofile](.zprofile)
+1. [.profile](core/.profile)
+1. [.zprofile](core/.zprofile)
 1. [.zshrc](core/.zshrc)
 1. [.p10k.zsh](core/.p10k.zsh)
 1. [.bashrc](core/.bashrc)
 1. [.bash_profile](core/.bash_profile)
+1. [nvim](core/.config/nvim)
 
 ### Software installation (let the dotfiles work)
 
