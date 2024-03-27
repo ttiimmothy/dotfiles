@@ -181,7 +181,7 @@ ssh-keygen
 # investigate install scripts and bootstrapping tools.
 
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/developer/github_repositories/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/.profile ~/.profile
 ln -s ~/.dotfiles/.zprofile ~/.zprofile
 ln -s ~/.dotfiles/.config/fish/config.fish ~/.config/fish/config.fish
@@ -190,6 +190,7 @@ ln -s ~/.dotfiles/.config/fish/functions/fish_user_key_bindings.fish ~/.config/f
 ln -s ~/.dotfiles/.config/fish/functions/peco_select_history.fish ~/.config/fish/functions/peco_select_history.fish
 mkdir ~/.config/peco
 ln -s ~/.dotfiles/.config/peco/config.json ~/.config/peco/config.json
+ln -s ~/.dotfiles/.config/nvim/init.lua ~/.config/nvim/init.lua
 git clone git@github.com:ttiimmothy/vscode-settings.json ~/.vscode_settings
 ln -s ~/.vscode_settings/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ```
