@@ -2,3 +2,5 @@
 node_modules
 .gitconfig
 lla1.png
+.vscode/settings.json
+# .config/nvim/unused.lua
