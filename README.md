@@ -68,6 +68,15 @@ brew install peco
    applications on your system.
 1. Set the `terminal` and `iterm` to use these fonts in the settings
 
+### Neovim color
+
+- [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
+- [catppuccin/nvim](https://github.com/catppuccin/nvim)
+- [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
+- [kepano/flexoki](https://github.com/kepano/flexoki), [kepano/flexoki-neovim](https://github.com/kepano/flexoki-neovim)
+
+<https://github.com/topics/neovim-colorscheme>
+
 ## Terminal configuration
 ### ANSI color configuration for both `terminal` and `iterm`
 
