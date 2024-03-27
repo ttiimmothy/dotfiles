@@ -3,6 +3,10 @@
 
 Dotfiles is for storing my dotfiles for setting up a new computer.
 
+### Sample iterm view
+
+![neovim](images/neovim_init_lua.png)
+
 ## Contents
 
 - [Shell setup](#shell-setup)
