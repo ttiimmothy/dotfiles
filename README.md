@@ -168,8 +168,9 @@ brew install peco
 1. [git](https://git-scm.com/download/mac)
 1. [node.js, npm](https://nodejs.org/en)
 1. [go](https://go.dev/)
-1. [pnpm](https://pnpm.io/installation) - Use this command: `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+1. [pnpm](https://pnpm.io/installation) - Use command `curl -fsSL https://get.pnpm.io/install.sh | sh -`
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
+1. [stow](https://www.gnu.org/software/stow/) - after installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
 
 #### Images showing the things installed by brew
 
@@ -210,6 +211,7 @@ ssh-keygen
 ## Create symlinks in the Home directory to the real files in the repo
 
 ```zsh
+# need to try afterwards
 stow .
 ```
 
