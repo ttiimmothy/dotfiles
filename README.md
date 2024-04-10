@@ -78,12 +78,9 @@ brew install peco
 
 ### Neovim color
 
-- [ ] [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim)
-- [ ] [catppuccin/nvim](https://github.com/catppuccin/nvim)
-- [ ] [rebelot/kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)
 - [x] [kepano/flexoki](https://github.com/kepano/flexoki), [kepano/flexoki-neovim](https://github.com/kepano/flexoki-neovim) - Currently using this color theme
 
-<https://github.com/topics/neovim-colorscheme>
+- [ ] can also check: <https://github.com/topics/neovim-colorscheme>
 
 ## Terminal configuration
 ### ANSI color configuration for both `terminal` and `iterm`
