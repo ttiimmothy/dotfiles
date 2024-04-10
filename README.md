@@ -156,12 +156,6 @@ brew install peco
 1. [nvim](https://github.com/ttiimmothy/nvim)
 1. [configstore/nodemon.json](core/.config/configstore/nodemon.json)
 
-### dotfiles (depreciated)
-
-1. [.tmux.conf](.config/tmux.bak/.tmux.conf)
-1. [tmux/.tmux-cht-command](.config/tmux/.tmux-cht-command)
-1. [tmux/.tmux-cht-languages](.config/tmux/.tmux-cht-languages)
-
 ### Software installation (let the dotfiles work)
 
 1. [homebrew](https://brew.sh/)
@@ -211,8 +205,8 @@ ssh-keygen
 ## Create symlinks in the Home directory to the real files in the repo
 
 ```zsh
-# need to try afterwards
 stow .
+ln -s ~/developer/github_repository/vscode_settings/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ```
 
 ## Reminders
@@ -234,7 +228,6 @@ brew bundle dump --describe
 check `zoxide` weight
 
 ```bash
-zoxide query -l -s | less
 zoxide query -l -s
 ```
 
