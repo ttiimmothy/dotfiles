@@ -4,6 +4,7 @@
 .gitmodules
 .github
 .vscode
+.config/tmux.bak
 core
 images
 node_modules
