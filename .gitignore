@@ -1,0 +1,6 @@
+.DS_Store
+node_modules
+lla_1.png
+.vscode/settings.json
+.config/nvim/*.lua
+!.config/nvim/init.lua

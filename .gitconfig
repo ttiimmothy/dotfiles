@@ -1,0 +1,31 @@
+[core]
+	excludesfile = /Users/timoptimothy/.gitignore_global
+	editor = nvim
+# optional
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+# optional
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = ttiimmothy
+	email = dinosauli2006@gmail.com
+	signingkey = F5C18F19D2B47181E60D1249B9BC2570CE5BA643
+[commit]
+	template = /Users/timoptimothy/.stCommitMsg
+	gpgsign = true
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[pull]
+	rebase = false
+[alias]
+	pull-allow = pull --allow-unrelated-histories
+	co = commit --allow-empty
+	cout = checkout

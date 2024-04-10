@@ -1,0 +1,19 @@
+{
+  "name": "dotfiles_stow",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "project-tree": "tree -l 5 --ignore node_modules/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "packageManager": "pnpm@8.15.6",
+  "keywords": [],
+  "author": "",
+  "license": "GPL-3.0",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "devDependencies": {
+    "tree-cli": "^0.6.7"
+  }
+}
