@@ -13,7 +13,7 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 - [Terminal configuration](#terminal-configuration)
 - [Dotfiles](#dotfiles-current)
 - [Git configuration](#git-configuration)
-- [Create symlink (symbolic link)](#create-symlinks-in-the-home-directory-to-the-real-files-in-the-repo)
+- [Create symlink (symbolic link)](#create-symlinks-in-the-home-directory)
 - [Reminders](#reminders)
 - [License](#license)
 
@@ -202,7 +202,7 @@ ssh-keygen
 
 - [ ] `GPG (GNU Privacy Guard) key` is stored in `~/.gnupg` after installation
 
-## Create symlinks in the Home directory to the real files in the repo
+## Create symlinks in the home directory
 
 ```zsh
 stow .
