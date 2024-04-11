@@ -4,7 +4,10 @@ function norcomt
   git co -m "$argv[1]" && git push
 end
 function norcomtpartial
-  git co -m "$argv[1]" && git partial-push
+  if $argv[2]
+    git co -m "$argv[1]" && git partial-push origin $argv[2]
+  else
+    git co -m "$argv[1]" && git partial-push origin main
 end
 # initial commit
 alias init "git add . && git co -m 'chore init' && git push -u origin main"
