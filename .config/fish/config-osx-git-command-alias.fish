@@ -8,6 +8,7 @@ function norcomtpartial
     git add . && git co -m "$argv[1]" && git partial-push origin $argv[2]
   else
     git add . && git co -m "$argv[1]" && git partial-push origin main
+  end
 end
 # initial commit
 alias init "git add . && git co -m 'chore init' && git push -u origin main"
