@@ -4,7 +4,7 @@ function norcomt
   git co -m "$argv[1]" && git push
 end
 function norcomtpartial
-  if $argv[2]
+  if test $argv[2]
     git add . && git co -m "$argv[1]" && git partial-push origin $argv[2]
   else
     git add . && git co -m "$argv[1]" && git partial-push origin main
