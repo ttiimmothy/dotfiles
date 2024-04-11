@@ -88,10 +88,11 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-  'theprimeagen/vim-be-good',
+  { "theprimeagen/vim-be-good", dependencies = { "nvim-lua/plenary.nvim" } },
   -- keep the tabstop and softtabstop to be 2 in vim.opt, so don't need to use vim-sleuth
   -- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-  { 'numToStr/Comment.nvim', opts = {} },
+  { "github/copilot.vim" },
+  { "numToStr/Comment.nvim", opts = {} },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
     opts = {
