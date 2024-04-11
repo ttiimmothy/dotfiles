@@ -164,7 +164,6 @@ brew install peco
 1. [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
 1. [stow](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
-1. (optional) [coreutils](https://www.gnu.org/software/coreutils/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
 
 #### Images showing the things installed by brew
 
@@ -185,6 +184,8 @@ brew install peco
 `ripgrep` (**important for neovim telescope searching**)
 
 [`git-lfs (optional)`](https://git-lfs.com/)
+
+[`coreutils (optional)`](https://www.gnu.org/software/coreutils/)
 
 ###### other softwares showing in the above image are default downloaded after installing `brew` and other softwares that mentioned above (like `luv` is installed itself after installing `neovim`), `don't` need to run `brew install $(software-name)`
 
