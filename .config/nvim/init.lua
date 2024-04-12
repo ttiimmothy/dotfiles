@@ -93,7 +93,7 @@ require("lazy").setup({
     "eandrju/cellular-automaton.nvim",
     config = function()
       vim.keymap.set("n", "<leader>mta", "<cmd>CellularAutomaton make_it_rain<CR>")
-      vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton make_it_rain<CR>")
+      vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
     end,
   },
   -- keep the tabstop and softtabstop to be 2 in vim.opt, so don't need to use vim-sleuth
