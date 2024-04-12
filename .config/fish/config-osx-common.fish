@@ -3,3 +3,5 @@ alias icond "neofetch --ascii_colors 9 8 --ascii_distro debian --config none --c
 alias icon "neofetch --ascii_colors 9 8 --ascii_distro debian --config none -L"
 alias archdistro "neofetch --ascii_colors 8 9 --ascii_distro arch --config none -L"
 alias tsession "tmux ls"
+alias vim "nvim"
+alias v "z"
