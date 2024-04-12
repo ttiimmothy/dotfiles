@@ -92,7 +92,7 @@ require("lazy").setup({
   {  
     "eandrju/cellular-automaton.nvim",
     config = function()
-      vim.keymap.set("n", "<leader>mir", "<cmd>CellularAutomaton make_it_rain<CR>")
+      vim.keymap.set("n", "<leader>mta", "<cmd>CellularAutomaton make_it_rain<CR>")
       vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton make_it_rain<CR>")
     end,
   },
