@@ -89,6 +89,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
   { "theprimeagen/vim-be-good", dependencies = { "nvim-lua/plenary.nvim" } },
+  "eandrju/cellular-automaton.nvim"
   -- keep the tabstop and softtabstop to be 2 in vim.opt, so don't need to use vim-sleuth
   -- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   { "github/copilot.vim" },
