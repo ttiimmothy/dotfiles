@@ -5,3 +5,4 @@ alias archdistro "neofetch --ascii_colors 8 9 --ascii_distro arch --config none 
 alias tsession "tmux ls"
 alias vim "nvim"
 alias v "z"
+alias so-z "source ~/.zshrc"
