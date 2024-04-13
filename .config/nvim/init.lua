@@ -48,10 +48,14 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- for not storing the word that is replaced in the clipboard and store the origin yanked word
 vim.keymap.set("x", "<leader>p", [["_dP]])
+-- original insert keymap
 vim.keymap.set("x", "s", '<cmd>echo "s is typing"<CR>')
 vim.keymap.set("n", "s", '<cmd>echo "s is typing"<CR>')
 vim.keymap.set("x", "a", '<cmd>echo "a is typing"<CR>')
 vim.keymap.set("n", "a", '<cmd>echo "a is typing"<CR>')
+vim.keymap.set("x", "o", '<cmd>echo "e is typing"<CR>')
+vim.keymap.set("n", "o", '<cmd>echo "e is typing"<CR>')
+-- original keymap for going to the end of next word
 vim.keymap.set("x", "e", '<cmd>echo "e is typing"<CR>')
 vim.keymap.set("n", "e", '<cmd>echo "e is typing"<CR>')
 -- s keymap cannot be override
