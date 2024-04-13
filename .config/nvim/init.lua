@@ -102,7 +102,7 @@ require("lazy").setup({
   },
   -- keep the tabstop and softtabstop to be 2 in vim.opt, so don't need to use vim-sleuth
   -- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-  "github/copilot.vim",
+  -- "github/copilot.vim",
   { "numToStr/Comment.nvim", opts = {} },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
