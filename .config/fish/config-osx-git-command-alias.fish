@@ -10,4 +10,4 @@ alias emback "git cout main && git pull-allow origin main"
 # checkout empty branch and create empty commit
 alias emt "git cout empty && git pull origin empty && git pull origin main && git co -m "empty" && git push"
 alias git-global "git config --global --list"
-alias glt "git lfs track"
+alias glk "git lfs track"
