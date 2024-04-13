@@ -159,7 +159,7 @@ require("lazy").setup({
           file_ignore_patterns = {
             -- "node_modules", ".DS_Store", ".git", "object.*%.mm"
             -- "node_modules", ".DS_Store", ".git", "object.*%.mm", "^/openrice_timothy_backend/**/*/Dockerfile", "^/ttiimmothy_metrics/**/*/Dockerfile"
-            "node_modules", ".DS_Store", ".git", "Dockerfile", "object.*%.mm" 
+            "node_modules", ".DS_Store", ".git/*", "Dockerfile", "object.*%.mm" 
             -- "node_modules", ".DS_Store", ".git"
          },
           -- layout_config = {
