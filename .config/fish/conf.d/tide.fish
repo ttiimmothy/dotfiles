@@ -51,6 +51,7 @@ set -U fish_color_command ffffff
 set -U fish_color_operator brcyan
 set -U fish_color_param ffcc00
 # set -U fish_color_quote yellow
+# set -U fish_color_quote 4e387e
 set -U fish_color_quote 9c87c9
 set -U fish_color_host normal
 set -U fish_color_normal normal
