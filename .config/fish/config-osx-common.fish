@@ -16,4 +16,4 @@ alias vim "nvim"
 alias v "z"
 
 # source
-alias so-z "source ~/.zshrc"
+alias soz "source ~/.zshrc"
