@@ -1,5 +1,6 @@
 # python
 alias python "python3"
+alias pip "pip3"
 
 # neofetch
 alias icondistro "neofetch --ascii_colors 9 8 --ascii_distro debian --config none --colors 3 2 7 6 2 8"
