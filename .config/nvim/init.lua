@@ -55,11 +55,18 @@ vim.keymap.set("x", "a", '<cmd>echo "a is typing"<CR>')
 vim.keymap.set("n", "a", '<cmd>echo "a is typing"<CR>')
 vim.keymap.set("x", "o", '<cmd>echo "o is typing"<CR>')
 vim.keymap.set("n", "o", '<cmd>echo "o is typing"<CR>')
-vim.keymap.set("v", "c", '<cmd>echo "visual mode c is typing"<CR>')
-vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
 -- original keymap for going to the end of next word
 vim.keymap.set("x", "e", '<cmd>echo "e is typing"<CR>')
 vim.keymap.set("n", "e", '<cmd>echo "e is typing"<CR>')
+-- original delete keymap
+vim.keymap.set("n", "c", '<cmd>echo "c is typing"<CR>')
+vim.keymap.set("n", "<S-c>", '<cmd>echo "shift+c is typing"<CR>')
+vim.keymap.set("n", "<S-d>", '<cmd>echo "shift+d is typing"<CR>')
+vim.keymap.set("v", "c", '<cmd>echo "visual mode c is typing"<CR>')
+vim.keymap.set("v", "<S-c>", '<cmd>echo "visual mode shift+c is typing"<CR>')
+vim.keymap.set("v", "<S-d>", '<cmd>echo "visual mode shift+d is typing"<CR>')
+-- original word replace keymap
+vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
 -- s keymap cannot be override
 -- vim.keymap.set('n', '<s>', '<cmd>echo "Use a/i to enter insert mode"<CR>')
 -- useful words replacement command
