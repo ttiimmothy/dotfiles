@@ -142,6 +142,9 @@ brew install peco
 1. [tmux/macos.conf](.config/tmux/macos.conf)
 1. [tmux/status_line.conf](.config/tmux/status_line.conf)
 1. [tmux/utility.conf](.config/tmux/utility.conf)
+1. [karabiner.json](.config/karabiner/karabiner.json)
+1. [.warp/themes/color_dark.yml](.warp/themes/color_dark.yml)
+1. [.warp/themes/color_light.yml](.warp/themes/color_light.yml)
 
 ### dotfiles (old)
 
@@ -164,6 +167,8 @@ brew install peco
 1. [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
 1. [stow](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
+1. [Raycast](https://raycast.com/)
+1. [Karabiner-elements](https://karabiner-elements.pqrs.org/) - Keys modification
 
 #### Images showing the things installed by brew
 
