@@ -17,3 +17,6 @@ alias v "z"
 
 # source
 alias soz "source ~/.zshrc"
+
+# open file
+alias pdfvore "open ~/Integration/voreprank/Perfect\ pdf.pdf"
