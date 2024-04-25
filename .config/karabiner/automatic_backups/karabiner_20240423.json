@@ -82,7 +82,7 @@
                         ]
                     },
                     {
-                        "description": "Open activity monitor by capslock+1, storage by capslock+2, battery health by capslock+3, world clock by capslock+4, quick calendar by capslock+5, search repositories by capslock+6, next by capslock+7, kill process by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, spotify player, kill process in raycast)\nCapslock+shift->capslock",
+                        "description": "Open activity monitor by capslock+1, storage by capslock+2, battery health by capslock+3, world clock by capslock+4, quick calendar by capslock+5, search repositories by capslock+6, kill process by capslock+7, next by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, spotify player in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -269,9 +269,9 @@
                                     "key_code": "7"
                                 },
                                 "to": {
-                                    "key_code": "c",
+                                    "key_code": "j",
                                     "modifiers": [
-                                        "left_control",
+                                        "left_option",
                                         "left_command"
                                     ]
                                 },
@@ -289,9 +289,9 @@
                                     "key_code": "8"
                                 },
                                 "to": {
-                                    "key_code": "m",
+                                    "key_code": "c",
                                     "modifiers": [
-                                        "left_option",
+                                        "left_control",
                                         "left_command"
                                     ]
                                 },
