@@ -15,6 +15,8 @@ brew "peco"
 brew "ripgrep"
 # Terminal multiplexer
 brew "tmux"
+# Free and open-source web browser
+cask "chromium"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 vscode "adrianwilczynski.alpine-js-intellisense"
