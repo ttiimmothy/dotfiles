@@ -59,7 +59,7 @@
                                 "to": {
                                     "key_code": "i",
                                     "modifiers": [
-                                        "left_control",
+                                        "left_option",
                                         "left_command"
                                     ]
                                 },
