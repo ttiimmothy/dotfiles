@@ -12,8 +12,8 @@ alias emback "git cout main && git pull-allow origin main"
 alias emt "git cout empty && git pull origin empty && git pull origin main && git co -m "empty" && git push"
 alias git-global "git config --global --list"
 alias glk "git lfs track"
-alias vgit1 "emback && v g vim && norcomt empty && v ../doe && norcomt empty && v d 0 && norcomt empty && v d 1 && norcomt empty && v gi zsh && norcomt empty && v loc fish && norcomt \"feat add fish shell history\" && v githu shell && emback && v raycast && norcomt empty && v repo repos && norcomt empty && v proj m && emt"
-alias vgit2 "emback && v vsc && norcomt empty && v general && norcomt empty && v gi pseudo && norcomt empty && v codeforce && norcomt empty && v use && norcomt empty && v install && norcomt empty && v metrics && norcomt empty && v ttiimmo && norcomt empty"
+alias verogit1 "emback && v g vim && norcomt empty && v ../doe && norcomt empty && v d 0 && norcomt empty && v d 1 && norcomt empty && v gi zsh && norcomt empty && v loc fish && norcomt \"feat add fish shell history\" && v githu shell && emback && v raycast && norcomt empty && v repo repos && norcomt empty && v proj m && emt"
+alias verogit2 "emback && v vsc && norcomt empty && v general && norcomt empty && v gi pseudo && norcomt empty && v codeforce && norcomt empty && v use && norcomt empty && v install && norcomt empty && v metrics && norcomt empty && v ttiimmo && norcomt empty"
 
 # python
 alias python "python3"
