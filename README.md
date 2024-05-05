@@ -89,7 +89,7 @@ brew install peco
 - yellow bright: **#ff9300**
 - blue normal: **#0096ff**
 - blue bright: **#6871ff**
-- `terminal`: **#151515** **opacity 99%** **blur 20%**, `iterm`: **#171717** **transparency 1%** **blur 20%**
+- `terminal`: **#151515** **opacity 99%** **blur 20%**, `iterm`: **#171717** **transparency 8%** **blur 20%**
 
 ###### need to change the color because the default color is difficult to see when using `ll` or `lla` command
 
