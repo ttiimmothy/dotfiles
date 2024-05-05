@@ -82,6 +82,7 @@ set -U tide_node_color ffffff
 set -U tide_rustc_bg_color 838996
 set -U tide_rustc_color 000000
 set -U tide_rustc_icon 
+set -U tide_go_color aaaaaa
 set -U tide_cmd_duration_bg_color fac5a6
 set -U tide_cmd_duration_color 424242
 set -U tide_cmd_duration_icon ⎈
