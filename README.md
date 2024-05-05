@@ -78,7 +78,7 @@ brew install peco
 
 ### Neovim color
 
-- [x] [kepano/flexoki](https://github.com/kepano/flexoki), [kepano/flexoki-neovim](https://github.com/kepano/flexoki-neovim) - Currently using this color theme
+- [x] [rose-pine/neovim](https://github.com/rose-pine/neovim)
 
 - [ ] can also check: <https://github.com/topics/neovim-colorscheme>
 
