@@ -40,7 +40,7 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. It can be directly downloaded from the [files](#font-installation) below without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 - [Eza](https://github.com/eza-community/eza) - `ls` replacement
 - [Peco](https://github.com/peco/peco) - Interactive filtering
-- [Zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping, `cd` replacement  with extensive features
+- [Zoxide](https://github.com/ajeetdsouza/zoxide) - Directory jumping, `cd` replacement with extensive features
 
 #### Commands for installing `eza` and `peco`
 
@@ -171,7 +171,6 @@ brew install peco
 1. [Karabiner-elements](https://karabiner-elements.pqrs.org/) - Keys modification
 1. [iTerm](https://iterm2.com/)
 1. [Wezterm](https://wezfurlong.org/wezterm/install/macos.html)
-1. [Alacritty](https://alacritty.org/)
 
 #### Images showing the things installed by brew
 
