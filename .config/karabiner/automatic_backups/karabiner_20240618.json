@@ -191,12 +191,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "4",
-                                    "modifiers": {
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
+                                    "key_code": "4"
                                 },
                                 "to": {
                                     "key_code": "m",
