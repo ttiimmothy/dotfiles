@@ -170,7 +170,6 @@ brew install peco
 1. [Raycast](https://raycast.com/)
 1. [Karabiner-elements](https://karabiner-elements.pqrs.org/) - Keys modification
 1. [iTerm](https://iterm2.com/)
-1. [Wezterm](https://wezfurlong.org/wezterm/install/macos.html)
 
 #### Images showing the things installed by brew
 
