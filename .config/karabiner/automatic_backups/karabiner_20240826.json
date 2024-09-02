@@ -51,7 +51,7 @@
                         ]
                     },
                     {
-                        "description": "Open activity monitor by capslock+1, battery health by capslock+2, world clock by capslock+3, quick calendar by capslock+4, kill process by capslock+5, storage by capslock+6, search repositories by capslock+7(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process in raycast)\nCapslock+shift->capslock",
+                        "description": "Open activity monitor by capslock+1, battery health by capslock+2, world clock by capslock+3, quick calendar by capslock+4, storage by capslock+5, kill process by capslock+6, search repositories by capslock+7, toggle play/pause by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, spotify player, kill process in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -158,8 +158,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "m",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "w",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -176,8 +176,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "w",
-                                    "modifiers": ["left_control", "left_command"]
+                                    "key_code": "m",
+                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -196,6 +196,21 @@
                                 "to": {
                                     "key_code": "k",
                                     "modifiers": ["left_option", "left_command"]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "8" },
+                                "to": {
+                                    "key_code": "x",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             },
