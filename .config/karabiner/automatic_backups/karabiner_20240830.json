@@ -195,14 +195,22 @@
                         ]
                     },
                     {
-                        "description": "Show desktop by function key(f7)(prerequisite:add show desktop shortcut in settings)",
+                        "description": "Open root folder by function key(f7), download folder by function key(f10)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f7",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "key_code": "f9" },
+                                "to": { "shell_command": "open '/Users/timoptimothy'" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f10",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
                                 "type": "basic"
                             }
                         ]
@@ -224,22 +232,14 @@
                         ]
                     },
                     {
-                        "description": "Open root folder by function key(f9), download folder by function key(f10)",
+                        "description": "Show desktop by function key(f9)(prerequisite:add show desktop shortcut in settings)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f9",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f10",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": { "key_code": "f9" },
                                 "type": "basic"
                             }
                         ]

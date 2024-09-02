@@ -8,7 +8,50 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open battery health by capslock+1, world clock by capslock+2, quick calendar by capslock+3, kill process by capslock+4, activity monitor by capslock+5, storage by capslock+6, search repositories by capslock+7(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process in raycast)\nCapslock+shift->capslock",
+                        "description": "Open visual studio code by function key(f5), iterm by function key(f6), warp by function key(f7)",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "f5" },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": { "key_code": "f6" },
+                                "to": { "shell_command": "open '/Applications/iTerm.app'" },
+                                "type": "basic"
+                            },
+                            {
+                                "from": { "key_code": "f7" },
+                                "to": { "shell_command": "open '/Applications/Warp.app'" },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "toggle caffeinate by function key(f8)(prerequisites: add the hotkey and install coffee in raycast)",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "f8" },
+                                "to": {
+                                    "key_code": "i",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Show desktop by function key(f9)(prerequisite:add show desktop shortcut in settings)",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "f9" },
+                                "to": { "key_code": "f9" },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open activity monitor by capslock+1, battery health by capslock+2, world clock by capslock+3, quick calendar by capslock+4, kill process by capslock+5, storage by capslock+6, search repositories by capslock+7(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -45,10 +88,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "e",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -64,7 +104,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "r",
+                                    "key_code": "e",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
@@ -82,7 +122,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "t",
+                                    "key_code": "r",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
@@ -100,8 +140,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "m",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "t",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -117,7 +157,10 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" },
+                                "to": {
+                                    "key_code": "m",
+                                    "modifiers": ["left_option", "left_command"]
+                                },
                                 "type": "basic"
                             },
                             {
@@ -172,77 +215,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Open visual studio code by function key(f5), iterm by function key(f6)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f5",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f6",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Applications/iTerm.app'" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Show desktop by function key(f7)(prerequisite:add show desktop shortcut in settings)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f7",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "key_code": "f9" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "toggle caffeinate by function key(f8)(prerequisites: add the hotkey and install coffee in raycast)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f8",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "i",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open root folder by function key(f9), download folder by function key(f10)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f9",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f10",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
@@ -273,7 +245,7 @@
                 },
                 {
                     "from": { "key_code": "f10" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "consumer_key_code": "play_or_pause" }]
                 }
             ],
             "name": "Default profile",
