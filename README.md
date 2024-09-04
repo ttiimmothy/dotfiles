@@ -36,7 +36,7 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-- [Tide](https://github.com/IlanCosman/tide) - Shell theme. Use version 5: `fisher install ilancosman/tide@v5`
+- [Tide](https://github.com/IlanCosman/tide) - Shell theme
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. It can be directly downloaded from the [files](#font-installation) below without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 - [Eza](https://github.com/eza-community/eza) - `ls` replacement
 - [Peco](https://github.com/peco/peco) - Interactive filtering
