@@ -103,7 +103,7 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
   { "theprimeagen/vim-be-good", dependencies = { "nvim-lua/plenary.nvim" } },
-  {  
+  {
     "eandrju/cellular-automaton.nvim",
     config = function()
       vim.keymap.set("n", "<leader>mta", "<cmd>CellularAutomaton make_it_rain<CR>")
