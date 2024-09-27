@@ -241,7 +241,7 @@ check `zoxide` weight
 zoxide query -l -s
 ```
 
-#### Installing `tmux` require following dependencies
+#### Installing `tmux` require following dependencies (depreciated, download `tmux` with brew after trying manual install)
 
 [![tmux installation](images/tmux_installation.png)](https://github.com/tmux/tmux/wiki/Installing#building-dependencies)
 
