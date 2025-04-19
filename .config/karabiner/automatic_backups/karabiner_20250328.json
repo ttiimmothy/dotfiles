@@ -208,16 +208,24 @@
                         ]
                     },
                     {
-                        "description": "Open download folder by function key(f8), root folder by function key(f9)",
+                        "description": "toggle caffeinate by function key(f8)(prerequisites: add the hotkey and install coffee in raycast)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f8",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": {
+                                    "key_code": "i",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open root folder by function key(f9)",
+                        "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f9",
