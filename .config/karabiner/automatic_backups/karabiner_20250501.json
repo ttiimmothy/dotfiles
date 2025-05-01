@@ -8,7 +8,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open battery health by capslock+1, world clock by capslock+2, quick calendar by capslock+3, kill process by capslock+4, activity monitor by capslock+5, storage by capslock+6, search repositories by capslock+7, weather by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open battery health by capslock+1, world clock by capslock+2, quick calendar by capslock+3, kill process by capslock+4, activity monitor by capslock+5, storage by capslock+6, search repositories by capslock+7(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -152,24 +152,6 @@
                                 },
                                 "to": {
                                     "key_code": "k",
-                                    "modifiers": ["left_option", "left_command"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "8",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "n",
                                     "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
