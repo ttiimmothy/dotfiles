@@ -226,14 +226,14 @@
                         ]
                     },
                     {
-                        "description": "Open root folder by function key(f8), download folder by function key(f9)",
+                        "description": "Open download folder by function key(f8), root folder by function key(f9)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f8",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
                                 "type": "basic"
                             },
                             {
@@ -241,7 +241,7 @@
                                     "key_code": "f9",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy'" },
                                 "type": "basic"
                             }
                         ]
