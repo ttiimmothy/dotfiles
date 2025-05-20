@@ -213,7 +213,7 @@
                         ]
                     },
                     {
-                        "description": "Show desktop by function key(f7)(prerequisite:add show desktop shortcut(f19) in settings)",
+                        "description": "Show desktop by function key(f7)(prerequisite:add show desktop shortcut in settings)",
                         "manipulators": [
                             {
                                 "from": {
