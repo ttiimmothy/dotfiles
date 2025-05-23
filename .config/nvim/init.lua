@@ -169,7 +169,7 @@ require("lazy").setup({
           file_ignore_patterns = {
             -- "node_modules", ".DS_Store", ".git", "object.*%.mm"
             -- "node_modules", ".DS_Store", ".git", "object.*%.mm", "^/openrice_timothy_backend/**/*/Dockerfile", "^/ttiimmothy_metrics/**/*/Dockerfile"
-            "node_modules", ".DS_Store", ".git", "Dockerfile", "object.*%.mm" 
+            "node_modules", ".DS_Store", ".git", "Dockerfile", "object.*%.mm"
             -- "node_modules", ".DS_Store", ".git"
          },
           -- layout_config = {
@@ -618,6 +618,12 @@ require("lazy").setup({
       -- - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       -- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
+  },
+  {
+     "m4xshen/hardtime.nvim",
+     lazy = false,
+     dependencies = { "MunifTanjim/nui.nvim" },
+     opts = {},
   },
   { import = "various.plugins" },
 }, {
