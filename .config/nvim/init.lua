@@ -426,6 +426,12 @@ require("lazy").setup({
       })
     end,
   },
+  -- replace tsserver with typescript-tools.nvim
+  {
+  "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   { -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "VimEnter",
