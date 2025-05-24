@@ -426,7 +426,7 @@ require("lazy").setup({
       })
     end,
   },
-  -- NOTE:replace tsserver with typescript-tools.nvim
+  -- NOTE: replace tsserver with typescript-tools.nvim
   -- {
   --   "pmizio/typescript-tools.nvim",
   --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -625,12 +625,12 @@ require("lazy").setup({
       -- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
-  {
-     "m4xshen/hardtime.nvim",
-     lazy = true,
-     dependencies = { "MunifTanjim/nui.nvim" },
-     opts = {},
-  },
+  -- {
+  --    "m4xshen/hardtime.nvim",
+  --    lazy = true,
+  --    dependencies = { "MunifTanjim/nui.nvim" },
+  --    opts = {},
+  -- },
   { import = "various.plugins" },
 }, {
   ui = {
