@@ -398,8 +398,8 @@ require("lazy").setup({
               },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               diagnostics = {
-                disable = { 'missing-fields' },
-                globals = { 'vim' },
+                -- disable = { 'missing-fields' },
+                globals = { "vim", "describe", "it", "before_each", "after_each", "packer_plugins", "MiniTest" },
               },
             },
           },
