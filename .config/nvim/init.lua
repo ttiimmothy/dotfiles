@@ -627,7 +627,7 @@ require("lazy").setup({
   },
   {
      "m4xshen/hardtime.nvim",
-     lazy = false,
+     lazy = true,
      dependencies = { "MunifTanjim/nui.nvim" },
      opts = {},
   },
