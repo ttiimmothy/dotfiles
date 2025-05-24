@@ -85,6 +85,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+NOTE: for disabling v in netrw
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
