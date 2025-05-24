@@ -102,7 +102,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-  { "theprimeagen/vim-be-good", dependencies = { "nvim-lua/plenary.nvim" } },
+  -- { "theprimeagen/vim-be-good", dependencies = { "nvim-lua/plenary.nvim" } },
   {
     "eandrju/cellular-automaton.nvim",
     config = function()
@@ -426,12 +426,12 @@ require("lazy").setup({
       })
     end,
   },
-  -- replace tsserver with typescript-tools.nvim
-  {
-  "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
+  -- NOTE:replace tsserver with typescript-tools.nvim
+  -- {
+  --   "pmizio/typescript-tools.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  --   opts = {},
+  -- },
   { -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "VimEnter",
