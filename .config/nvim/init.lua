@@ -391,6 +391,9 @@ require("lazy").setup({
         },
         lua_ls = {
           -- capabilities = {},
+          name = 'lua-language-server',
+          cmd = { 'lua-language-server' },
+          root_dir = vim.fs.dirname(vim.fs.find({'.git', '.vim', 'nvim'}, { upward = true })[1]),
           settings = {
             Lua = {
               completion = {
