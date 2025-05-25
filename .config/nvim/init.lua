@@ -109,7 +109,6 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-  -- { "theprimeagen/vim-be-good", dependencies = { "nvim-lua/plenary.nvim" } },
   {
     "eandrju/cellular-automaton.nvim",
     config = function()
@@ -117,9 +116,6 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>gol", "<cmd>CellularAutomaton game_of_life<CR>")
     end,
   },
-  -- keep the tabstop and softtabstop to be 2 in vim.opt, so don't need to use vim-sleuth
-  -- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-  -- "github/copilot.vim",
   { "numToStr/Comment.nvim", opts = {} },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
@@ -395,7 +391,7 @@ require("lazy").setup({
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require("mini.surround").setup()
+      requaire("mini.surround").setup()
       -- Simple and easy statusline.
       -- You could remove this setup call if you don't like it, and try some other statusline plugin
       local statusline = require("mini.statusline")
@@ -438,12 +434,6 @@ require("lazy").setup({
       -- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
-  -- {
-  --    "m4xshen/hardtime.nvim",
-  --    lazy = true,
-  --    dependencies = { "MunifTanjim/nui.nvim" },
-  --    opts = {},
-  -- },
   { import = "various.plugins" },
 }, {
   ui = {
