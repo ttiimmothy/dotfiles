@@ -89,7 +89,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "netrw",
   callback = function()
-    vim.api.nvim_buf_del_keymap(0, "n", "v")
+    vim.api.nvim_buf_set_keymap(0, "n", "v", "<Nop>", { noremap = true, silent = true })
   end,
 })
 -- [[ Install `lazy.nvim` plugin manager ]]
