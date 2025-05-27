@@ -21,14 +21,15 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 
 - a terminal that support true color and *undercurl*:
   - [iterm](https://iterm2.com/) **(macOS)**
+  - [ghostty](https://ghostty.org/download)
 
 ## Shell setup
 **(macOS)**
 
 ### ohmyzsh framework for zsh shell (optional for installing, fish shell is good enough to use)
 
-- [ohmyzsh](https://ohmyz.sh/)
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
+- (**not used**) [ohmyzsh](https://ohmyz.sh/)
+- (**not used**) [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. It can be directly downloaded from the [files](#font-installation) below without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 
 
@@ -96,8 +97,8 @@ brew install peco
 ### window size and font size
 
 - window
-  - `terminal` **149 * 45**
-  - `iterm` **149 * 43**
+  - `terminal` **258 * 87**
+  - `iterm` **258 * 87**
 
 - font
   - `terminal` **MesloLGS NF Regular `10`**
@@ -134,8 +135,10 @@ brew install peco
 1. [config-alias.fish](.config/fish/config-alias.fish)
 1. [config.fish](.config/fish/config.fish)
 1. [tide.fish](.config/fish/conf.d/tide.fish)
+1. [docker.fish](.config/fish/completions/docker.fish)
 1. [nvim/init.lua](.config/nvim/init.lua)
 1. [shortlisted.lua](.config/nvim/lua/various/plugins/shortlisted.lua)
+1. [lspconfig.lua](.config/nvim/lua/various/plugins/lspconfig.lua)
 1. [peco/config.json](.config/peco/config.json)
 1. [tmux.conf](.config/tmux/tmux.conf)
 1. [tmux/macos.conf](.config/tmux/macos.conf)
@@ -145,6 +148,7 @@ brew install peco
 1. [.warp/themes/color_dark.yml](.warp/themes/color_dark.yml)
 1. [.warp/themes/color_light.yml](.warp/themes/color_light.yml)
 1. [alacritty.toml](.config/alacritty/alacritty.toml)
+1. [config](.config/ghostty/config)
 
 ### dotfiles (old)
 
