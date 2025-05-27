@@ -26,7 +26,6 @@ alias arch "neofetch --ascii_colors 8 9 --ascii_distro arch --config none -L"
 alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config none"
 
 # other (tmux, neovim, zoxide and more)
-alias tsession "tmux ls"
 alias vim "nvim"
 alias c "clear"
 
