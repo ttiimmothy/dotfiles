@@ -4,3 +4,7 @@ window-inherit-font-size = false
 background-opacity = 0.7
 background-blur = 60
 macos-icon = glass
+window-height = 83
+window-width = 258
+window-position-x = 250
+window-position-y = 60
