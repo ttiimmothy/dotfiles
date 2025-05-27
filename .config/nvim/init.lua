@@ -15,7 +15,6 @@ vim.opt.wrap = false
 vim.opt.mouse = "r"
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
--- vim.opt.breakindent = true
 vim.opt.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -71,12 +70,6 @@ vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
 -- vim.keymap.set('n', '<s>', '<cmd>echo "Use a/i to enter insert mode"<CR>')
 -- useful words replacement command
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [W]ord" })
--- "<C-w><C-h>" is sufficient to use, don't need the following keeps to switch the window
--- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
--- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
--- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
--- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<leader>er', vim.cmd.Ex, { desc = '[E]xplo[r]e the directory' })
 vim.keymap.set('n', '<leader>al', vim.cmd.Lazy, { desc = '[A] [L]azy command' })
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
