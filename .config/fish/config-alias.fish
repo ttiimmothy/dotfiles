@@ -31,7 +31,7 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias tsession "tmux ls"
 alias vim "nvim"
 # alias v "z"
-alias vwv "zoxide query -l -s"
+# alias vwv "zoxide query -l -s"
 alias c "clear"
 
 # source
