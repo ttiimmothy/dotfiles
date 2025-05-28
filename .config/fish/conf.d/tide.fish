@@ -133,4 +133,5 @@ set -U tide_shlvl_color cccccc
 set -U tide_shlvl_icon 
 set -U tide_left_prompt_items pwd os newline character
 # set -U tide_right_prompt_items cmd_duration chruby go node php rustc time newline status git vi_mode
-set -U tide_right_prompt_items cmd_duration chruby go node rustc crystal elixir docker kubectl aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox jobs shlvl time newline status git
+# set -U tide_right_prompt_items cmd_duration chruby go node rustc crystal elixir docker kubectl aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox jobs shlvl time newline status git
+set -U tide_right_prompt_items cmd_duration chruby go node rustc crystal elixir docker kubectl aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox jobs time newline status git
