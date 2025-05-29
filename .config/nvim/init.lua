@@ -190,8 +190,7 @@ require("lazy").setup({
       end, { desc = "[S]earch [N]eovim files" })
     end,
   },
-  -- NOTE: replace tsserver with typescript-tools.nvim
-  {
+  { -- NOTE: replace tsserver with typescript-tools.nvim
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
