@@ -5,9 +5,9 @@ if status is-interactive
   source (dirname (status --current-filename))/config-alias.fish
   # source $HOME/.config/fish/config-osx-eza.fish
   # source $HOME/.config/fish/config-alias.fish
-  # echo -e '\n# Auto-Warpify\nstatus --is-interactive; and printf '\''\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish", "uname": "'$(uname)'" }}\x9c'\'' '
-  # Auto-Warpify
-  printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish", "uname": "Darwin" }}�'
+  if test -s (dirname (status --current-filename))/.profile
+    source (dirname (status --current-filename))/.profile
+  end
   set -g fish_greeting
 end
 zoxide init fish | source
