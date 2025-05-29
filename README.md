@@ -138,7 +138,7 @@ brew install peco
 1. [docker.fish](.config/fish/completions/docker.fish)
 1. [nvim/init.lua](.config/nvim/init.lua)
 1. [shortlisted.lua](.config/nvim/lua/various/plugins/shortlisted.lua)
-1. [lspconfig.lua](.config/nvim/lua/various/plugins/lspconfig.lua)
+1. [lspconfiguration.lua](.config/nvim/lua/various/plugins/lspconfiguration.lua)
 1. [peco/config.json](.config/peco/config.json)
 1. [tmux.conf](.config/tmux/tmux.conf)
 1. [tmux/macos.conf](.config/tmux/macos.conf)
@@ -147,6 +147,7 @@ brew install peco
 1. [karabiner.json](.config/karabiner/karabiner.json)
 1. [.warp/themes/color_dark.yml](.warp/themes/color_dark.yml)
 1. [.warp/themes/color_light.yml](.warp/themes/color_light.yml)
+1. [.warp/themes/my_color.yml](.warp/themes/my_color.yml)
 1. [alacritty.toml](.config/alacritty/alacritty.toml)
 1. [config](.config/ghostty/config)
 
