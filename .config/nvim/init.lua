@@ -10,8 +10,6 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.wrap = false
--- Enable mouse mode, can be useful for resizing splits for example!
--- vim.opt.mouse = "a"
 vim.opt.mouse = "r"
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
@@ -66,9 +64,6 @@ vim.keymap.set("v", "<S-c>", '<cmd>echo "visual mode shift+c is typing"<CR>')
 vim.keymap.set("v", "<S-d>", '<cmd>echo "visual mode shift+d is typing"<CR>')
 -- original word replace keymap
 vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
--- s keymap cannot be override
--- vim.keymap.set('n', '<s>', '<cmd>echo "Use a/i to enter insert mode"<CR>')
--- useful words replacement command
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [W]ord" })
 vim.keymap.set('n', '<leader>al', vim.cmd.Lazy, { desc = '[A] [L]azy command' })
 vim.api.nvim_create_autocmd('TextYankPost', {
@@ -93,13 +88,6 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
---
---  To check the current status of your plugins, run
---    :Lazy
---  You can press `?` in this menu for help. Use `:q` to close the window
---  To update plugins you can run
---    :Lazy update
---
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
   {
@@ -133,51 +121,30 @@ require("lazy").setup({
         -- `build` is used to run some command when the plugin is installed/updated.
         -- This is only run then, not every time Neovim starts up.
         build = "make",
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
+        -- `cond` is a condition used to determine whether this plugin should be installed and loaded.
         cond = function()
           return vim.fn.executable("make") == 1
         end,
       },
-      -- Useful for getting pretty icons, but requires a Nerd Font.
       { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
       "nvim-telescope/telescope-ui-select.nvim"
     },
     config = function()
-      -- The easiest way to use Telescope, is to start by doing something like:
-      -- :Telescope help_tags
-      -- After running this command, a window will open up and you're able to type in the prompt window. You'll see a list of `help_tags` options and a corresponding preview of the help.
-      -- Two important keymaps to use while in Telescope are:
-      -- - Insert mode: <c-/>
-      -- - Normal mode: ?
-      --
-      -- This opens a window that shows you all of the keymaps for the current Telescope picker. This is really useful to discover what Telescope can do as well as how to actually do it!
-      --
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
       require("telescope").setup({
         -- You can put your default mappings / updates / etc. in here
         -- All the info you're looking for is in `:help telescope.setup()`
         defaults = {
-          -- mappings = {
-          --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-          -- },
           file_ignore_patterns = {
-            -- "node_modules", ".DS_Store", ".git", "object.*%.mm"
-            -- "node_modules", ".DS_Store", ".git", "object.*%.mm", "^/openrice_timothy_backend/**/*/Dockerfile", "^/ttiimmothy_metrics/**/*/Dockerfile"
             "node_modules", ".DS_Store", ".git", "Dockerfile", "object.*%.mm"
-            -- "node_modules", ".DS_Store", ".git"
          },
-          -- layout_config = {
-          --   vertical = { width = 100 }
-          -- },
         },
         pickers = {
           find_files = {
             hidden = true,
             -- symlinks follow param not working            
             -- find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "-L" }
-            -- follow_symlinks = true,
           }
         },
         extensions = {
@@ -202,19 +169,14 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
       vim.keymap.set("n", "<leader>gs", builtin.live_grep, { desc = "[G]rep [S]tring" })
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-      -- vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>/", function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
         builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({}))
-          -- winblend = 80,
-          -- previewer = true,
-        -- }))
       end, { desc = "[/] Fuzzily search in current buffer" })
       vim.keymap.set("n", "<leader>gf", builtin.git_files, { desc = "Search [G]it [F]iles" })
-      -- It's also possible to pass additional configuration options.
       -- See `:help telescope.builtin.live_grep()` for information about particular keys
       vim.keymap.set("n", "<leader>s/", function()
         builtin.live_grep({
@@ -229,42 +191,33 @@ require("lazy").setup({
     end,
   },
   -- NOTE: replace tsserver with typescript-tools.nvim
-  -- {
-  --   "pmizio/typescript-tools.nvim",
-  --   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-  --   opts = {},
-  -- },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
   { -- Autocompletion
     "hrsh7th/nvim-cmp",
     event = "VimEnter",
-    -- event = "InsertEnter",
-    dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
+    dependencies = { -- Snippet Engine & its associated nvim-cmp source
       {
         "L3MON4D3/LuaSnip",
         build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
           if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
             return
           end
           return "make install_jsregexp"
         end)(),
-        dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          -- See the README about individual language/framework/plugin snippets:
-          -- https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+        dependencies = { -- https://github.com/rafamadriz/friendly-snippets
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
       },
       "saadparwaiz1/cmp_luasnip",
-      -- Adds other completion capabilities.
       -- nvim-cmp does not ship with all sources by default. They are split into multiple repos for maintenance purposes.
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
@@ -282,7 +235,6 @@ require("lazy").setup({
         },
         completion = { completeopt = "menu,menuone,noinsert" },
         -- For an understanding of why these mappings were chosen, you will need to read `:help ins-completion`
-        -- No, but seriously. Please read `:help ins-completion`, it is really good!
         mapping = cmp.mapping.preset.insert({
           -- Select the [n]ext item
           ["<C-n>"] = cmp.mapping.select_next_item(),
@@ -291,19 +243,7 @@ require("lazy").setup({
           -- Scroll the documentation window [b]ack / [f]orward
           ["<C-b>"] = cmp.mapping.scroll_docs(-4),
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
-          -- Accept ([y]es) the completion.
-          -- This will auto-import if your LSP supports it.
-          -- This will expand snippets if the LSP sent a snippet.
           ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-          -- Manually trigger a completion from nvim-cmp.
-          -- Generally you don't need this, because nvim-cmp will display completions whenever it has completion options available.
-          -- ["<C-Space>"] = cmp.mapping.complete({}),
-          -- Think of <c-l> as moving to the right of your snippet expansion.
-          -- So if you have a snippet that's like:
-          -- function $name($args)
-          --   $body
-          -- end
-          --
           -- <c-l> will move you to the right of each of the expansion locations.
           -- <c-h> is similar, except moving you backwards.
           ["<C-l>"] = cmp.mapping(function()
@@ -316,9 +256,6 @@ require("lazy").setup({
               luasnip.jump(-1)
             end
           end, { "i", "s" }),
-
-          -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-          -- https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
         }),
         sources = {
           { name = "nvim_lsp" },
@@ -354,11 +291,6 @@ require("lazy").setup({
     "echasnovski/mini.nvim",
     config = function()
       -- Better Around/Inside textobjects
-      --
-      -- Examples:
-      -- - va)  - [V]isually select [A]round [)]paren
-      -- - yinq - [Y]ank [I]nside [N]ext [']quote
-      -- - ci'  - [C]hange [I]nside [']quote
       require("mini.ai").setup({ n_lines = 500 })
       -- (Add)/delete/replace surroundings (brackets, quotes, etc.)
       --
@@ -369,9 +301,7 @@ require("lazy").setup({
       -- Simple and easy statusline.
       -- You could remove this setup call if you don't like it, and try some other statusline plugin
       local statusline = require("mini.statusline")
-      -- set use_icons to true if you have a Nerd Font
       statusline.setup({ use_icons = vim.g.have_nerd_font })
-      -- You can configure sections in the statusline by overriding their default behavior. For example, here we set the section for cursor location to LINE:COLUMN
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return "%2l:%-2v"
@@ -391,21 +321,13 @@ require("lazy").setup({
       auto_install = true,
       highlight = {
         enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        -- If you are experiencing weird indenting issues, add the language to the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby' },
       },
-      -- indent = { enable = true, disable = { 'ruby' } },
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
       ---@diagnostic disable-next-line: missing-fields
       require('nvim-treesitter.configs').setup(opts)
-      -- There are additional nvim-treesitter modules that you can use to interact with nvim-treesitter. You should go explore a few and see what interests you:
-      --
-      -- - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-      -- - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-      -- - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
   },
   { import = "various.plugins" },
@@ -416,7 +338,6 @@ require("lazy").setup({
       cmd = "⌘",
       config = "🛠",
       event = "🌙",
-      -- event = "📅",
       ft = "📂",
       init = "⚙",
       keys = "🗝",
@@ -424,8 +345,6 @@ require("lazy").setup({
       runtime = "💻",
       require = "💫",
       source = "🌪️",
-      -- require = "🌙",
-      -- source = "📄",
       start = "🚀",
       task = "📌",
       lazy = "💤 ",

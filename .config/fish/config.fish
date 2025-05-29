@@ -3,8 +3,6 @@ if status is-interactive
   # Commands to run in interactive sessions can go here
   source (dirname (status --current-filename))/config-osx-eza.fish
   source (dirname (status --current-filename))/config-alias.fish
-  # source $HOME/.config/fish/config-osx-eza.fish
-  # source $HOME/.config/fish/config-alias.fish
   if test -s (dirname (status --current-filename))/.profile
     source (dirname (status --current-filename))/.profile
   end
