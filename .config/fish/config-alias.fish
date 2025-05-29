@@ -27,7 +27,8 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 
 # other (tmux, neovim, zoxide and more)
 alias vim "nvim"
-alias vi "vim"
+alias vi "nvim"
+alias n "nvim"
 alias c "clear"
 # auto-warpify, but can't use
 # alias ww "printf '\eP$f{\"hook\": \"SourcedRcFileForWarp\", \"value\": { \"shell\": \"fish\"}}\x9c'"
