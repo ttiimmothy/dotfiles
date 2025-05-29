@@ -45,7 +45,6 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- for not storing the word that is replaced in the clipboard and store the origin yanked word
 vim.keymap.set("x", "<leader>p", [["_dP]])
--- original insert keymap
 vim.keymap.set("x", "s", '<cmd>echo "s is typing"<CR>')
 vim.keymap.set("n", "s", '<cmd>echo "s is typing"<CR>')
 vim.keymap.set("x", "a", '<cmd>echo "a is typing"<CR>')
