@@ -8,7 +8,6 @@ if status is-interactive
   # echo -e '\n# Auto-Warpify\nstatus --is-interactive; and printf '\''\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish", "uname": "'$(uname)'" }}\x9c'\'' '
   # Auto-Warpify
   printf 'P$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish", "uname": "Darwin" }}�'
-  # printf '\''\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish", "uname": "Darwin" }}\x9c'\'' '
   set -g fish_greeting
 end
 zoxide init fish | source
