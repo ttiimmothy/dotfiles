@@ -27,7 +27,10 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 
 # other (tmux, neovim, zoxide and more)
 alias vim "nvim"
+alias nvi "nvim"
 alias vi "nvim"
+alias nv "nvim"
+alias im "nvim"
 alias n "nvim"
 alias c "clear"
 # auto-warpify, but can't use
