@@ -32,7 +32,6 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 - (**not used**) [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. It can be directly downloaded from the [files](#font-installation) below without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 
-
 ### Fish shell
 
 - [Fish shell](https://fishshell.com/)
@@ -82,6 +81,18 @@ brew install peco
 - [x] [rose-pine/neovim](https://github.com/rose-pine/neovim)
 
 - [ ] can also check: <https://github.com/topics/neovim-colorscheme>
+
+### Default shell setup (from `zsh` to `fish`, by `chsh` command)
+
+- [ ] change /etc/shells files by adding **/opt/homebrew/bin/fish** or where you install the fish
+- [ ] type following command
+
+```bash
+chsh
+```
+
+- [ ] change the default shell to fish in the file that you open
+- [ ] logout and login again, the default shell would change to **`fish`** now, don't need to add `fish` in `.zshrc` anymore
 
 ## Terminal configuration
 ### ANSI color configuration for both `terminal` and `iterm`
