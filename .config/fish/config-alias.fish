@@ -37,4 +37,4 @@ alias c "clear"
 # alias ww "printf '\eP$f{\"hook\": \"SourcedRcFileForWarp\", \"value\": { \"shell\": \"fish\"}}\x9c'"
 
 # source
-# alias soz "source ~/.zshrc"
+alias sorf "source ~/.config/fish/config.fish"
