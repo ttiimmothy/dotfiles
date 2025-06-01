@@ -194,17 +194,19 @@ chsh
 
 `git`
 
-`eza`
+`pnpm`
 
 `fish`
 
-`peco`
-
 `neovim`
 
-`tmux`
+`eza`
+
+`peco`
 
 `ripgrep` (**important for neovim telescope searching**)
+
+`tmux`
 
 [`git-lfs (optional)`](https://git-lfs.com/)
 
