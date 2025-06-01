@@ -159,7 +159,6 @@ chsh
 1. [.warp/themes/color_dark.yml](.warp/themes/color_dark.yml)
 1. [.warp/themes/color_light.yml](.warp/themes/color_light.yml)
 1. [.warp/themes/my_color.yml](.warp/themes/my_color.yml)
-1. [alacritty.toml](.config/alacritty/alacritty.toml)
 1. [config](.config/ghostty/config)
 
 ### dotfiles (old)
