@@ -4,6 +4,13 @@ function norcomt
   # $argv[1] coverts to string if I don't put string as param
   git co -m "$argv[1]" && git push
 end
+function git
+  if test (count $argv) -eq 1 -a "$argv[1]" = "a"
+    command git a .
+  else
+    command git $argv
+  end
+end
 # initial commit
 alias init "git a . && git co -m 'first init' && git push -u origin main"
 # usually use after emt
