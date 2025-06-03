@@ -12,7 +12,7 @@ function git
   end
 end
 # initial commit
-alias init "git a . && git co -m 'first init' && git push -u origin main"
+alias init "git a && git co -m 'first init' && git push -u origin main"
 # usually use after emt
 alias emback "git cout main && git pull-allow origin main"
 # checkout empty branch and create empty commit
