@@ -34,7 +34,7 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 
 # other (tmux, neovim, zoxide and more)
 alias vi "nvim"
-alias nv "nvim"
+alias ni "nvim"
 alias c "clear"
 
 # source
