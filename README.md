@@ -181,7 +181,7 @@ chsh
 1. [git](https://git-scm.com/download/mac)
 1. [node.js, npm](https://nodejs.org/en)
 1. [go](https://go.dev/)
-1. [pnpm](https://pnpm.io/installation) - Use command `curl -fsSL https://get.pnpm.io/install.sh | sh -`
+1. (**I haven't used anymore**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
 1. [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
 1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
 1. [stow](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
@@ -195,8 +195,6 @@ chsh
 ![brew caskroom](images/homebrew/brew_cask.png)
 
 `git`
-
-`pnpm`
 
 `fish`
 
