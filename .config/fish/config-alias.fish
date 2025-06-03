@@ -4,6 +4,10 @@ function norcomt
   # $argv[1] coverts to string if I don't put string as param
   git co -m "$argv[1]" && git push
 end
+function nrcot
+  # $argv[1] coverts to string if I don't put string as param
+  git co -m "$argv[1]" && git push
+end
 # function git
 #   if test (count $argv) -eq 1 -a "$argv[1]" = "a"
 #     command git a .
