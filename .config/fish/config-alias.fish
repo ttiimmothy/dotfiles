@@ -36,6 +36,7 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias vi "nvim"
 alias ni "nvim"
 alias c "clear"
+alias d "clear"
 
 # source
 alias sorf "source ~/.config/fish/config.fish"
