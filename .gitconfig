@@ -10,7 +10,7 @@
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
-	name = ttiimmothy
+	name = Timothy
 	email = dinosauli2006@gmail.com
 	signingkey = F5C18F19D2B47181E60D1249B9BC2570CE5BA643
 [commit]
