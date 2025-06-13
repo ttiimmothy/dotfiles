@@ -12,7 +12,7 @@ set -U tide_character_bg_color normal
 set -U tide_os_bg_color ff5500
 set -U tide_os_color ffffff
 set -U tide_pwd_bg_color 424242
-set -U tide_git_bg_color ff5500
+set -U tide_git_bg_color 4e387e
 set -U tide_git_bg_color_urgent cc0000
 set -U tide_git_color_dirty ffffff
 
