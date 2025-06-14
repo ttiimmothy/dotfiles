@@ -9,3 +9,6 @@ if status is-interactive
   set -g fish_greeting
 end
 zoxide init fish | source
+
+eval /opt/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+or source /opt/miniconda3/etc/fish/conf.d/conda.fish

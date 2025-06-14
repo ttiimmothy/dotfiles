@@ -8,14 +8,6 @@ function nrcot
   # $argv[1] coverts to string if I don't put string as param
   git co -m "$argv[1]" && git push
 end
-# function git
-#   if test (count $argv) -eq 1 -a "$argv[1]" = "a"
-#     command git a .
-#   else
-#     command git $argv
-#   end
-# end
-# initial commit
 alias init "git a && git co -m 'first init' && git push -u origin main"
 # usually use after emt
 alias emback "git cout main && git pull-allow origin main"
@@ -36,6 +28,7 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias vi "nvim"
 alias ni "nvim"
 alias d "clear"
+alias python "python3"
 
 # source
 alias sorf "source ~/.config/fish/config.fish"

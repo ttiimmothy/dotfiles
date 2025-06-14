@@ -4,6 +4,8 @@ set -U fish_color_param ffcc00
 set -U fish_color_quote 9c87c9
 set -U fish_color_host normal
 set -U fish_color_normal normal
+set -U fish_color_error dddddd
+set -U fish_color_comment dddddd
 
 # either one
 # set -U tide_character_bg_color 268bd2
