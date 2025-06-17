@@ -163,6 +163,7 @@ chsh
 1. [dark-neon.json](.config/gollama/themes/dark-neon.json)
 1. [light-neon.json](.config/gollama/themes/light-neon.json)
 1. [config.json](.config/gollama/config.json)
+1. [config.toml](.config/helix/config.toml)
 
 ### dotfiles (old)
 
@@ -213,6 +214,8 @@ chsh
 `iterm` (**it can be downloaded from the software homepage without homebrew**)
 
 `chromium`
+
+`helix` (helix editor, binary path: **hx**)
 
 ###### other softwares showing in the above image are default downloaded after installing `brew` and other softwares that mentioned above (like `luv` is installed itself after installing `neovim`), `don't` need to run `brew install $(software-name)`
 
