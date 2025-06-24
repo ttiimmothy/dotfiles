@@ -1,5 +1,5 @@
 theme = raycast_dark
-font-size = 10
+font-size = 8
 window-inherit-font-size = false
 background-opacity = 0.7
 background-blur = 60
@@ -7,7 +7,7 @@ macos-icon = custom-style
 macos-icon-frame = plastic
 macos-icon-ghost-color = ff5500
 macos-icon-screen-color = 161616
-window-height = 75
-window-width = 257
+window-height = 92
+window-width = 309
 window-position-x = 252
-window-position-y = 116
+window-position-y = 115
