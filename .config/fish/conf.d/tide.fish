@@ -14,11 +14,12 @@ set -U tide_character_bg_color normal
 set -U tide_os_bg_color ff5500
 set -U tide_os_color ffffff
 set -U tide_pwd_bg_color 424242
-set -U tide_git_bg_color 4e387e
+# set -U tide_git_bg_color 4e387e
+set -U tide_git_bg_color ff8800
 set -U tide_git_bg_color_urgent cc0000
 set -U tide_git_color_dirty ffffff
 
-set -U tide_git_bg_color_unstable 4e387e
+set -U tide_git_bg_color_unstable ff8800
 set -U tide_git_color_branch ffffff
 set -U tide_git_color_conflicted ffffff
 set -U tide_git_color_dirty ffffff
@@ -39,7 +40,7 @@ set -U tide_cmd_duration_color 424242
 set -U tide_cmd_duration_icon ⎈
 set -U tide_character_color fac5a6
 # set -U tide_character_icon ❯
-set -U tide_character_icon 﫸❯
+set -U tide_character_icon 
 set -U tide_pwd_color grey
 set -U tide_git_icon 
 set -U tide_shlvl_bg_color 049189
