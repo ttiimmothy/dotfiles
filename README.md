@@ -84,15 +84,15 @@ brew install peco
 
 ### Default shell setup (from `zsh` to `fish`, by `chsh` command)
 
-- [ ] change /etc/shells files by adding **/opt/homebrew/bin/fish** or where you install the fish
-- [ ] type following command
+- [ ] change `/etc/shells` files by adding **/opt/homebrew/bin/fish** or where you install the fish
+- [ ] type following command afterwards
 
 ```bash
 chsh
 ```
 
 - [ ] change the default shell to fish in the file that you open
-- [ ] logout and login again, the default shell would change to **`fish`** now, don't need to add `fish` in `.zshrc` anymore
+- [ ] logout and login to the local machine (e.g Macbook) again, the default shell would change to **`fish`** now, don't need to add **fish** this line of code in `.zshrc` anymore
 
 ## Terminal configuration
 ### ANSI color configuration for both `terminal` and `iterm`
@@ -180,15 +180,19 @@ chsh
 
 1. [homebrew](https://brew.sh/)
 1. [git](https://git-scm.com/download/mac)
-1. [node.js, npm](https://nodejs.org/en)
-1. [go](https://go.dev/)
+1. [node.js, `npm`](https://nodejs.org/en)
+1. [`go`](https://go.dev/)
 1. (**I haven't used anymore**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
 1. [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
-1. [gnupg](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
-1. [stow](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
+1. [`gnupg`](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
+1. [`stow`](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
 1. [Raycast](https://raycast.com/)
 1. [Karabiner-elements](https://karabiner-elements.pqrs.org/) - Keys modification
-1. [iTerm](https://iterm2.com/)
+1. (**Optional**) [iTerm](https://iterm2.com/)
+1. [`deno`](https://deno.com/)
+1. [Android Studio](https://developer.android.com/studio)
+1. [Docker Desktop](https://www.docker.com/)
+1. [`uv`](https://docs.astral.sh/uv/#installation) - faster replacement of `pip`
 
 #### Images showing the things installed by brew
 
@@ -241,6 +245,22 @@ ssh-keygen
 stow .
 ln -s ~/developer/github_repository/vscode_settings/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ```
+
+```zsh
+ln -s ~/.deno/bin/deno ~/.local/bin/deno
+```
+
+(need to install `deno` in the official website first)
+
+```zsh
+ln -s ~/Library/Android/sdk/platform-tools/adb ~/.local/bin/adb
+```
+
+(need to install **Android Studio** first)
+
+- [ ] move `~/.docker/bin` all symlinks to the `~/.local/bin` folder
+
+(need to install **Docker Desktop** first)
 
 ## Reminders
 
