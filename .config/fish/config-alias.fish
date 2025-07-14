@@ -28,7 +28,13 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias vi "nvim"
 alias ni "nvim"
 alias d "clear"
+alias c "clear"
+alias cr "clear"
 alias python "python3"
+alias wificonnectivity "ping -c 8 firebase.google.com"
+alias wificonnectivitycheck "ping -c 9 firebase.com"
+alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 
 # source
 alias sorf "source ~/.config/fish/config.fish"
+alias sof "source ~/.config/fish/config.fish"
