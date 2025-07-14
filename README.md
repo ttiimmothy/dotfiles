@@ -20,7 +20,7 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 ### Requirements
 
 - a terminal that support true color and *undercurl*:
-  - [iterm](https://iterm2.com/) **(macOS)**
+  - [iterm](https://iterm2.com/) **(macOS, optional)**
   - [ghostty](https://ghostty.org/download)
 
 ## Shell setup
