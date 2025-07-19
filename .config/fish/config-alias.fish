@@ -54,5 +54,5 @@ function listallbinaries
     if test -d $dir
       find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
     end
-  end | sort | uniq | less
+  end | sort | uniq | vi
 end
