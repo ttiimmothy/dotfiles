@@ -38,3 +38,21 @@ alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 # source
 alias sorf "source ~/.config/fish/config.fish"
 alias sof "source ~/.config/fish/config.fish"
+
+function countbinary
+  # \( -type f -or -type l \)
+  # f = file, l = symlink
+  # -perm +111 = executable
+  for dir in $PATH
+    if test -d $dir
+      find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
+    end
+  end | sort | uniq | wc -l | string trim
+end
+function listallbinaries
+  for dir in $PATH
+    if test -d $dir
+      find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
+    end
+  end | sort | uniq | less
+end
