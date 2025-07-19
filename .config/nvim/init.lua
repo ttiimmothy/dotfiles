@@ -2,28 +2,28 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 -- Make line numbers default
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.wrap = false
-vim.opt.mouse = "r"
-vim.opt.showmode = false
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.undofile = true
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.o.expandtab = true
+vim.o.wrap = false
+vim.o.mouse = "r"
+vim.o.showmode = false
+vim.o.clipboard = 'unnamedplus'
+vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.updatetime = 50
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.inccommand = "split"
-vim.opt.cursorline = true
-vim.opt.scrolloff = 20
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.updatetime = 50
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.inccommand = "split"
+vim.o.cursorline = true
+vim.o.scrolloff = 20
 -- [[ Basic Keymaps ]]
-vim.opt.hlsearch = false
+vim.o.hlsearch = false
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
@@ -83,9 +83,14 @@ vim.api.nvim_create_autocmd("FileType", {
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-end ---@diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  if vim.v.shell_error ~= 0 then
+    error('Error cloning lazy.nvim:\n' .. out)
+  end
+end
+---@type vim.Option
+local rtp = vim.opt.rtp
+rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
@@ -112,7 +117,6 @@ require("lazy").setup({
   { -- Fuzzy Finder (files, lsp, etc)
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
-    branch = "0.1.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
