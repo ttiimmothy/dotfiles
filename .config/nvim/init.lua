@@ -22,6 +22,7 @@ vim.o.splitbelow = true
 vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 20
+vim.o.confirm = true
 -- [[ Basic Keymaps ]]
 vim.o.hlsearch = false
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
