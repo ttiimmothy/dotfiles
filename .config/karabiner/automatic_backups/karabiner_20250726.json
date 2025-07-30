@@ -8,7 +8,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open battery health by capslock+1, quick calendar by capslock+2, world clock by capslock+3, storage by capslock+4, kill process by capslock+5, activity monitor by capslock+6, search repositories by capslock+7, weather by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open battery health by capslock+1, quick calendar by capslock+2, world clock by capslock+3, kill process by capslock+4, activity monitor by capslock+5, storage by capslock+6, search repositories by capslock+7, weather by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, weather in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -100,8 +100,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "w",
-                                    "modifiers": ["left_control", "left_command"]
+                                    "key_code": "m",
+                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -117,10 +117,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "m",
-                                    "modifiers": ["left_option", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -135,7 +132,10 @@
                                     "key_code": "6",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" },
+                                "to": {
+                                    "key_code": "w",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
                                 "type": "basic"
                             },
                             {

@@ -9,3 +9,6 @@ if status is-interactive
   set -g fish_greeting
 end
 zoxide init fish | source
+# Setting PATH for Python 3.11
+# The original version is saved in /Users/timoptimothy/.config/fish/config.fish.pysave
+set -x PATH "/Library/Frameworks/Python.framework/Versions/3.11/bin" "$PATH"

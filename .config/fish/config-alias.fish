@@ -8,7 +8,7 @@ function nrcot
   # $argv[1] coverts to string if I don't put string as param
   git co -m "$argv[1]" && git push
 end
-alias init "git a && git co -m 'first init' && git push -u origin main"
+alias init "git a . && git co -m 'first init' && git push -u origin main"
 # usually use after emt
 alias emback "git cout main && git pull-allow origin main"
 # checkout empty branch and create empty commit
