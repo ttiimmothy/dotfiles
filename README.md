@@ -20,7 +20,7 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 ### Requirements
 
 - a terminal that support true color and *undercurl*:
-  - [iterm](https://iterm2.com/) **(macOS, optional)**
+  - [iterm](https://iterm2.com/) **(macOS, optional, not used now)**
   - [ghostty](https://ghostty.org/download)
 
 ## Shell setup
@@ -105,7 +105,7 @@ chsh
 
 ###### need to change the color because the default color is difficult to see when using `ll` or `lla` command
 
-### window size and font size
+### window size and font size (not used now)
 
 - window
   - `terminal` **258 * 87**
@@ -115,7 +115,7 @@ chsh
   - `terminal` **MesloLGS NF Regular `10`**
   - `iterm` **MesloLGS NF Regular `10`**
 
-### other configurations
+### other configurations (not used now)
 
 #### terminal
 
