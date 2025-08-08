@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open world clock by capslock+1, battery health by capslock+2, ghostty by capslock+3, cursor by capslock+4, storage(in settings) by capslock+5, control center(in settings, include menu bar behavior settings) by capslock+6, kill process by capslock+7, search repositories by capslock+8, weather by capslock+9(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open world clock by capslock+1, battery health by capslock+2, ghostty by capslock+3, cursor by capslock+4, storage(in settings) by capslock+5, kill process by capslock+6, search repositories by capslock+7, weather by capslock+8(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, weather in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -131,7 +131,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "o",
+                                    "key_code": "m",
                                     "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
@@ -149,24 +149,6 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "m",
-                                    "modifiers": ["left_option", "left_command"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "8",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
                                     "key_code": "k",
                                     "modifiers": ["left_option", "left_command"]
                                 },
@@ -181,7 +163,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "9",
+                                    "key_code": "8",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -208,7 +190,7 @@
                         ]
                     },
                     {
-                        "description": "Open calendar by function key(f3), quick calendar by function key(f4), desktop and dock(in settings) by function key(f8)(prerequisites:add the hotkey and install quick calendar in raycast)",
+                        "description": "Open calendar by function key(f3), ghostty by function key(f6), desktop and dock(in settings) by f10(prerequisites:add the hotkey and install quick calendar in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -231,7 +213,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f8",
+                                    "key_code": "f10",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -256,22 +238,22 @@
                         ]
                     },
                     {
-                        "description": "Open download folder by function key(f9), root folder by function key(f10)",
+                        "description": "Open root folder by function key(f8), download folder by function key(f9)",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f8",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "shell_command": "open '/Users/timoptimothy'" },
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "f9",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "f10",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
                                 "type": "basic"
                             }
                         ]
