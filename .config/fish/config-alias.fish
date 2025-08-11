@@ -28,8 +28,6 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias vi "nvim"
 alias ni "nvim"
 alias d "clear"
-alias c "clear"
-alias cr "clear"
 alias python "python3"
 alias wificonnectivity "ping -c 8 firebase.com"
 alias wificonnectivitycheck "ping -c 17 firebase.com"
