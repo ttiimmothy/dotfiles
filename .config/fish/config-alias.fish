@@ -33,6 +33,7 @@ alias cr "clear"
 alias python "python3"
 alias wificonnectivity "ping -c 8 firebase.com"
 alias wificonnectivitycheck "ping -c 17 firebase.com"
+alias wificheck "ping -c 23 firebase.com"
 alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 
 # source
