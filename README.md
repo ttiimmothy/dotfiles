@@ -164,6 +164,7 @@ chsh
 1. [light-neon.json](.config/gollama/themes/light-neon.json)
 1. [config.json](.config/gollama/config.json)
 1. [config.toml](.config/helix/config.toml)
+1. [linearmouse.json](.config/linearmouse/linearmouse.json)
 
 ### dotfiles (old)
 
@@ -193,6 +194,7 @@ chsh
 1. [Android Studio](https://developer.android.com/studio)
 1. [Docker Desktop](https://www.docker.com/)
 1. [`uv`](https://docs.astral.sh/uv/#installation) - faster replacement of `pip`
+1. [LinearMouse](https://linearmouse.app/)
 
 #### Images showing the things installed by brew
 
@@ -211,7 +213,7 @@ chsh
 
 `ripgrep` (**important for neovim telescope searching**)
 
-`tmux`
+**`tmux`**
 
 [`git-lfs (optional)`](https://git-lfs.com/)
 
