@@ -243,19 +243,6 @@
                         ]
                     },
                     {
-                        "description": "Show desktop by function key(f7)(prerequisite:add show desktop shortcut(f19) in settings)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f7",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "key_code": "f19" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Open download folder by function key(f9), root folder by function key(f10)",
                         "manipulators": [
                             {
@@ -297,7 +284,7 @@
                 },
                 {
                     "from": { "key_code": "f7" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "key_code": "f7" }]
                 },
                 {
                     "from": { "key_code": "f8" },
