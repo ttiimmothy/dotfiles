@@ -35,54 +35,6 @@
             "control" : true,
             "option" : false,
             "shift" : false
-          },
-          {
-            "action" : "none",
-            "command" : false,
-            "control" : false,
-            "option" : false,
-            "scroll" : "left",
-            "shift" : false
-          },
-          {
-            "action" : "none",
-            "command" : false,
-            "control" : false,
-            "option" : false,
-            "scroll" : "right",
-            "shift" : false
-          },
-          {
-            "action" : "none",
-            "command" : false,
-            "control" : false,
-            "option" : false,
-            "scroll" : "right",
-            "shift" : true
-          },
-          {
-            "action" : "none",
-            "command" : false,
-            "control" : false,
-            "option" : false,
-            "scroll" : "left",
-            "shift" : true
-          },
-          {
-            "action" : "none",
-            "command" : false,
-            "control" : true,
-            "option" : false,
-            "scroll" : "right",
-            "shift" : false
-          },
-          {
-            "action" : "none",
-            "command" : false,
-            "control" : true,
-            "option" : false,
-            "scroll" : "left",
-            "shift" : false
           }
         ]
       },
@@ -143,6 +95,118 @@
             "option" : false,
             "scroll" : "down",
             "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : true,
+            "control" : false,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : true,
+            "control" : false,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "scroll" : "left",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "scroll" : "right",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : true,
+            "control" : true,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : true,
+            "control" : true,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : true
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : true,
+            "option" : true,
+            "scroll" : "left",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : true,
+            "option" : true,
+            "scroll" : "right",
+            "shift" : false
           }
         ]
       },
