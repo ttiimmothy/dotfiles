@@ -35,6 +35,22 @@
             "control" : true,
             "option" : false,
             "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : false
           }
         ]
       },
