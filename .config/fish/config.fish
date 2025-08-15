@@ -9,3 +9,6 @@ if status is-interactive
   set -g fish_greeting
 end
 zoxide init fish | source
+
+# opencode
+fish_add_path /Users/timoptimothy/.opencode/bin
