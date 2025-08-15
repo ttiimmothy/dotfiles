@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open world clock by capslock+1, battery health by capslock+2, ghostty by capslock+3, kiro by capslock+4, storage(in settings) by capslock+5, control center(in settings, include menu bar behavior settings) by capslock+6, kill process by capslock+7, search repositories by capslock+8, weather by capslock+9(prerequisites:add the hotkey and install battery health, quick calendar, world clock, github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open battery health by capslock+1, arc by capslock+2, ghostty by capslock+3, kiro by capslock+4, cursor by capslock+5, storage(in settings) by capslock+6, kill process by capslock+7, search repositories by capslock+8, weather by capslock+9(prerequisites:add the hotkey and install battery health, github, kill process, weather in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -47,7 +47,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "r",
+                                    "key_code": "e",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
@@ -64,10 +64,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "e",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {
@@ -112,10 +109,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "w",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -131,8 +125,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "o",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "w",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -208,14 +202,17 @@
                         ]
                     },
                     {
-                        "description": "Open calendar by function key(f3), quick calendar by function key(f4), desktop and dock(in settings) by function key(f8)(prerequisites:add the hotkey and install quick calendar in raycast)",
+                        "description": "Open quick calendar by function key(f3), query world time by function key(f4), desktop and dock(in settings) by function key(f8)(prerequisites:add the hotkey, install quick calendar and world clock in raycast)",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "f3",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
+                                "to": {
+                                    "key_code": "t",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
                                 "type": "basic"
                             },
                             {
@@ -224,7 +221,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "t",
+                                    "key_code": "r",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
