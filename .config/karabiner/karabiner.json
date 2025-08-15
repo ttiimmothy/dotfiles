@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open battery health by capslock+1, arc by capslock+2, ghostty by capslock+3, kiro by capslock+4, cursor by capslock+5, storage(in settings) by capslock+6, kill process by capslock+7, search repositories by capslock+8, weather by capslock+9(prerequisites:add the hotkey and install battery health, github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open arc by capslock+1, ghostty by capslock+2, kiro by capslock+3, cursor by capslock+4, pearai by capslock+5, storage(in settings) by capslock+6, desktop and dock(in settings) by capslock+7, kill process by capslock+8, search repositories by capslock+9, weather by capslock+0(prerequisites:add the hotkey and install github, kill process, weather in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -46,10 +46,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "e",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {
@@ -64,7 +61,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
+                                "to": { "shell_command": "open '/Applications/Ghostty.app'" },
                                 "type": "basic"
                             },
                             {
@@ -79,7 +76,7 @@
                                     "key_code": "3",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Ghostty.app'" },
+                                "to": { "shell_command": "open '/Applications/Kiro.app'" },
                                 "type": "basic"
                             },
                             {
@@ -94,7 +91,7 @@
                                     "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Kiro.app'" },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -109,7 +106,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
+                                "to": { "shell_command": "open '/Applications/PearAI.app'" },
                                 "type": "basic"
                             },
                             {
@@ -143,7 +140,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "m",
+                                    "key_code": "l",
                                     "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
@@ -161,7 +158,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "k",
+                                    "key_code": "m",
                                     "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
@@ -176,6 +173,24 @@
                                 ],
                                 "from": {
                                     "key_code": "9",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": {
+                                    "key_code": "k",
+                                    "modifiers": ["left_option", "left_command"]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "0",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -202,7 +217,7 @@
                         ]
                     },
                     {
-                        "description": "Open quick calendar by function key(f3), query world time by function key(f4), desktop and dock(in settings) by function key(f8)(prerequisites:add the hotkey, install quick calendar and world clock in raycast)",
+                        "description": "Open quick calendar by function key(f3), query world time by function key(f4), show battery information by function key(f5)(prerequisites:add the hotkey, install quick calendar, world clock and battery health in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -228,23 +243,23 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f8",
+                                    "key_code": "f5",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "l",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "e",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Open download folder by function key(f9), root folder by function key(f10)",
+                        "description": "Open download folder by function key(f6), root folder by function key(f7)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "f9",
+                                    "key_code": "f6",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
@@ -252,7 +267,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f10",
+                                    "key_code": "f7",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/Users/timoptimothy'" },
@@ -273,27 +288,27 @@
                 },
                 {
                     "from": { "key_code": "f5" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f6" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f7" },
-                    "to": [{ "key_code": "f7" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f8" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
                 },
                 {
                     "from": { "key_code": "f9" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
                     "from": { "key_code": "f10" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "key_code": "f10" }]
                 }
             ],
             "name": "Default profile",
