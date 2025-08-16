@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open arc by capslock+1, ghostty by capslock+2, kiro by capslock+3, cursor by capslock+4, pearai by capslock+5, storage(in settings) by capslock+6, desktop and dock(in settings) by capslock+7, kill process by capslock+8, search repositories by capslock+9, weather by capslock+0(prerequisites:add the hotkey and install github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open arc by capslock+1, ghostty by capslock+2, cursor by capslock+3, pearai by capslock+4, kiro by capslock+5, storage(in settings) by capslock+6, desktop and dock(in settings) by capslock+7, kill process by capslock+8, search repositories by capslock+9, weather by capslock+0(prerequisites:add the hotkey and install github, kill process, weather in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -76,7 +76,7 @@
                                     "key_code": "3",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Kiro.app'" },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -91,7 +91,7 @@
                                     "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
+                                "to": { "shell_command": "open '/Applications/PearAI.app'" },
                                 "type": "basic"
                             },
                             {
@@ -106,7 +106,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/PearAI.app'" },
+                                "to": { "shell_command": "open '/Applications/Kiro.app'" },
                                 "type": "basic"
                             },
                             {
