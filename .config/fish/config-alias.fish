@@ -15,6 +15,7 @@ alias emback "git cout main && git pull-allow origin main"
 alias emt "git cout empty && git pull origin empty && git pull origin main && git co -m "empty" && git push"
 alias git-global "git config --global --list"
 alias glk "git lfs track"
+alias gostow "z stow && emback && z stow"
 
 # neofetch
 alias icondistro "neofetch --ascii_colors 9 8 --ascii_distro debian --config none --colors 3 2 7 6 2 8"
