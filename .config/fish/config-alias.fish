@@ -35,6 +35,7 @@ alias wificonnectivity "ping -c 8 firebase.com"
 alias wificonnectivitycheck "ping -c 17 firebase.com"
 alias wificheck "ping -c 23 firebase.com"
 alias firebases "ping -c 24 firebase.com"
+alias core "ping -c 20 firebase.com"
 alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 
 # source
