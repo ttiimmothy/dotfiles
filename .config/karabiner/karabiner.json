@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open arc by capslock+1, ghostty by capslock+2, pearai by capslock+3, visual studio code by capslock+4, kiro by capslock+5, storage(in settings) by capslock+6, desktop and dock(in settings) by capslock+7, kill process by capslock+8, search repositories by capslock+9, weather by capslock+0(prerequisites:add the hotkey and install github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open arc by capslock+1, ghostty by capslock+2, visual studio code by capslock+3, cursor by capslock+4, pearai by capslock+5, storage(in settings) by capslock+6, desktop and dock(in settings) by capslock+7, kill process by capslock+8, search repositories by capslock+9, weather by capslock+0(prerequisites:add the hotkey and install github, kill process, weather in raycast)\nCapslock+shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -76,7 +76,7 @@
                                     "key_code": "3",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/PearAI.app'" },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
                                 "type": "basic"
                             },
                             {
@@ -91,7 +91,7 @@
                                     "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -106,7 +106,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Kiro.app'" },
+                                "to": { "shell_command": "open '/Applications/PearAI.app'" },
                                 "type": "basic"
                             },
                             {
@@ -217,7 +217,7 @@
                         ]
                     },
                     {
-                        "description": "Open quick calendar by function key(f3), query world time by function key(f4), show battery information by function key(f5)(prerequisites:add the hotkey, install quick calendar, world clock and battery health in raycast)",
+                        "description": "Open query world time by function key(f3), quick calendar by function key(f4), show battery information by function key(f5)(prerequisites:install world clock, quick calendar and battery health in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -255,7 +255,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "t",
+                                    "key_code": "r",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
@@ -273,7 +273,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "r",
+                                    "key_code": "t",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
@@ -303,6 +303,36 @@
                         "manipulators": [
                             {
                                 "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
                                     "key_code": "f6",
                                     "modifiers": { "optional": ["any"] }
                                 },
@@ -310,6 +340,13 @@
                                 "type": "basic"
                             },
                             {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "f7",
                                     "modifiers": { "optional": ["any"] }
