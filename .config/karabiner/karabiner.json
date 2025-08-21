@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open arc by capslock+1, ghostty by capslock+2, visual studio code by capslock+3, cursor by capslock+4, pearai by capslock+5, storage(in settings) by capslock+6, desktop and dock(in settings) by capslock+7, kill process by capslock+8, search repositories by capslock+9, weather by capslock+0(prerequisites:add the hotkey and install github, kill process, weather in raycast)\nCapslock+shift->capslock",
+                        "description": "Open download folder by capslock+1, root folder by capslock+2, ghostty by capslock+3, arc by capslock+4, visual studio code by capslock+5, visual studio code - insiders by capslock+6, cursor by capslock+7, show battery information by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install battery health, kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -46,7 +46,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
                                 "type": "basic"
                             },
                             {
@@ -61,7 +61,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Ghostty.app'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy'" },
                                 "type": "basic"
                             },
                             {
@@ -76,7 +76,7 @@
                                     "key_code": "3",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
+                                "to": { "shell_command": "open '/Applications/Ghostty.app'" },
                                 "type": "basic"
                             },
                             {
@@ -91,7 +91,7 @@
                                     "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
+                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {
@@ -106,7 +106,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/PearAI.app'" },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
                                 "type": "basic"
                             },
                             {
@@ -121,10 +121,7 @@
                                     "key_code": "6",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "w",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code - Insiders.app'" },
                                 "type": "basic"
                             },
                             {
@@ -139,10 +136,7 @@
                                     "key_code": "7",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "l",
-                                    "modifiers": ["left_option", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -155,6 +149,24 @@
                                 ],
                                 "from": {
                                     "key_code": "8",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": {
+                                    "key_code": "e",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "9",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -172,29 +184,11 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "9",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "k",
-                                    "modifiers": ["left_option", "left_command"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "0",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "n",
+                                    "key_code": "k",
                                     "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
@@ -213,11 +207,26 @@
                                 },
                                 "to": { "key_code": "caps_lock" },
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "key_code": "caps_lock" },
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Open query world time by function key(f3), quick calendar by function key(f4), show battery information by function key(f5)(prerequisites:install world clock, quick calendar and battery health in raycast)",
+                        "description": "Open query world time by function key(f3), quick calendar by function key(f4), weather by function key(f5)(prerequisites:install world clock, quick calendar and weather in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -291,15 +300,15 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "e",
-                                    "modifiers": ["left_control", "left_command"]
+                                    "key_code": "n",
+                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Open download folder by function key(f6), root folder by function key(f7)",
+                        "description": "Open storage(in settings) by function key(f1), control center(include menu bar)(in settings) by function key(f2)",
                         "manipulators": [
                             {
                                 "from": {
@@ -333,10 +342,13 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f6",
+                                    "key_code": "f1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": {
+                                    "key_code": "w",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
                                 "type": "basic"
                             },
                             {
@@ -348,10 +360,13 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f7",
+                                    "key_code": "f2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
+                                "to": {
+                                    "key_code": "l",
+                                    "modifiers": ["left_option", "left_command"]
+                                },
                                 "type": "basic"
                             }
                         ]
@@ -359,6 +374,14 @@
                 ]
             },
             "fn_function_keys": [
+                {
+                    "from": { "key_code": "f1" },
+                    "to": [{ "key_code": "vk_none" }]
+                },
+                {
+                    "from": { "key_code": "f2" },
+                    "to": [{ "key_code": "vk_none" }]
+                },
                 {
                     "from": { "key_code": "f3" },
                     "to": [{ "key_code": "vk_none" }]
@@ -373,23 +396,23 @@
                 },
                 {
                     "from": { "key_code": "f6" },
-                    "to": [{ "key_code": "vk_none" }]
-                },
-                {
-                    "from": { "key_code": "f7" },
-                    "to": [{ "key_code": "vk_none" }]
-                },
-                {
-                    "from": { "key_code": "f8" },
                     "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
                 },
                 {
-                    "from": { "key_code": "f9" },
+                    "from": { "key_code": "f7" },
+                    "to": [{ "key_code": "f7" }]
+                },
+                {
+                    "from": { "key_code": "f8" },
                     "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
+                    "from": { "key_code": "f9" },
+                    "to": [{ "consumer_key_code": "display_brightness_decrement" }]
+                },
+                {
                     "from": { "key_code": "f10" },
-                    "to": [{ "key_code": "f10" }]
+                    "to": [{ "consumer_key_code": "display_brightness_increment" }]
                 }
             ],
             "name": "Default profile",

@@ -37,7 +37,7 @@
             "shift" : false
           },
           {
-            "action" : "none",
+            "action" : "mouse.wheel.scrollRight",
             "command" : false,
             "control" : false,
             "option" : false,
@@ -45,7 +45,7 @@
             "shift" : false
           },
           {
-            "action" : "none",
+            "action" : "mouse.wheel.scrollLeft",
             "command" : false,
             "control" : false,
             "option" : false,
@@ -96,6 +96,22 @@
     {
       "buttons" : {
         "mappings" : [
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "scroll" : "left",
+            "shift" : false
+          },
+          {
+            "action" : "none",
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "scroll" : "right",
+            "shift" : false
+          },
           {
             "action" : "none",
             "command" : false,
