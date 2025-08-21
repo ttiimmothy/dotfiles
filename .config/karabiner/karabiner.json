@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open download folder by capslock+1, root folder by capslock+2, ghostty by capslock+3, arc by capslock+4, visual studio code by capslock+5, visual studio code - insiders by capslock+6, cursor by capslock+7, show battery information by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install battery health, kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
+                        "description": "Open download folder by capslock+1, root folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, arc(broswer) by capslock+7, show battery information by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install battery health, kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -91,7 +91,7 @@
                                     "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
                                 "type": "basic"
                             },
                             {
@@ -106,7 +106,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code - Insiders.app'" },
                                 "type": "basic"
                             },
                             {
@@ -121,7 +121,7 @@
                                     "key_code": "6",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code - Insiders.app'" },
+                                "to": { "shell_command": "open '/Applications/VSCodium.app'" },
                                 "type": "basic"
                             },
                             {
@@ -136,7 +136,7 @@
                                     "key_code": "7",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
+                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {
