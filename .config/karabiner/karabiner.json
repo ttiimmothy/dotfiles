@@ -9,7 +9,79 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open download folder by capslock+1, root folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, arc(broswer) by capslock+7, show battery information by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install battery health, kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
+                        "description": "Open show battery information by tab+1(prerequisites:add the hotkey and install battery health in raycast)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": { "key_code": "tab" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_pressed",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "tab" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab_pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "tab_pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": {
+                                    "key_code": "e",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open download folder by capslock+1, root folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, cursor by capslock+7, arc(broswer) by capslock+8, kill process by capslock+9, search repositories by capslock+0, show battery information by left tab+1(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -136,7 +208,7 @@
                                     "key_code": "7",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -151,10 +223,7 @@
                                     "key_code": "8",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": {
-                                    "key_code": "e",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
+                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {
