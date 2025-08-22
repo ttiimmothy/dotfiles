@@ -81,7 +81,7 @@
                         ]
                     },
                     {
-                        "description": "Open download folder by capslock+1, root folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, cursor by capslock+7, arc(broswer) by capslock+8, kill process by capslock+9, search repositories by capslock+0, show battery information by left tab+1(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
+                        "description": "Open root folder by capslock+1, download folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, cursor by capslock+7, arc(broswer) by capslock+8, kill process by capslock+9, search repositories by capslock+0, show battery information by left tab+1(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -118,7 +118,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy'" },
                                 "type": "basic"
                             },
                             {
@@ -133,7 +133,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
                                 "type": "basic"
                             },
                             {
