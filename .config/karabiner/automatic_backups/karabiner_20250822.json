@@ -9,158 +9,9 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open show battery information by tab+1(prerequisites:add the hotkey and install battery health in raycast)\nTabs+capslock->capslock",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "tab" },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab pressed",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "key_code": "tab" }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab pressed",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Tab + CapsLock => send real CapsLock (toggle on/off)",
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "caps_lock" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "description": "CapsLock held = modifier (only when Tab not pressed); tap = toggle",
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "caps_lock pressed",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "caps_lock pressed",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "caps_lock" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    },
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "description": "Example: when Tab held and caps_lock not active, remap 1 to ⌘⌃E",
-                                "from": {
-                                    "key_code": "1",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "e",
-                                        "modifiers": ["left_control", "left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Tabs+capslock->capslock",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "tab" },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab pressed",
-                                            "value": 1
-                                        }
-                                    }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab pressed",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "key_code": "caps_lock" },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Open show battery information by tab+1(prerequisites:add the hotkey and install battery health in raycast)",
-                        "enabled": false,
                         "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
@@ -188,7 +39,7 @@
                                 "to": [
                                     {
                                         "set_variable": {
-                                            "name": "tab pressed",
+                                            "name": "tab_pressed",
                                             "value": 1
                                         }
                                     },
@@ -197,7 +48,7 @@
                                 "to_after_key_up": [
                                     {
                                         "set_variable": {
-                                            "name": "tab pressed",
+                                            "name": "tab_pressed",
                                             "value": 0
                                         }
                                     }
@@ -212,7 +63,7 @@
                                         "value": 0
                                     },
                                     {
-                                        "name": "tab pressed",
+                                        "name": "tab_pressed",
                                         "type": "variable_if",
                                         "value": 1
                                     }
@@ -226,26 +77,11 @@
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "key_code": "caps_lock" },
-                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Open root folder by capslock+1, download folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, cursor by capslock+7, arc(broswer) by capslock+8, kill process by capslock+9, search repositories by capslock+0, show battery information by left tab+1(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock",
+                        "description": "Open root folder by capslock+1, download folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, cursor by capslock+7, arc(broswer) by capslock+8, kill process by capslock+9, search repositories by capslock+0, show battery information by left tab+1(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -436,6 +272,21 @@
                                 ],
                                 "from": {
                                     "key_code": "left_shift",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "key_code": "caps_lock" },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "tab",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "key_code": "caps_lock" },
