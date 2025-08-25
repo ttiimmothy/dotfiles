@@ -467,7 +467,7 @@
                         ]
                     },
                     {
-                        "description": "Open query world time by function key(f3), quick calendar by function key(f4), weather by function key(f5)(prerequisites:install world clock, quick calendar and weather in raycast)",
+                        "description": "Open quick calendar by function key(f3), weather by function key(f4), query world time by function key(f5)(prerequisites:install world clock, quick calendar and weather in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -505,7 +505,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "r",
+                                    "key_code": "t",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
@@ -523,8 +523,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "t",
-                                    "modifiers": ["left_control", "left_command"]
+                                    "key_code": "n",
+                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -541,8 +541,8 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "n",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "r",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             }

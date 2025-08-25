@@ -1,9 +1,9 @@
 # git
 # normal commit to any branch without anything added, but can also combine as git add . && norcomt "message" with things added
-function norcomt
-  # $argv[1] coverts to string if I don't put string as param
-  git co -m "$argv[1]" && git push
-end
+# function norcomt
+#   # $argv[1] coverts to string if I don't put string as param
+#   git co -m "$argv[1]" && git push
+# end
 function nrcot
   # $argv[1] coverts to string if I don't put string as param
   git co -m "$argv[1]" && git push
@@ -12,9 +12,9 @@ alias init "git a . && git co -m 'first init' && git push -u origin main"
 # usually use after emt
 alias emback "git cout main && git pull-allow origin main"
 # checkout empty branch and create empty commit
-alias emt "git cout empty && git pull origin empty && git pull origin main && git co -m "empty" && git push"
-alias git-global "git config --global --list"
-alias glk "git lfs track"
+# alias emt "git cout empty && git pull origin empty && git pull origin main && git co -m "empty" && git push"
+# alias git-global "git config --global --list"
+# alias glk "git lfs track"
 alias gostow "z stow && emback && z stow"
 
 # neofetch
@@ -28,6 +28,7 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 # other (tmux, neovim, zoxide and more)
 alias vi "nvim"
 alias ni "nvim"
+alias vim "nvim"
 alias d "clear"
 alias python "python3"
 alias pip "pip3"
@@ -39,7 +40,7 @@ alias core "ping -c 20 firebase.com"
 alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 
 # source
-alias sorf "source ~/.config/fish/config.fish"
+# alias sorf "source ~/.config/fish/config.fish"
 alias sof "source ~/.config/fish/config.fish"
 
 function countbinary
