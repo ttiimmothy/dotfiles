@@ -185,7 +185,7 @@ chsh
 1. [`go`](https://go.dev/)
 1. (**I haven't used anymore**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
 1. [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
-1. [`gnupg`](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
+1. [`gpg`](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
 1. [`stow`](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
 1. [Raycast](https://raycast.com/)
 1. [Karabiner-elements](https://karabiner-elements.pqrs.org/) - Keys modification
