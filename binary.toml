@@ -12,3 +12,4 @@ poetry = "https://python-poetry.org/docs/#installing-with-the-official-installer
 "artifacthub(rename from ah)" = "https://artifacthub.io/docs/topics/cli/ - use pre-compiled binary"
 "containerdev(rename from cn)" = "https://docs.continue.dev/guides/cli"
 "atlassiancli(rename from acli)" = "https://developer.atlassian.com/cloud/acli/guides/install-macos/"
+"llama-cpp" = "https://github.com/ggml-org/llama.cpp/"
