@@ -43,6 +43,9 @@ alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 # alias sorf "source ~/.config/fish/config.fish"
 alias sof "source ~/.config/fish/config.fish"
 
+# show desktop
+alias sowdesk "osascript -e 'tell application \"System Events\" to key code 98'"
+
 function countbinary
   # \( -type f -or -type l \)
   # f = file, l = symlink
