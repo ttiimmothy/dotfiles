@@ -104,6 +104,24 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.api.nvim_buf_set_keymap(0, "n", "v", "<Nop>", { noremap = true, silent = true })
   end,
 })
+-- hide the file saving messages
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "VeryLazy",
+--   callback = function()
+--     vim.opt.shortmess:append("WF")
+--   end,
+-- })
+-- hide the file saving messages
+-- if there is error when saving, the error message will be shown
+vim.cmd([[
+  cnoreabbrev <expr> w (getcmdtype()==':' && getcmdline() ==# 'w') ? '<cmd>silent update<CR>' : 'w'
+  cnoreabbrev <expr> write (getcmdtype()==':' && getcmdline() ==# 'write') ? '<cmd>silent update<CR>' : 'write'
+]])
+-- silent! suppress all messages include error messages
+-- vim.cmd([[
+--   cnoreabbrev <expr> w (getcmdtype()==':' && getcmdline() ==# 'w') ? '<cmd>silent! update<CR>' : 'w'
+--   cnoreabbrev <expr> write (getcmdtype()==':' && getcmdline() ==# 'write') ? '<cmd>silent! update<CR>' : 'write'
+-- ]])
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -290,6 +308,7 @@ require("lazy").setup({
     end
   },
   {
+    -- NOTE: for searching to do comments (like warning)
     "folke/todo-comments.nvim",
     event = "VimEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
