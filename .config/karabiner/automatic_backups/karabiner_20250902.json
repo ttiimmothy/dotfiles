@@ -467,7 +467,7 @@
                         ]
                     },
                     {
-                        "description": "Open weather by function key(f6), quick calendar by function key(f7), query world time by function key(f8)(prerequisites:install weather, quick calendar and world clock in raycast)",
+                        "description": "Open weather by function key(f3), quick calendar by function key(f4), query world time by function key(f5)(prerequisites:install weather, quick calendar and world clock in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -501,7 +501,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f6",
+                                    "key_code": "f3",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -519,7 +519,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f7",
+                                    "key_code": "f4",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -537,7 +537,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f8",
+                                    "key_code": "f5",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -549,7 +549,7 @@
                         ]
                     },
                     {
-                        "description": "Open control center(include menu bar)(in settings) by function key(f4), storage(in settings) by function key(f5)",
+                        "description": "Open control center(include menu bar)(in settings) by function key(f1), storage(in settings) by function key(f2)",
                         "manipulators": [
                             {
                                 "from": {
@@ -583,7 +583,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f4",
+                                    "key_code": "f1",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -601,7 +601,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f5",
+                                    "key_code": "f2",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -617,15 +617,15 @@
             "fn_function_keys": [
                 {
                     "from": { "key_code": "f1" },
-                    "to": [{ "key_code": "f1" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f2" },
-                    "to": [{ "key_code": "f2" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f3" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f4" },
@@ -637,15 +637,15 @@
                 },
                 {
                     "from": { "key_code": "f6" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
                 },
                 {
                     "from": { "key_code": "f7" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "key_code": "f7" }]
                 },
                 {
                     "from": { "key_code": "f8" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
                     "from": { "key_code": "f9" },
