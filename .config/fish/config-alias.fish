@@ -43,7 +43,7 @@ alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
 # alias sorf "source ~/.config/fish/config.fish"
 alias sof "source ~/.config/fish/config.fish"
 
-# show desktop
+# show desktop, key code 120 is "f2" function key
 alias sowdesk "osascript -e 'tell application \"System Events\" to key code 120'"
 
 function countbinary
