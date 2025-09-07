@@ -620,7 +620,7 @@
             "fn_function_keys": [
                 {
                     "from": { "key_code": "f1" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
+                    "to": [{ "key_code": "f1" }]
                 },
                 {
                     "from": { "key_code": "f2" },
@@ -628,7 +628,7 @@
                 },
                 {
                     "from": { "key_code": "f3" },
-                    "to": [{ "key_code": "f3" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
                     "from": { "key_code": "f4" },
