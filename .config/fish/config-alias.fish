@@ -6,7 +6,18 @@
 # end
 function nrcot
   # $argv[1] coverts to string if I don't put string as param
-  git co -m "$argv[1]" && git push
+  # git co -m "$argv[1]" && git push
+  git co -m "$argv[1]"
+
+  # Get current branch
+  set branch (git symbolic-ref --short HEAD)
+
+  # Check if branch has an upstream
+  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
+    git push
+  else
+    git push -u origin $branch
+  end
 end
 alias init "git a . && git co -m 'first init' && git push -u origin main"
 # usually use after emt
