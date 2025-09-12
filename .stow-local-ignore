@@ -16,3 +16,4 @@ jsconfig.json
 package.json
 pnpm-lock.yaml
 object.mm
+binary.toml
