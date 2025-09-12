@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open show battery information by tab+1, stop running timer by tab+2(prerequisites:add the hotkey and install battery health, timers in raycast)",
+                        "description": "Open show battery information by tab+1(prerequisites:add the hotkey and install battery health in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -78,29 +78,6 @@
                                 "to": {
                                     "key_code": "e",
                                     "modifiers": ["left_control", "left_command"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "tab pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    },
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "2",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "o",
-                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             }
@@ -493,7 +470,7 @@
                         ]
                     },
                     {
-                        "description": "Open weather by function key(f6), quick calendar by function key(f7), query world time by function key(f8)(prerequisites:add the hotkey and install weather, quick calendar and world clock in raycast)",
+                        "description": "Open weather by function key(f6), quick calendar by function key(f7), query world time by function key(f8)(prerequisites:install weather, quick calendar and world clock in raycast)",
                         "manipulators": [
                             {
                                 "from": {
