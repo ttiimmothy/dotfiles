@@ -49,6 +49,7 @@ alias wificheck "ping -c 23 firebase.com"
 alias firebases "ping -c 24 firebase.com"
 alias ero "ping -c 20 firebase.com"
 alias timoptimothywificonnectivitycheck "ping -c 10 firebase.com"
+alias zc "zoxide query -l -s"
 
 # source
 # alias sorf "source ~/.config/fish/config.fish"
