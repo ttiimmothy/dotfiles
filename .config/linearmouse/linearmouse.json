@@ -410,6 +410,10 @@
       "scrolling" : {
         "reverse" : {
           "vertical" : true
+        },
+        "speed" : {
+          "horizontal" : 0,
+          "vertical" : 10
         }
       }
     }

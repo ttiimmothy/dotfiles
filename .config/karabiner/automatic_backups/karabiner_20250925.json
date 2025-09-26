@@ -9,27 +9,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Option+p->media rewind, option+[->media fast forward",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": { "mandatory": ["option"] }
-                                },
-                                "to": [{ "consumer_key_code": "rewind" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "open_bracket",
-                                    "modifiers": { "mandatory": ["option"] }
-                                },
-                                "to": [{ "consumer_key_code": "fastforward" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Open show battery information by tab+1, stop running timer by tab+2(prerequisites:add the hotkey and install battery health, timers in raycast)",
                         "enabled": false,
                         "manipulators": [
