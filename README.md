@@ -160,9 +160,6 @@ chsh
 1. [.warp/themes/color_light.yml](.warp/themes/color_light.yml)
 1. [.warp/themes/my_color.yml](.warp/themes/my_color.yml)
 1. [config](.config/ghostty/config)
-1. [dark-neon.json](.config/gollama/themes/dark-neon.json)
-1. [light-neon.json](.config/gollama/themes/light-neon.json)
-1. [config.json](.config/gollama/config.json)
 1. [config.toml](.config/helix/config.toml)
 1. [linearmouse.json](.config/linearmouse/linearmouse.json)
 

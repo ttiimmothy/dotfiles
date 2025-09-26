@@ -4,3 +4,6 @@ lla_1.png
 .vscode/settings.json
 .config/nvim/*.lua
 !.config/nvim/init.lua
+.config/fish
+.claude
+gollama
