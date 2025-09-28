@@ -11,3 +11,6 @@ window-height = 75
 window-width = 235
 window-position-x = 320
 window-position-y = 120
+
+window-inherit-working-directory = false
+working-directory = /Users/timoptimothy
