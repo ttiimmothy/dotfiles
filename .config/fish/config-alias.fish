@@ -42,6 +42,7 @@ alias emback "git cout main && git pull-allow origin main"
 # alias git-global "git config --global --list"
 # alias glk "git lfs track"
 alias tstow "z stow && emback && z stow"
+alias toldstow "z stow && emback && z stow"
 alias zcu "cursor"
 
 # neofetch
