@@ -8,8 +8,8 @@ macos-icon-frame = plastic
 macos-icon-ghost-color = ff5500
 macos-icon-screen-color = 161616
 window-height = 75
-window-width = 223
-window-position-x = 355
+window-width = 216
+window-position-x = 375
 window-position-y = -119
 
 window-inherit-working-directory = false
