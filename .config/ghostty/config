@@ -10,7 +10,7 @@ macos-icon-screen-color = 161616
 window-height = 75
 window-width = 215
 window-position-x = 380
-window-position-y = -121
+window-position-y = -118
 
 window-inherit-working-directory = false
 working-directory = /Users/timoptimothy
