@@ -341,7 +341,7 @@
                         ]
                     },
                     {
-                        "description": "Open arc broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, cursor by capslock+4, vscodium by capslock+5, visual studio code - insiders by capslock+6, visual studio code by capslock+7, clipboard history by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
+                        "description": "Open download folder by capslock+1, arc(broswer) by capslock+2, ghostty by capslock+3, cursor by capslock+4, vscodium by capslock+5, visual studio code - insiders by capslock+6, visual studio code by capslock+7, clipboard history by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -378,7 +378,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
                                 "type": "basic"
                             },
                             {
@@ -393,7 +393,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {
