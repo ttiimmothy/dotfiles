@@ -4,7 +4,7 @@
 #   # $argv[1] coverts to string if I don't put string as param
 #   git co -m "$argv[1]" && git push
 # end
-function nrcot
+function nrot
   # $argv[1] coverts to string if I don't put string as param
   # git co -m "$argv[1]" && git push
   git co -m "$argv[1]"
@@ -43,6 +43,7 @@ alias emback "git cout main && git pull-allow origin main"
 # alias glk "git lfs track"
 alias tstow "z stow && emback && z dot"
 alias toldstow "z stow && emback && z dot"
+alias tstw "z stow && emback && z dot"
 
 # neofetch
 alias icondistro "neofetch --ascii_colors 9 8 --ascii_distro debian --config none --colors 3 2 7 6 2 8"
