@@ -9,7 +9,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open activity monitor by ]",
+                        "description": "Open activity monitor by \\",
                         "manipulators": [
                             {
                                 "from": {
@@ -43,7 +43,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "close_bracket",
+                                    "key_code": "backslash",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" },
