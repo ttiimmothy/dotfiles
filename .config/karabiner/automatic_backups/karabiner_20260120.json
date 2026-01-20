@@ -342,7 +342,7 @@
                         ]
                     },
                     {
-                        "description": "Open arc broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, vscodium by capslock+4, cursor by capslock+5, visual studio code - insiders by capslock+6, clipboard history by capslock+7, kill process by capslock+8, search repositories by capslock+9(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
+                        "description": "Open arc broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, vscodium by capslock+4, cursor by capslock+5, visual studio code - insiders by capslock+6, visual studio code by capslock+7, clipboard history by capslock+8, kill process by capslock+9, search repositories by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -469,6 +469,21 @@
                                     "key_code": "7",
                                     "modifiers": { "optional": ["any"] }
                                 },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "8",
+                                    "modifiers": { "optional": ["any"] }
+                                },
                                 "to": {
                                     "key_code": "j",
                                     "modifiers": ["left_option", "left_command"]
@@ -484,7 +499,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "8",
+                                    "key_code": "9",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -502,7 +517,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "9",
+                                    "key_code": "0",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
