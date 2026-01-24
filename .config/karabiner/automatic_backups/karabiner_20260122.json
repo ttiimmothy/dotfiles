@@ -9,7 +9,8 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open show battery information by tab+1(prerequisites:add the hotkey and install battery health in raycast)",
+                        "description": "Open activity monitor by ]",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -28,27 +29,6 @@
                                     {
                                         "set_variable": {
                                             "name": "caps_lock pressed",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": { "key_code": "tab" },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab_pressed",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "key_code": "tab" }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "tab_pressed",
                                             "value": 0
                                         }
                                     }
@@ -61,11 +41,100 @@
                                         "name": "caps_lock pressed",
                                         "type": "variable_if",
                                         "value": 0
-                                    },
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "close_bracket",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "shell_command": "open '/System/Applications/Utilities/Activity Monitor.app'" },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Option+p->media rewind, option+[->media fast forward",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [{ "consumer_key_code": "rewind" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "open_bracket",
+                                    "modifiers": { "mandatory": ["option"] }
+                                },
+                                "to": [{ "consumer_key_code": "fastforward" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open show battery information by tab+1, stop running timer by tab+2(prerequisites:add the hotkey and install battery health, timers in raycast)",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
                                     {
-                                        "name": "tab_pressed",
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "tab" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
                                         "type": "variable_if",
                                         "value": 1
+                                    },
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
                                     }
                                 ],
                                 "from": {
@@ -77,11 +146,203 @@
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    },
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "2",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": {
+                                    "key_code": "o",
+                                    "modifiers": ["left_option", "left_command"]
+                                },
+                                "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Open root folder by capslock+1, download folder by capslock+2, ghostty by capslock+3, visual studio code by capslock+4, visual studio code - insiders by capslock+5, vscodium by capslock+6, cursor by capslock+7, arc(broswer) by capslock+8, kill process by capslock+9, search repositories by capslock+0, show battery information by left tab+1(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+tab->capslock | capslock+left shift->capslock",
+                        "description": "Open show battery information by tab+1(prerequisites:add the hotkey and install battery health in raycast)\nTabs+capslock->capslock",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "tab" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "tab" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Tab + CapsLock => send real CapsLock (toggle on/off)",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "caps_lock" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "description": "CapsLock held = modifier (only when Tab not pressed); tap = toggle",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "caps_lock pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "caps_lock" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    },
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "description": "Example: when Tab held and caps_lock not active, remap 1 to ⌘⌃E",
+                                "from": {
+                                    "key_code": "1",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": ["left_control", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open show battery information by tab+capslock+1(prerequisites:add the hotkey and install battery health in raycast)(not work keybindings)",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "simultaneous": [
+                                        { "key_code": "tab" },
+                                        { "key_code": "caps_lock" },
+                                        { "key_code": "1" }
+                                    ],
+                                    "simultaneous_options": {
+                                        "detect_key_down_uninterruptedly": true,
+                                        "key_down_order": "insensitive",
+                                        "key_up_order": "insensitive"
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "e",
+                                        "modifiers": ["left_control", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Tabs+capslock->capslock",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "tab" },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 1
+                                        }
+                                    }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "tab pressed",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "tab pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "key_code": "caps_lock" },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open comet broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, vscodium by capslock+4, cursor by capslock+5, visual studio code - insiders by capslock+6, clipboard history by capslock+7, kill process by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -118,7 +379,7 @@
                                     "key_code": "1",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy'" },
+                                "to": { "shell_command": "open '/Applications/Comet.app'" },
                                 "type": "basic"
                             },
                             {
@@ -163,7 +424,7 @@
                                     "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code.app'" },
+                                "to": { "shell_command": "open '/Applications/VSCodium.app'" },
                                 "type": "basic"
                             },
                             {
@@ -178,7 +439,7 @@
                                     "key_code": "5",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Visual Studio Code - Insiders.app'" },
+                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
                                 "type": "basic"
                             },
                             {
@@ -193,7 +454,7 @@
                                     "key_code": "6",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/VSCodium.app'" },
+                                "to": { "shell_command": "open '/Applications/Visual Studio Code - Insiders.app'" },
                                 "type": "basic"
                             },
                             {
@@ -208,7 +469,10 @@
                                     "key_code": "7",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Cursor.app'" },
+                                "to": {
+                                    "key_code": "j",
+                                    "modifiers": ["left_option", "left_command"]
+                                },
                                 "type": "basic"
                             },
                             {
@@ -221,21 +485,6 @@
                                 ],
                                 "from": {
                                     "key_code": "8",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "9",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -253,13 +502,28 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "0",
+                                    "key_code": "9",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
                                     "key_code": "k",
                                     "modifiers": ["left_option", "left_command"]
                                 },
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": { "shell_command": "open '/Applications/Karabiner-Elements.app'" },
                                 "type": "basic"
                             },
                             {
@@ -286,7 +550,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "tab",
+                                    "key_code": "left_control",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "key_code": "caps_lock" },
@@ -295,7 +559,7 @@
                         ]
                     },
                     {
-                        "description": "Open query world time by function key(f3), quick calendar by function key(f4), weather by function key(f5)(prerequisites:install world clock, quick calendar and weather in raycast)",
+                        "description": "Open weather by function key(f6), quick calendar by function key(f7), query world time by function key(f8)(prerequisites:add the hotkey and install weather, quick calendar and world clock in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -329,12 +593,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f3",
+                                    "key_code": "f6",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "r",
-                                    "modifiers": ["left_control", "left_command"]
+                                    "key_code": "n",
+                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -347,7 +611,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f4",
+                                    "key_code": "f7",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
@@ -365,19 +629,19 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f5",
+                                    "key_code": "f8",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "n",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "r",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Open storage(in settings) by function key(f1), control center(include menu bar)(in settings) by function key(f2)",
+                        "description": "Open control center(include menu bar)(in settings) by function key(f4), storage(in settings) by function key(f5)",
                         "manipulators": [
                             {
                                 "from": {
@@ -411,12 +675,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f1",
+                                    "key_code": "f4",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "w",
-                                    "modifiers": ["left_control", "left_command"]
+                                    "key_code": "l",
+                                    "modifiers": ["left_option", "left_command"]
                                 },
                                 "type": "basic"
                             },
@@ -429,12 +693,12 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "f2",
+                                    "key_code": "f5",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
-                                    "key_code": "l",
-                                    "modifiers": ["left_option", "left_command"]
+                                    "key_code": "w",
+                                    "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
                             }
@@ -445,15 +709,15 @@
             "fn_function_keys": [
                 {
                     "from": { "key_code": "f1" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
                 },
                 {
                     "from": { "key_code": "f2" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "key_code": "f2" }]
                 },
                 {
                     "from": { "key_code": "f3" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "key_code": "f3" }]
                 },
                 {
                     "from": { "key_code": "f4" },
@@ -465,15 +729,15 @@
                 },
                 {
                     "from": { "key_code": "f6" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "mission_control" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f7" },
-                    "to": [{ "key_code": "f7" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f8" },
-                    "to": [{ "apple_vendor_keyboard_key_code": "launchpad" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f9" },
