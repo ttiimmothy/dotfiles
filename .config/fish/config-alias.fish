@@ -41,7 +41,7 @@ alias emback "git cout main && git pull-allow origin main"
 # alias emt "git cout empty && git pull origin empty && git pull origin main && git co -m "empty" && git push"
 # alias git-global "git config --global --list"
 # alias glk "git lfs track"
-alias toldstow "z stow && emback && z dot"
+# alias toldstow "z stow && emback && z dot"
 alias tstw "z stow && emback && z dot"
 
 # neofetch
@@ -53,8 +53,9 @@ alias arch "neofetch --ascii_colors 8 9 --ascii_distro arch --config none -L"
 alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config none"
 
 # other (tmux, neovim, zoxide and more)
-alias zcu "cursor"
+# alias zcu "cursor"
 alias te "tmux"
+alias tmu "tmux"
 alias vim "nvim"
 alias d "clear"
 alias python "python3"
