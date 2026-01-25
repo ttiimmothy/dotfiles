@@ -214,11 +214,11 @@ chsh
 
 [`git-lfs (optional)`](https://git-lfs.com/)
 
-`iterm` (**it can be downloaded from the software homepage without homebrew**)
+`iterm (optional)` (**it can be downloaded from the software homepage without homebrew**)
 
-`chromium`
+`chromium (optional)`
 
-`helix` (helix editor, binary path: **hx**)
+`helix (optional)` (helix editor, binary path: **hx**)
 
 `cloudflared`
 
