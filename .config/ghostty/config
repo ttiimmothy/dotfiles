@@ -9,7 +9,7 @@ macos-icon-ghost-color = ff5500
 macos-icon-screen-color = 161616
 window-height = 90
 window-width = 219
-window-position-x = 0
+window-position-x = 97
 window-position-y = 0
 
 window-inherit-working-directory = false
