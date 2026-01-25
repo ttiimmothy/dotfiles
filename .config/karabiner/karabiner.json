@@ -342,7 +342,7 @@
                         ]
                     },
                     {
-                        "description": "Open comet broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, vscodium by capslock+5, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
+                        "description": "Open comet broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, vscodium by capslock+4, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -421,7 +421,7 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "5",
+                                    "key_code": "4",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/Applications/VSCodium.app'" },
@@ -611,7 +611,7 @@
                         ]
                     },
                     {
-                        "description": "Open control center(include menu bar)(in settings) by function key(f4), storage(in settings) by function key(f5)",
+                        "description": "Open storage(in settings) by function key(f4)",
                         "manipulators": [
                             {
                                 "from": {
@@ -646,24 +646,6 @@
                                 ],
                                 "from": {
                                     "key_code": "f4",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "l",
-                                    "modifiers": ["left_option", "left_command"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f5",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": {
