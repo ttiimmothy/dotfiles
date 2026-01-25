@@ -347,8 +347,10 @@ require("lazy").setup({
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup(opts)
+      -- ---@diagnostic disable-next-line: missing-fields
+      -- require('nvim-treesitter.configs').setup(opts)
+      local TS = require("nvim-treesitter")
+			TS.setup(opts)
     end,
   },
   { import = "various.plugins" },
