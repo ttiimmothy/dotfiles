@@ -41,6 +41,7 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 -- vim.keymap.set('v', '<up>', '<cmd>echo "Use k to move ↑"<CR>')
 -- vim.keymap.set('v', '<down>', '<cmd>echo "Use j to move ↓"<CR>')
 -- NOTE: <Nop> means do nothing but overlapping the original vim feature
+-- NOTE: v is visual+select mode
 vim.keymap.set('n', '<left>', '<Nop>')
 vim.keymap.set('n', '<right>', '<Nop>')
 vim.keymap.set('n', '<up>', '<Nop>')
@@ -60,17 +61,21 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 -- vim.keymap.set("n", "a", '<cmd>echo "a is typing"<CR>')
 -- vim.keymap.set("x", "o", '<cmd>echo "o is typing"<CR>')
 -- vim.keymap.set("n", "o", '<cmd>echo "o is typing"<CR>')
+-- NOTE: s = substitue
+-- NOTE: o = open line
+-- NOTE: a = append
 vim.keymap.set("x", "s", '<Nop>')
 vim.keymap.set("n", "s", '<Nop>')
-vim.keymap.set("x", "a", '<Nop>')
-vim.keymap.set("n", "a", '<Nop>')
+-- vim.keymap.set("x", "a", '<Nop>')
+-- vim.keymap.set("n", "a", '<Nop>')
 vim.keymap.set("x", "o", '<Nop>')
 vim.keymap.set("n", "o", '<Nop>')
 -- original keymap for going to the end of next word
 -- vim.keymap.set("x", "e", '<cmd>echo "e is typing"<CR>')
 -- vim.keymap.set("n", "e", '<cmd>echo "e is typing"<CR>')
-vim.keymap.set("x", "e", '<Nop>')
-vim.keymap.set("n", "e", '<Nop>')
+-- NOTE: e = end of word
+-- vim.keymap.set("x", "e", '<Nop>')
+-- vim.keymap.set("n", "e", '<Nop>')
 -- original delete keymap
 -- vim.keymap.set("n", "c", '<cmd>echo "c is typing"<CR>')
 -- vim.keymap.set("n", "<S-c>", '<cmd>echo "shift+c is typing"<CR>')
@@ -78,15 +83,22 @@ vim.keymap.set("n", "e", '<Nop>')
 -- vim.keymap.set("v", "c", '<cmd>echo "visual mode c is typing"<CR>')
 -- vim.keymap.set("v", "<S-c>", '<cmd>echo "visual mode shift+c is typing"<CR>')
 -- vim.keymap.set("v", "<S-d>", '<cmd>echo "visual mode shift+d is typing"<CR>')
+-- NOTE: c = change
+-- NOTE: d = delete
 vim.keymap.set("n", "c", '<Nop>')
+vim.keymap.set("n", "d", '<Nop>')
 vim.keymap.set("n", "<S-c>", '<Nop>')
 vim.keymap.set("n", "<S-d>", '<Nop>')
-vim.keymap.set("v", "c", '<Nop>')
-vim.keymap.set("v", "<S-c>", '<Nop>')
-vim.keymap.set("v", "<S-d>", '<Nop>')
+vim.keymap.set("x", "c", '<Nop>')
+vim.keymap.set("x", "d", '<Nop>')
+vim.keymap.set("x", "<S-c>", '<Nop>')
+vim.keymap.set("x", "<S-d>", '<Nop>')
+vim.keymap.set('n', 'ci', 'ci')
+vim.keymap.set('x', 'ci', 'ci')
 -- original word replace keymap
 -- vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
-vim.keymap.set("v", "r", '<Nop>')
+-- NOTE: r in visual mode means replace the selected area with the typed character after r
+vim.keymap.set("x", "r", '<Nop>')
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [W]ord" })
 vim.keymap.set('n', '<leader>er', vim.cmd.Ex, { desc = '[E]xplo[r]e the directory' })
 vim.keymap.set('n', '<leader>al', vim.cmd.Lazy, { desc = '[A] [L]azy command' })
