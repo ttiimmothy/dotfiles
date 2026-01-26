@@ -10,3 +10,4 @@ if status is-interactive
   set -g fish_greeting
 end
 zoxide init fish | source
+pyenv init - fish | source
