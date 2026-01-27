@@ -11,3 +11,5 @@ if status is-interactive
 end
 zoxide init fish | source
 pyenv init - fish | source
+export ANTHROPIC_AUTH_TOKEN=ollama
+export ANTHROPIC_BASE_URL=http://localhost:11434
