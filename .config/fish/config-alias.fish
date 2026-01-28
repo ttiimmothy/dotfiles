@@ -58,8 +58,8 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias tmu "tmux"
 alias vim "nvim"
 alias d "clear"
-alias python "python3"
-alias pip "pip3"
+# alias python "python3"
+# alias pip "pip3"
 alias erc "ping -c 20 firebase.com"
 alias zc "zoxide query -l -s"
 
@@ -68,7 +68,7 @@ alias zc "zoxide query -l -s"
 alias sof "source ~/.config/fish/config.fish"
 
 # show desktop, key code 120 is "f2" function key
-alias sowdesk "osascript -e 'tell application \"System Events\" to key code 120'"
+# alias sowdesk "osascript -e 'tell application \"System Events\" to key code 120'"
 
 function countbinary
   # \( -type f -or -type l \)
