@@ -222,6 +222,8 @@ chsh
 
 `cloudflared`
 
+`claude-code` **(optional)**
+
 ###### other softwares showing in the above image are default downloaded after installing `brew` and other softwares that mentioned above (like `luv` is installed itself after installing `neovim`), `don't` need to run `brew install $(software-name)`
 
 ## Git configuration
