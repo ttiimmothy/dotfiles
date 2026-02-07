@@ -19,3 +19,4 @@ object.mm
 binary.toml
 .config/gollama
 .claude
+.warp
