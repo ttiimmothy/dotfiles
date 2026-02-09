@@ -32,20 +32,21 @@ return {
           -- See `:help K` for why this keymap.
           map("K", vim.lsp.buf.hover, "Hover Documentation")
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-          ---@param client vim.lsp.Client
-          ---@param method vim.lsp.protocol.Method
-          ---@param bufnr? integer some lsp support methods only in specific files
-          ---@return boolean
-          local function client_supports_method(client, method, bufnr)
-            if vim.fn.has 'nvim-0.11' == 1 then
-              return client:supports_method(method, bufnr)
-            else
-              return client.supports_method(method, { bufnr = bufnr })
-            end
-          end
+          -- Neovim 0.11 is now stable
+          -- ---@param client vim.lsp.Client
+          -- ---@param method vim.lsp.protocol.Method
+          -- ---@param bufnr? integer some lsp support methods only in specific files
+          -- ---@return boolean
+          -- local function client_supports_method(client, method, bufnr)
+          --   if vim.fn.has 'nvim-0.11' == 1 then
+          --     return client:supports_method(method, bufnr)
+          --   else
+          --     return client.supports_method(method, { bufnr = bufnr })
+          --   end
+          -- end
           -- See `:help CursorHold` for information about when this is executed
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.server_capabilities.documentHighlightProvider then
+          if client and client:supports_method('textDocument/documentHighlight', event.buf) then
             vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
               buffer = event.buf,
               callback = vim.lsp.buf.document_highlight,
@@ -62,7 +63,7 @@ return {
               end,
             })
           end
-          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+          if client and client:supports_method('textDocument/inlayHint', event.buf) then
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')

@@ -32,14 +32,6 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move ←"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move →"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move ↑"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move ↓"<CR>')
--- vim.keymap.set('v', '<left>', '<cmd>echo "Use h to move ←"<CR>')
--- vim.keymap.set('v', '<right>', '<cmd>echo "Use l to move →"<CR>')
--- vim.keymap.set('v', '<up>', '<cmd>echo "Use k to move ↑"<CR>')
--- vim.keymap.set('v', '<down>', '<cmd>echo "Use j to move ↓"<CR>')
 -- NOTE: <Nop> means do nothing but overlapping the original vim feature
 -- NOTE: v is visual+select mode
 vim.keymap.set('n', '<left>', '<Nop>')
@@ -55,50 +47,23 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- for not storing the word that is replaced in the clipboard and store the origin yanked word
 vim.keymap.set("x", "<leader>p", [["_dP]])
--- vim.keymap.set("x", "s", '<cmd>echo "s is typing"<CR>')
--- vim.keymap.set("n", "s", '<cmd>echo "s is typing"<CR>')
--- vim.keymap.set("x", "a", '<cmd>echo "a is typing"<CR>')
--- vim.keymap.set("n", "a", '<cmd>echo "a is typing"<CR>')
--- vim.keymap.set("x", "o", '<cmd>echo "o is typing"<CR>')
--- vim.keymap.set("n", "o", '<cmd>echo "o is typing"<CR>')
 -- NOTE: s = substitue
 -- NOTE: o = open line
 -- NOTE: a = append
-vim.keymap.set("x", "s", '<Nop>')
-vim.keymap.set("n", "s", '<Nop>')
--- vim.keymap.set("x", "a", '<Nop>')
--- vim.keymap.set("n", "a", '<Nop>')
-vim.keymap.set("x", "o", '<Nop>')
-vim.keymap.set("n", "o", '<Nop>')
--- original keymap for going to the end of next word
--- vim.keymap.set("x", "e", '<cmd>echo "e is typing"<CR>')
--- vim.keymap.set("n", "e", '<cmd>echo "e is typing"<CR>')
+vim.keymap.set({"x","n"}, "s", '<Nop>')
+-- vim.keymap.set({"x","n"}, "a", '<Nop>')
+vim.keymap.set({"x","n"}, "o", '<Nop>')
 -- NOTE: e = end of word
--- vim.keymap.set("x", "e", '<Nop>')
--- vim.keymap.set("n", "e", '<Nop>')
--- original delete keymap
--- vim.keymap.set("n", "c", '<cmd>echo "c is typing"<CR>')
--- vim.keymap.set("n", "<S-c>", '<cmd>echo "shift+c is typing"<CR>')
--- vim.keymap.set("n", "<S-d>", '<cmd>echo "shift+d is typing"<CR>')
--- vim.keymap.set("v", "c", '<cmd>echo "visual mode c is typing"<CR>')
--- vim.keymap.set("v", "<S-c>", '<cmd>echo "visual mode shift+c is typing"<CR>')
--- vim.keymap.set("v", "<S-d>", '<cmd>echo "visual mode shift+d is typing"<CR>')
+-- vim.keymap.set({"x","n"}, "e", '<Nop>')
 -- NOTE: c = change
 -- NOTE: d = delete
-vim.keymap.set("n", "c", '<Nop>')
-vim.keymap.set("n", "dd", '<Nop>')
-vim.keymap.set("n", "dw", '<Nop>')
-vim.keymap.set("n", "di", '<Nop>')
-vim.keymap.set("n", "<S-c>", '<Nop>')
-vim.keymap.set("n", "<S-d>", '<Nop>')
-vim.keymap.set("x", "c", '<Nop>')
-vim.keymap.set("x", "dd", '<Nop>')
-vim.keymap.set("x", "dw", '<Nop>')
-vim.keymap.set("x", "di", '<Nop>')
-vim.keymap.set("x", "<S-c>", '<Nop>')
-vim.keymap.set("x", "<S-d>", '<Nop>')
-vim.keymap.set('n', 'ci', 'ci')
-vim.keymap.set('x', 'ci', 'ci')
+vim.keymap.set({"x","n"}, "c", '<Nop>')
+vim.keymap.set({"x","n"}, "dd", '<Nop>')
+vim.keymap.set({"x","n"}, "dw", '<Nop>')
+vim.keymap.set({"x","n"}, "di", '<Nop>')
+vim.keymap.set({"x","n"}, "<S-c>", '<Nop>')
+vim.keymap.set({"x","n"}, "<S-d>", '<Nop>')
+vim.keymap.set({"x","n"}, 'ci', 'ci')
 -- original word replace keymap
 -- vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
 -- NOTE: r in visual mode means replace the selected area with the typed character after r
@@ -228,7 +193,7 @@ require("lazy").setup({
         })
       end, { desc = "[S]earch [F]iles" })
       vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
-      vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+      vim.keymap.set({"n","v"}, "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
       vim.keymap.set("n", "<leader>gs", builtin.live_grep, { desc = "[G]rep [S]tring" })
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
@@ -331,7 +296,7 @@ require("lazy").setup({
     opts = { signs = false },
   },
   { -- Collection of various small independent plugins/modules
-    "echasnovski/mini.nvim",
+    "nvim-mini/mini.nvim",
     config = function()
       -- Better Around/Inside textobjects
       require("mini.ai").setup({ n_lines = 500 })
@@ -343,7 +308,7 @@ require("lazy").setup({
       statusline.section_location = function()
         return "%2l:%-2v"
       end
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      --  Check out: https://github.com/nvim-mini/mini.nvim
     end,
   },
    { -- Highlight, edit, and navigate code
