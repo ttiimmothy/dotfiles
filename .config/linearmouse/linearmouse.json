@@ -416,6 +416,42 @@
           "vertical" : 10
         }
       }
+    },
+    {
+      "buttons" : {
+        "mappings" : [
+          {
+            "action" : "missionControl",
+            "button" : 2,
+            "command" : true,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : "missionControl",
+            "button" : 2,
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          }
+        ]
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xb023",
+          "productName" : "ttiimmothy",
+          "serialNumber" : "2E744D5652B679FD",
+          "vendorID" : "0x46d"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        }
+      }
     }
   ]
 }

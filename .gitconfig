@@ -30,3 +30,5 @@
 	co = commit --allow-empty
 	cout = checkout
   a = add
+[credential]
+	helper = osxkeychain
