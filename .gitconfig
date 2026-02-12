@@ -32,3 +32,5 @@
   a = add
 [credential]
 	helper = osxkeychain
+[includeIf "gitdir:~/Developer/github_repository/ttiimmothhy/"]
+  path = ~/.gitconfig1
