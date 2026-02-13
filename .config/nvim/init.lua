@@ -311,7 +311,7 @@ require("lazy").setup({
       --  Check out: https://github.com/nvim-mini/mini.nvim
     end,
   },
-   { -- Highlight, edit, and navigate code
+  { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     event = "VimEnter",
     build = ':TSUpdate',
