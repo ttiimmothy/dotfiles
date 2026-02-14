@@ -28,7 +28,6 @@
 [alias]
 	pull-allow = pull --allow-unrelated-histories
 	co = commit --allow-empty
-	cout = checkout
   a = add
 [credential]
 	helper = osxkeychain
