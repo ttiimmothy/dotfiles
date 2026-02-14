@@ -12,7 +12,7 @@
 [user]
 	name = Timothy
 	email = dinosauli2006@gmail.com
-	signingkey = F5C18F19D2B47181E60D1249B9BC2570CE5BA643
+	signingkey = 3748061515B564A2A32EEB27AB870CF30786EFA9
 [commit]
 	template = /Users/timoptimothy/.stCommitMsg
 	gpgsign = true
