@@ -3,7 +3,7 @@
 #   git co -m "$argv[1]" && git push
 # end
 function nrot
-  git co -m "$argv[1]"
+  git co -m "$argv[1] \n Co-authored-by: wingck <ckwwingo@gmail.com>"
   set branch (git symbolic-ref --short HEAD)
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
     git push
