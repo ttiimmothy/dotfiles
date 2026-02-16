@@ -3,7 +3,16 @@
 #   git co -m "$argv[1]" && git push
 # end
 function nrot
-  git co -m "$argv[1]" -m "Co-authored-by: wingck <ckwwingo@gmail.com>"
+  git co -m "$argv[1]"
+  set branch (git symbolic-ref --short HEAD)
+  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
+    git push
+  else
+    git push -u origin $branch
+  end
+end
+function nrotwithcoauth
+  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
   set branch (git symbolic-ref --short HEAD)
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
     git push
