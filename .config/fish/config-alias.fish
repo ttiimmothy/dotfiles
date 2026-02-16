@@ -11,7 +11,7 @@ function nrot
     git push -u origin $branch
   end
 end
-function nrotwithcoauth
+function nrotwithc
   git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
   set branch (git symbolic-ref --short HEAD)
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
