@@ -29,14 +29,6 @@ function initbranch
     git push -u origin $branch
   end
 end
-function initbranchnocommit
-  set branch (git symbolic-ref --short HEAD)
-  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-    git push
-  else
-    git push -u origin $branch
-  end
-end
 function emback
   set -l default_branch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
   git checkout $default_branch && git pull-allow origin $default_branch
