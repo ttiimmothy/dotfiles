@@ -43,8 +43,8 @@ function git
     else
       command git checkout -b "$branch_name"
     end
-  else if test "$argv[1]" = "p-a"
-    command git pull-allow
+  else if contains -- "$argv[1]" pull p-a p
+    command git pull-allow $argv[2..-1]
   else
     command git $argv
   end
