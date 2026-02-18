@@ -16,6 +16,8 @@
 [commit]
 	template = /Users/timoptimothy/.stCommitMsg
 	gpgsign = true
+[tag]
+	gpgSign = true
 [init]
 	defaultBranch = main
 [filter "lfs"]
@@ -33,3 +35,4 @@
 	helper = osxkeychain
 [includeIf "gitdir:~/Developer/github_repository/ttiimmothhy/"]
   path = ~/.gitconfig1
+  
