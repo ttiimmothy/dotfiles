@@ -21,7 +21,7 @@ function nrotwithc
   end
 end
 function initbranch
-  git a . && git co -m "branch first init"
+  git co -m "branch first init"
   set branch (git symbolic-ref --short HEAD)
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
     git push
