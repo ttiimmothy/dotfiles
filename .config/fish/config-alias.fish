@@ -12,7 +12,7 @@ function nrot
   end
 end
 function nrotwithc
-  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
+  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>")"
   set branch (git symbolic-ref --short HEAD)
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
     git push
@@ -27,6 +27,24 @@ function initbranch
     git push
   else
     git push -u origin $branch
+  end
+end
+function git
+  if test (count $argv) -eq 2; and test "$argv[1]" = "checkout"
+    set -l branch_name $argv[2]
+    if test -f "$branch_name"; or test -d "$branch_name"
+      command git $argv
+      return
+    end
+    if command git rev-parse --verify "$branch_name" >/dev/null 2>&1
+      command git checkout "$branch_name"
+    else if command git rev-parse --verify "origin/$branch_name" >/dev/null 2>&1
+      command git checkout --track "origin/$branch_name"
+    else
+      command git checkout -b "$branch_name"
+    end
+  else
+    command git $argv
   end
 end
 function emback
@@ -53,7 +71,7 @@ alias erc "ping -c 20 firebase.com"
 alias zc "zoxide query -l -s"
 
 # source
-alias sof "source ~/.config/fish/config.fish"
+alias srf "source ~/.config/fish/config.fish"
 
 function countbinary
   # in \( -type f -or -type l \), f = file, l = symlink
