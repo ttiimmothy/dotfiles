@@ -37,8 +37,12 @@ function initbranchnocommit
     git push -u origin $branch
   end
 end
+function emback
+  set -l default_branch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+  git checkout $default_branch && git pull-allow origin $default_branch
+end
 alias init "git a . && git co -m 'first init' && git push -u origin main"
-alias emback "git checkout main && git pull-allow origin main"
+# alias emback "git checkout main && git pull-allow origin main"
 alias tstw "z stow && emback && z dot"
 
 # neofetch
