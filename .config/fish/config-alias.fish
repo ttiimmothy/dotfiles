@@ -30,7 +30,7 @@ function initbranch
   end
 end
 function git
-  if test (count $argv) -eq 2; test "$argv[1]" = "checkout"
+  if test (count $argv) -eq 2; and test "$argv[1]" = "checkout"
     set -l branch_name $argv[2]
     if test -f "$branch_name"; or test -d "$branch_name"
       command git $argv
