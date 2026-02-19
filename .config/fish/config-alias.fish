@@ -12,7 +12,7 @@ function nrot
   end
 end
 function nrotwithc
-  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\nCo-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>")"
+  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\nCo-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
   set branch (git symbolic-ref --short HEAD)
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
     git push
