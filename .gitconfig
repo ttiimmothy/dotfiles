@@ -34,7 +34,7 @@
 [credential]
 	helper = osxkeychain
 [includeIf "gitdir:~/Developer/github_repository/ttiimmothhy/"]
-  path = ~/.gitconfig1
-[includeIf "gitdir:~/Developer/github_repository/work/"]
+  path = ~/.gitconfig-not-often
+[includeIf "gitdir:~/Developer/github_repository/working/"]
   path = ~/.gitconfig-work
   
