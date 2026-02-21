@@ -14,14 +14,15 @@ function git
     command git $argv
   end
 end
-function push
-  set branch (git symbolic-ref --short HEAD)
-  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-    git push
-  else
-    git push -u origin $branch
-  end
-end
+# git version 2.37+ has autoSetupRemote = true for push, this function can be replaced
+# function push
+#   set branch (git symbolic-ref --short HEAD)
+#   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
+#     git push
+#   else
+#     git push -u origin $branch
+#   end
+# end
 function nrot
   git co -m "$argv[1]"
   push
