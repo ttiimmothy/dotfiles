@@ -1,41 +1,6 @@
-# function norcomt
-#   # $argv[1] coverts to string if I don't put string as param
-#   git co -m "$argv[1]" && git push
-# end
-function nrot
-  git co -m "$argv[1]"
-  set branch (git symbolic-ref --short HEAD)
-  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-    git push
-  else
-    git push -u origin $branch
-  end
-end
-function nrotwithc
-  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\nCo-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
-  set branch (git symbolic-ref --short HEAD)
-  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-    git push
-  else
-    git push -u origin $branch
-  end
-end
-function initbranch
-  git co -m "branch first init"
-  set branch (git symbolic-ref --short HEAD)
-  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-    git push
-  else
-    git push -u origin $branch
-  end
-end
 function git
   if test (count $argv) -eq 2; and test "$argv[1]" = "checkout"
     set -l branch_name $argv[2]
-    if test -f "$branch_name"; or test -d "$branch_name"
-      command git $argv
-      return
-    end
     if command git rev-parse --verify "$branch_name" >/dev/null 2>&1
       command git checkout "$branch_name"
     else if command git rev-parse --verify "origin/$branch_name" >/dev/null 2>&1
@@ -49,9 +14,35 @@ function git
     command git $argv
   end
 end
+function push
+  set branch (git symbolic-ref --short HEAD)
+  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
+    git push
+  else
+    git push -u origin $branch
+  end
+end
+function nrot
+  git co -m "$argv[1]"
+  push
+end
+function nrotwithc
+  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\n
+  Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
+  push
+end
+function nrotwithc-
+  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\n
+  Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
+  push
+end
+function initbranch
+  git co -m "branch first init"
+  push
+end
 function emback
   set -l default_branch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
-  git checkout $default_branch && git pull-allow origin $default_branch
+  git checkout $default_branch && git p origin $default_branch
 end
 alias init "git a . && nrot 'first init'"
 alias tstw "z stow && emback && z dot"
