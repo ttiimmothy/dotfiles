@@ -31,7 +31,7 @@ function nrotwithc
   Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
   push
 end
-function nrotwithc-
+function nrotwithc-1
   git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\n
   Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
   push
