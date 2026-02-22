@@ -14,27 +14,36 @@ function git
     command git $argv
   end
 end
-# git version 2.37+ has autoSetupRemote = true for push, this function can be replaced
-# function push
-#   set branch (git symbolic-ref --short HEAD)
-#   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-#     git push
-#   else
-#     git push -u origin $branch
-#   end
-# end
+
+set -g ALL_AUTHORS "Co-authored-by: wingck <ckwwingo@gmail.com>
+Co-authored-by: steipete <peter@steipete.me>
+Co-authored-by: claude <noreply@anthropic.com>
+Co-authored-by: antfu <github@antfu.me>
+Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>"
+
+# git version 2.37+ has autoSetupRemote = true for push, push = push -u origin
 function nrot
   git co -m "$argv[1]"
   git push
 end
 function nrotwithc
-  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\n
-  Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
+  git co -m "$argv[1]" -m "$ALL_AUTHORS
+Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>"
   git push
 end
-function nrotwithc-1
-  git co -m "$argv[1]" -m "$(printf "Co-authored-by: wingck <ckwwingo@gmail.com>\nCo-authored-by: steipete <peter@steipete.me>\nCo-authored-by: claude <noreply@anthropic.com>\nCo-authored-by: antfu <github@antfu.me>\n
-  Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>\nCo-authored-by: hoipangcheung <hoipang1e06@gmail.com>")"
+function nrotwithc-c
+  git co -m "$argv[1]" -m "$ALL_AUTHORS
+Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>"
+  git push
+end
+function nrotwithc-w1
+  git co -m "$argv[1]" -m "$ALL_AUTHORS
+Co-authored-by: ttiimmothy <timothytimothytimo3@gmail.com>"
+  git push
+end
+function nrotwithc-w2
+  git co -m "$argv[1]" -m "$ALL_AUTHORS
+Co-authored-by: ttiimmothy <timothytimothytimo5@gmail.com>"
   git push
 end
 function initbranch
