@@ -1,7 +1,7 @@
 theme = Raycast Dark
 font-size = 10
 window-inherit-font-size = false
-background-opacity = 0.9
+background-opacity = 0.2
 background-blur = 60
 macos-icon = custom-style
 macos-icon-ghost-color = 8968cd
