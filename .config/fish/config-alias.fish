@@ -19,7 +19,8 @@ set -g ALL_AUTHORS "Co-authored-by: wingck <ckwwingo@gmail.com>
 Co-authored-by: steipete <peter@steipete.me>
 Co-authored-by: claude <noreply@anthropic.com>
 Co-authored-by: antfu <github@antfu.me>
-Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>"
+Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>
+Co-authored-by: yyx990803 <yyx990803@gmail.com>"
 
 # git version 2.37+ has autoSetupRemote = true for push, push = push -u origin
 function nrot
