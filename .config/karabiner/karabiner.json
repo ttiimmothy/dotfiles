@@ -2,15 +2,15 @@
     "global": {
         "ask_for_confirmation_before_quitting": false,
         "enable_notification_window": false,
-        "show_in_menu_bar": false,
-        "number_of_backups": 0
+        "number_of_backups": 0,
+        "show_in_menu_bar": false
     },
     "profiles": [
         {
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open comet broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, arc by capslock+4, vscodium by capslock+5, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
+                        "description": "Open comet broswer by capslock+1, download folder by capslock+2, ghostty by capslock+3, vscodium by capslock+5, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -78,21 +78,6 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/Applications/Ghostty.app'" },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/Applications/Arc.app'" },
                                 "type": "basic"
                             },
                             {

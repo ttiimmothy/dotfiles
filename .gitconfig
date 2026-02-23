@@ -33,6 +33,7 @@
 	pull-allow = pull --allow-unrelated-histories
 	co = commit --allow-empty
   a = add
+  s = status
 [credential]
 	helper = osxkeychain
 [includeIf "gitdir:~/Developer/github_repository/ttiimmothhy/"]
