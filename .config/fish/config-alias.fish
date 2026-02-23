@@ -24,39 +24,40 @@ Co-authored-by: yyx990803 <yyx990803@gmail.com>"
 
 # git version 2.37+ has autoSetupRemote = true for push, push = push -u origin
 function nrot
-  git co -m "$argv[1]"
-  git push
+  gt co -m "$argv[1]"
+  gt push
 end
 function nrotwithc
-  git co -m "$argv[1]" -m "$ALL_AUTHORS
+  gt co -m "$argv[1]" -m "$ALL_AUTHORS
 Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>"
-  git push
+  gt push
 end
 function nrotwithc-c
-  git co -m "$argv[1]" -m "$ALL_AUTHORS
+  gt co -m "$argv[1]" -m "$ALL_AUTHORS
 Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>"
-  git push
+  gt push
 end
 function nrotwithc-w1
-  git co -m "$argv[1]" -m "$ALL_AUTHORS
+  gt co -m "$argv[1]" -m "$ALL_AUTHORS
 Co-authored-by: ttiimmothy <timothytimothytimo3@gmail.com>"
-  git push
+  gt push
 end
 function nrotwithc-w2
-  git co -m "$argv[1]" -m "$ALL_AUTHORS
+  gt co -m "$argv[1]" -m "$ALL_AUTHORS
 Co-authored-by: ttiimmothy <timothytimothytimo5@gmail.com>"
-  git push
+  gt push
 end
 function initbranch
-  git co -m "branch first init"
-  git push
+  gt co -m "branch first init"
+  gt push
 end
 function emback
-  set -l default_branch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
-  git checkout $default_branch && git p origin $default_branch
+  set -l default_branch (gt remote show origin | sed -n '/HEAD branch/s/.*: //p')
+  gt checkout $default_branch && gt p origin $default_branch
 end
-alias init "git a . && nrot 'first init'"
+alias init "gt a . && nrot 'first init'"
 alias tstw "z stow && emback && z dot"
+alias gt "git"
 
 # neofetch
 alias icondistro "neofetch --ascii_colors 9 8 --ascii_distro debian --config none --colors 3 2 7 6 2 8"
