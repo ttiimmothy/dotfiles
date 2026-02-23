@@ -23,6 +23,7 @@ vim.o.inccommand = "split"
 vim.o.cursorline = true
 vim.o.scrolloff = 20
 vim.o.confirm = true
+vim.o.laststatus = 0
 -- [[ Basic Keymaps ]]
 vim.o.hlsearch = false
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
@@ -391,27 +392,41 @@ require("lazy").setup({
       vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     end
   },
-  {
-    -- NOTE: for searching to do comments (like warning)
+  { -- NOTE: for searching to do comments (like warning)
     "folke/todo-comments.nvim",
     event = "VimEnter",
     dependencies = { "nvim-lua/plenary.nvim" },
     opts = { signs = false },
   },
-  { -- Collection of various small independent plugins/modules
-    "nvim-mini/mini.nvim",
+  {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      -- Better Around/Inside textobjects
-      require("mini.ai").setup({ n_lines = 500 })
-      require("mini.surround").setup()
-      -- You could remove this setup call if you don't like it, and try some other statusline plugin
-      local statusline = require("mini.statusline")
-      statusline.setup({ use_icons = vim.g.have_nerd_font })
-      ---@diagnostic disable-next-line: duplicate-set-field
-      statusline.section_location = function()
-        return "%2l:%-2v"
-      end
-      --  Check out: https://github.com/nvim-mini/mini.nvim
+      require('lualine').setup({
+        options = {
+          theme = 'rose-pine',
+          globalstatus = true,
+          component_separators = { left = '', right = ''},
+          section_separators = { left = '', right = ''},
+        },
+        winbar = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = { 
+            { 'filename', file_status = true, path = 1 }
+          },
+          lualine_x = { 'encoding', 'fileformat' },
+          lualine_y = { 'filetype' },
+          lualine_z = { '%l:%2v' }
+        },
+        inactive_winbar = {
+          lualine_c = { { 'filename', path = 1 } },
+        },
+        sections = {
+          lualine_a = {}, lualine_b = {}, lualine_c = {},
+          lualine_x = {}, lualine_y = {}, lualine_z = {}
+        },
+      })
     end,
   },
   { -- Highlight, edit, and navigate code
