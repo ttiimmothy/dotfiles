@@ -85,24 +85,10 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.api.nvim_buf_set_keymap(0, "n", "v", "<Nop>", { noremap = true, silent = true })
   end,
 })
--- hide the file saving messages
--- vim.api.nvim_create_autocmd("User", {
---   pattern = "VeryLazy",
---   callback = function()
---     vim.opt.shortmess:append("WF")
---   end,
--- })
--- hide the file saving messages
--- if there is error when saving, the error message will be shown
 vim.cmd([[
   cnoreabbrev <expr> w (getcmdtype()==':' && getcmdline() ==# 'w') ? '<cmd>silent update<CR>' : 'w'
   cnoreabbrev <expr> write (getcmdtype()==':' && getcmdline() ==# 'write') ? '<cmd>silent update<CR>' : 'write'
 ]])
--- silent! suppress all messages include error messages
--- vim.cmd([[
---   cnoreabbrev <expr> w (getcmdtype()==':' && getcmdline() ==# 'w') ? '<cmd>silent! update<CR>' : 'w'
---   cnoreabbrev <expr> write (getcmdtype()==':' && getcmdline() ==# 'write') ? '<cmd>silent! update<CR>' : 'write'
--- ]])
 -- [[ Install `lazy.nvim` plugin manager ]]
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -116,7 +102,6 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 -- [[ Configure and install plugins ]]
--- NOTE: Here is where you install your plugins.
 require("lazy").setup({
   {
     "eandrju/cellular-automaton.nvim",
@@ -237,7 +222,7 @@ require("lazy").setup({
             vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
           end
           -- Jump to the definition of the word under your cursor
-          -- To jump back, press <C-t>.
+          -- To jump back, press <C-t>
           map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
           map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
           map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
@@ -450,9 +435,8 @@ require("lazy").setup({
       -- require('nvim-treesitter.configs').setup(opts)
       local TS = require("nvim-treesitter")
 			TS.setup(opts)
-    end,
-  },
-  -- { import = "various.plugins" },
+    end
+  }
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
@@ -468,7 +452,7 @@ require("lazy").setup({
       source = "🌪️",
       start = "🚀",
       task = "📌",
-      lazy = "💤 ",
-    },
-  },
+      lazy = "💤 "
+    }
+  }
 })

@@ -1,5 +1,3 @@
-# set -g tide_right_prompt_items cmd_duration go node rustc crystal elixir docker kubectl aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox jobs time newline status git
-# set -g tide_right_prompt_items go node rustc crystal elixir docker aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox time newline git
 set -g tide_right_prompt_items python node rustc crystal elixir aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox time newline git
 set -g tide_left_prompt_items pwd os newline character
 
@@ -13,7 +11,6 @@ set -g fish_color_error dddddd
 set -g fish_color_comment dddddd
 set -U fish_key_bindings fish_default_key_bindings
 set -g tide_character_bg_color normal
-
 set -g tide_os_bg_color ff5500
 set -g tide_os_color ffffff
 set -g tide_pwd_bg_color 424242
@@ -30,7 +27,6 @@ set -g tide_git_color_stash ffffff
 set -g tide_git_color_unstable ffffff
 set -g tide_git_color_untracked ffffff
 set -g tide_git_color_upstream ffffff
-
 set -g tide_node_color ffffff
 set -g tide_rustc_bg_color 838996
 set -g tide_rustc_color 000000
