@@ -87,6 +87,7 @@ alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config no
 alias tu "tmux"
 alias vim "nvim"
 alias d "clear"
+alias bew "brew"
 alias ercfirese "ping -c 20 firebase.com"
 alias zls "zoxide query -l -s"
 alias srf "source ~/.config/fish/config.fish"
