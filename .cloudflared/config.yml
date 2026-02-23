@@ -1,0 +1,6 @@
+tunnel: 906334ac-c70c-42f0-8bbd-8ee25717ff34
+credentials-file: /Users/timoptimothy/.cloudflared/906334ac-c70c-42f0-8bbd-8ee25717ff34.json
+ingress:
+  - hostname: expense-splitter-backend.ttiimmothy.com
+    service: http://localhost:3001
+  - service: http_status:404

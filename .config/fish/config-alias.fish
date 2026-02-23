@@ -10,6 +10,8 @@ function git
     end
   else if contains -- "$argv[1]" pull p-a p
     command git pull-allow $argv[2..-1]
+  else if test "$argv" = "."
+    command git a .
   else
     command git $argv
   end
