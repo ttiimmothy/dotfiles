@@ -1,10 +1,31 @@
+set -g ALL_AUTHORS "Co-authored-by: wingck <ckwwingo@gmail.com>
+Co-authored-by: steipete <peter@steipete.me>
+Co-authored-by: claude <noreply@anthropic.com>
+Co-authored-by: antfu <github@antfu.me>
+Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>
+Co-authored-by: yyx990803 <yyx990803@gmail.com>"
+
+function countbinary
+  # in \( -type f -or -type l \), f = file, l = symlink
+  # -perm +111 = executable
+  for dir in $PATH
+    if test -d $dir
+      find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
+    end
+  end | sort | uniq | wc -l | string trim
+end
+function listallbinaries
+  for dir in $PATH
+    if test -d $dir
+      find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
+    end
+  end | sort | uniq | vi
+end
 function git
   if test (count $argv) -eq 2; and test "$argv[1]" = "checkout"
     set -l branch_name $argv[2]
     if command git rev-parse --verify "$branch_name" >/dev/null 2>&1
       command git checkout "$branch_name"
-    else if command git rev-parse --verify "origin/$branch_name" >/dev/null 2>&1
-      command git checkout --track "origin/$branch_name"
     else
       command git checkout -b "$branch_name"
     end
@@ -16,13 +37,6 @@ function git
     command git $argv
   end
 end
-
-set -g ALL_AUTHORS "Co-authored-by: wingck <ckwwingo@gmail.com>
-Co-authored-by: steipete <peter@steipete.me>
-Co-authored-by: claude <noreply@anthropic.com>
-Co-authored-by: antfu <github@antfu.me>
-Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>
-Co-authored-by: yyx990803 <yyx990803@gmail.com>"
 
 # git version 2.37+ has autoSetupRemote = true for push, push = push -u origin
 function nrot
@@ -57,7 +71,7 @@ function emback
   set -l default_branch (gt remote show origin | sed -n '/HEAD branch/s/.*: //p')
   gt checkout $default_branch && gt p origin $default_branch
 end
-alias init "gt a . && nrot 'first init'"
+alias init "gt . && nrot 'first init'"
 alias tstw "z stow && emback && z dot"
 alias gt "git"
 
@@ -76,20 +90,3 @@ alias d "clear"
 alias erc "ping -c 20 firebase.com"
 alias zc "zoxide query -l -s"
 alias srf "source ~/.config/fish/config.fish"
-
-function countbinary
-  # in \( -type f -or -type l \), f = file, l = symlink
-  # -perm +111 = executable
-  for dir in $PATH
-    if test -d $dir
-      find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
-    end
-  end | sort | uniq | wc -l | string trim
-end
-function listallbinaries
-  for dir in $PATH
-    if test -d $dir
-      find $dir -maxdepth 1 \( -type f -or -type l \) -perm +111 2>/dev/null | xargs -n1 basename
-    end
-  end | sort | uniq | vi
-end
