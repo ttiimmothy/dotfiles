@@ -33,8 +33,6 @@ vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagn
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
--- NOTE: <Nop> means do nothing but overlapping the original vim feature
--- NOTE: v is visual+select mode
 vim.keymap.set('n', '<left>', '<Nop>')
 vim.keymap.set('n', '<right>', '<Nop>')
 vim.keymap.set('n', '<up>', '<Nop>')
@@ -43,19 +41,18 @@ vim.keymap.set('v', '<left>', '<Nop>')
 vim.keymap.set('v', '<right>', '<Nop>')
 vim.keymap.set('v', '<up>', '<Nop>')
 vim.keymap.set('v', '<down>', '<Nop>')
--- useful keymap to move the whole line up and down
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- for not storing the word that is replaced in the clipboard and store the origin yanked word
 vim.keymap.set("x", "<leader>p", [["_dP]])
+-- NOTE: v = visual+select mode
 -- NOTE: s = substitue
 -- NOTE: o = open line
 -- NOTE: a = append
+-- NOTE: x = visual mode
 vim.keymap.set({"x","n"}, "s", '<Nop>')
--- vim.keymap.set({"x","n"}, "a", '<Nop>')
 vim.keymap.set({"x","n"}, "o", '<Nop>')
 -- NOTE: e = end of word
--- vim.keymap.set({"x","n"}, "e", '<Nop>')
 -- NOTE: c = change
 -- NOTE: d = delete
 vim.keymap.set({"x","n"}, "c", '<Nop>')
@@ -65,8 +62,6 @@ vim.keymap.set({"x","n"}, "di", '<Nop>')
 vim.keymap.set({"x","n"}, "<S-c>", '<Nop>')
 vim.keymap.set({"x","n"}, "<S-d>", '<Nop>')
 vim.keymap.set({"x","n"}, 'ci', 'ci')
--- original word replace keymap
--- vim.keymap.set("v", "r", '<cmd>echo "visual mode r is typing"<CR>')
 -- NOTE: r in visual mode means replace the selected area with the typed character after r
 vim.keymap.set("x", "r", '<Nop>')
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [W]ord" })
