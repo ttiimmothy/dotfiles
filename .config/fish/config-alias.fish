@@ -73,8 +73,6 @@ alias vim "nvim"
 alias d "clear"
 alias erc "ping -c 20 firebase.com"
 alias zc "zoxide query -l -s"
-
-# source
 alias srf "source ~/.config/fish/config.fish"
 
 function countbinary
