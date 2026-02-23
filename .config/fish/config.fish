@@ -1,5 +1,4 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
-. "$HOME/.cargo/env.fish"
 if status is-interactive
   source (dirname (status --current-filename))/config-osx-eza.fish
   source (dirname (status --current-filename))/config-alias.fish
