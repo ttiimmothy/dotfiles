@@ -146,7 +146,7 @@ require("lazy").setup({
         defaults = {
           file_ignore_patterns = {
             "node_modules", ".DS_Store", ".git", "Dockerfile", "object.*%.mm"
-         },
+          }
         },
         pickers = {
           find_files = {
@@ -158,8 +158,8 @@ require("lazy").setup({
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown(),
-          },
-        },
+          }
+        }
       })
       -- Enable Telescope extensions if they are installed
       pcall(require("telescope").load_extension, "fzf")
@@ -179,6 +179,18 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+      vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('telescope-lsp-attach', { clear = true }),
+        callback = function(event)
+          local buf = event.buf
+          vim.keymap.set('n', 'gr', builtin.lsp_references, { buffer = buf, desc = '[G]oto [R]eferences' })
+          vim.keymap.set('n', 'gd', builtin.lsp_definitions, { buffer = buf, desc = '[G]oto [D]efinition' })
+          vim.keymap.set('n', 'gI', builtin.lsp_implementations, { buffer = buf, desc = '[G]oto [I]mplementation' })
+          vim.keymap.set('n', '<leader>ds', builtin.lsp_document_symbols, { buffer = buf, desc = '[D]ocument [S]ymbols' })
+          vim.keymap.set('n', '<leader>ws', builtin.lsp_dynamic_workspace_symbols, { buffer = buf, desc = '[W]orkspace [S]ymbols' })
+          vim.keymap.set('n', '<leader>D', builtin.lsp_type_definitions, { buffer = buf, desc = '[G]oto [T]ype Definition' })
+        end,
+      })
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>/", function()
         -- You can pass additional configuration to Telescope to change the theme, layout, etc.
@@ -204,9 +216,7 @@ require("lazy").setup({
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      -- Useful status updates for LSP.
       { 'j-hui/fidget.nvim', opts = {} },
-      -- Allows extra capabilities provided by blink.cmp
       'saghen/blink.cmp',
     },
     config = function()
@@ -219,30 +229,11 @@ require("lazy").setup({
           end
           -- Jump to the definition of the word under your cursor
           -- To jump back, press <C-t>
-          map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-          map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-          map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-          map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
-          map("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-          map("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
           map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
           map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
-          -- Opens a popup that displays documentation about the word under your cursor
           -- See `:help K` for why this keymap.
           map("K", vim.lsp.buf.hover, "Hover Documentation")
           map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
-          -- Neovim 0.11 is now stable
-          -- ---@param client vim.lsp.Client
-          -- ---@param method vim.lsp.protocol.Method
-          -- ---@param bufnr? integer some lsp support methods only in specific files
-          -- ---@return boolean
-          -- local function client_supports_method(client, method, bufnr)
-          --   if vim.fn.has 'nvim-0.11' == 1 then
-          --     return client:supports_method(method, bufnr)
-          --   else
-          --     return client.supports_method(method, { bufnr = bufnr })
-          --   end
-          -- end
           -- See `:help CursorHold` for information about when this is executed
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client:supports_method('textDocument/documentHighlight', event.buf) then
@@ -311,9 +302,34 @@ require("lazy").setup({
         "stylua", -- Used to format Lua code
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-      for server_name, config in pairs(servers) do
-        vim.lsp.config(server_name, config)
+      for name, server in pairs(servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        vim.lsp.config(name, server)
+        vim.lsp.enable(name)
       end
+      vim.lsp.config('lua_ls', {
+        on_init = function(client)
+          if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
+              return
+            end
+          end
+          client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+              version = 'LuaJIT',
+              path = {
+                'lua/?.lua',
+                'lua/?/init.lua',
+              },
+            }
+          })
+        end,
+        settings = {
+          Lua = {},
+        },
+      })
+      vim.lsp.enable 'lua_ls'
     end,
   },
   { -- NOTE: replace tsserver with typescript-tools.nvim
@@ -335,26 +351,25 @@ require("lazy").setup({
           end
           return "make install_jsregexp"
         end)(),
-        dependencies = {},
+        dependencies = {
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          }
+        },
         opts = {},
-      },
-      'folke/lazydev.nvim',
+      }
     },
     --- @module 'blink.cmp'
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        -- All presets have the following mappings:
-        -- <tab>/<s-tab>: move to right/left of your snippet expansion
-        -- <c-space>: Open menu or open docs if already open
-        -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
-        -- <c-e>: Hide menu
-        -- <c-k>: Toggle signature help
         preset = 'default',
       },
       appearance = {
         -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-        -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = 'mono',
       },
       completion = {
@@ -428,11 +443,9 @@ require("lazy").setup({
     'nvim-treesitter/nvim-treesitter',
     event = "VimEnter",
     build = ':TSUpdate',
-    dependencies = { "nvim-treesitter/playground" },
     opts = {
       ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
       sync_install = false,
-      -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
         enable = true,
@@ -441,8 +454,6 @@ require("lazy").setup({
     },
     config = function(_, opts)
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-      -- ---@diagnostic disable-next-line: missing-fields
-      -- require('nvim-treesitter.configs').setup(opts)
       local TS = require("nvim-treesitter")
 			TS.setup(opts)
     end
