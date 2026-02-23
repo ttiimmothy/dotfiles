@@ -150,9 +150,7 @@ require("lazy").setup({
         },
         pickers = {
           find_files = {
-            hidden = true,
-            -- symlinks follow param not working            
-            -- find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*", "-L" }
+            hidden = true
           }
         },
         extensions = {
