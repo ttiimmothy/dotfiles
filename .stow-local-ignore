@@ -6,15 +6,12 @@
 .vscode
 core
 images
-node_modules
 Brewfile
 README.md
 SECURITY.md
 LICENSE
 index.js
 jsconfig.json
-package.json
-pnpm-lock.yaml
 object.mm
 binary.toml
 .warp

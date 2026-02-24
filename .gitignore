@@ -6,5 +6,9 @@ lla_1.png
 !.config/nvim/init.lua
 .config/fish
 .claude
-gollama
 .ssh
+configstore
+opencode
+raycast
+stripe
+hosts.yml
