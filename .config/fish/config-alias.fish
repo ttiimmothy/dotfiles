@@ -17,8 +17,8 @@ function git
     command git pull-allow $argv[2..-1]
   else if test "$argv" = "."
     command git a .
-  else if test "$argv" = "init"
-    command git . && nrot 'first init'
+  else if test "$argv" = "initi"
+    command git a . && nrot 'first init'
   else
     command git $argv
   end
