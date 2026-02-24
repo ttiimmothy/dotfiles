@@ -39,7 +39,7 @@
 	autoSetupRemote = true
 [alias]
 	pull-allow = pull --allow-unrelated-histories
-	co = commit --allow-empty
+	ci = commit --allow-empty
   a = add
   s = status
 [credential]
