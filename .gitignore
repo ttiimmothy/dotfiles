@@ -12,4 +12,4 @@ opencode
 raycast
 stripe
 hosts.yml
-tmux/plugins
+.config/tmux/plugins
