@@ -37,8 +37,6 @@ function git
     command git $argv
   end
 end
-
-# git version 2.37+ has autoSetupRemote = true for push, push = push -u origin
 function nrot
   gt co -m "$argv[1]"
   gt push
@@ -87,6 +85,6 @@ alias vim "nvim"
 alias d "clear"
 alias bew "brew"
 alias ercfirese "ping -c 20 firebase.com"
-alias zls "zoxide query -l -s"
-alias zcs "zoxide query -l -s"
+alias zls "zoxide query -l -s | head -n 20"
+alias zcs "zoxide query -l -s | head -n 20"
 alias srf "source ~/.config/fish/config.fish"
