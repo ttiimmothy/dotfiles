@@ -333,8 +333,7 @@ require("lazy").setup({
         end
       end,
       formatters_by_ft = {
-        lua = { 'stylua' },
-        python = { "isort", "black" }
+        lua = { 'stylua' }
       },
     },
   },
