@@ -73,6 +73,7 @@ function emback
 end
 alias init "gt . && nrot 'first init'"
 alias tstw "z stow && emback && z dot"
+alias gi "git"
 alias gt "git"
 
 # neofetch
@@ -81,13 +82,11 @@ alias icondistrocolor "neofetch --ascii_colors 7 9 --ascii_distro debian --confi
 alias icon "neofetch --ascii_colors 9 8 --ascii_distro debian --config none -L"
 alias archdistro "neofetch --ascii_colors 8 9 --ascii_distro arch --config none --colors 2 7 7 3 7 7"
 alias arch "neofetch --ascii_colors 8 9 --ascii_distro arch --config none -L"
-alias raspberry "neofetch --ascii_colors 8 2 --ascii_distro raspbian --config none"
-
-# other (tmux, neovim, zoxide and more)
 alias tu "tmux"
 alias vim "nvim"
 alias d "clear"
 alias bew "brew"
 alias ercfirese "ping -c 20 firebase.com"
 alias zls "zoxide query -l -s"
+alias zcs "zoxide query -l -s"
 alias srf "source ~/.config/fish/config.fish"
