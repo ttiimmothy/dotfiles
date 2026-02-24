@@ -300,34 +300,9 @@ require("lazy").setup({
         "stylua", -- Used to format Lua code
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-      for name, server in pairs(servers) do
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-        vim.lsp.config(name, server)
-        vim.lsp.enable(name)
+      for server_name, config in pairs(servers) do
+        vim.lsp.config(server_name, config)
       end
-      vim.lsp.config('lua_ls', {
-        on_init = function(client)
-          if client.workspace_folders then
-            local path = client.workspace_folders[1].name
-            if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then
-              return
-            end
-          end
-          client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-            runtime = {
-              version = 'LuaJIT',
-              path = {
-                'lua/?.lua',
-                'lua/?/init.lua',
-              },
-            }
-          })
-        end,
-        settings = {
-          Lua = {},
-        },
-      })
-      vim.lsp.enable 'lua_ls'
     end,
   },
   { -- NOTE: replace tsserver with typescript-tools.nvim
@@ -367,17 +342,13 @@ require("lazy").setup({
         preset = 'default',
       },
       appearance = {
-        -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         nerd_font_variant = 'mono',
       },
       completion = {
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
       },
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev' },
-        providers = {
-          lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-        },
+        default = { 'lsp', 'path', 'snippets' }
       },
       snippets = { preset = 'luasnip' },
       fuzzy = { implementation = 'lua' },
