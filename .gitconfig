@@ -1,11 +1,9 @@
 [core]
 	excludesfile = /Users/timoptimothy/.gitignore_global
 	editor = nvim
-# optional
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-# optional
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
@@ -42,3 +40,5 @@
   path = ~/.gitconfig-work1
 [includeIf "gitdir:~/Developer/github_repository/working_firm2/"]
   path = ~/.gitconfig-work2
+[advice]
+	defaultBranchName = false
