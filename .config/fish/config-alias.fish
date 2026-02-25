@@ -40,5 +40,5 @@ function emback
 end
 
 alias vim "nvim"
-alias d "clear"
 alias cat "bat"
+alias d "clear"
