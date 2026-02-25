@@ -1,9 +1,6 @@
 set -g ALL_AUTHORS "Co-authored-by: wingck <ckwwingo@gmail.com>
-Co-authored-by: steipete <peter@steipete.me>
 Co-authored-by: claude <noreply@anthropic.com>
-Co-authored-by: antfu <github@antfu.me>
-Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>
-Co-authored-by: yyx990803 <yyx990803@gmail.com>"
+Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>"
 
 function git
   if test (count $argv) -eq 2; and test "$argv[1]" = "checkout"
@@ -29,22 +26,12 @@ function nrot
 end
 function nrotwithc
   git ci -m "$argv[1]" -m "$ALL_AUTHORS
-Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>"
+Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>"
   git push
 end
 function nrotwithc-c
   git ci -m "$argv[1]" -m "$ALL_AUTHORS
-Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>"
-  git push
-end
-function nrotwithc-w1
-  git ci -m "$argv[1]" -m "$ALL_AUTHORS
-Co-authored-by: ttiimmothy <timothytimothytimo3@gmail.com>"
-  git push
-end
-function nrotwithc-w2
-  git ci -m "$argv[1]" -m "$ALL_AUTHORS
-Co-authored-by: ttiimmothy <timothytimothytimo5@gmail.com>"
+Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>"
   git push
 end
 function emback
