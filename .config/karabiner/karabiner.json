@@ -10,7 +10,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open comet broswer by capslock+1, download folder by capslock+2, vscodium by capslock+3, ghostty by capslock+5, clock by capslock+6, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
+                        "description": "Open comet broswer by capslock+1, vscodium by capslock+2, download folder by capslock+3, ghostty by capslock+5, clock by capslock+6, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -62,7 +62,7 @@
                                     "key_code": "2",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
+                                "to": { "shell_command": "open '/Applications/Vscodium.app'" },
                                 "type": "basic"
                             },
                             {
@@ -77,7 +77,7 @@
                                     "key_code": "3",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": { "shell_command": "open '/Applications/Vscodium.app'" },
+                                "to": { "shell_command": "open '/Users/timoptimothy/Downloads'" },
                                 "type": "basic"
                             },
                             {
