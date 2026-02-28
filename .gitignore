@@ -13,3 +13,5 @@ raycast
 stripe
 hosts.yml
 .config/tmux/plugins
+.zsh_history
+.local/
