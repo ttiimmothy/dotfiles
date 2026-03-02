@@ -1,5 +1,6 @@
 theme = Raycast Dark
 font-size = 10
+mouse-shift-capture = never
 window-inherit-font-size = false
 background-opacity = 0.2
 background-blur = 60
