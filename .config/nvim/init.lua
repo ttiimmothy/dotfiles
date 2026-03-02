@@ -64,9 +64,9 @@ vim.keymap.set({"x","n"}, "<S-d>", '<Nop>')
 vim.keymap.set({"x","n"}, 'ci', 'ci')
 -- NOTE: r in visual mode means replace the selected area with the typed character after r
 vim.keymap.set("x", "r", '<Nop>')
-vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[R]eplace [W]ord" })
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[r]eplace [w]ord" })
 vim.keymap.set('n', '<leader>er', vim.cmd.Ex, { desc = '[E]xplo[r]e the directory' })
-vim.keymap.set('n', '<leader>al', vim.cmd.Lazy, { desc = '[A] [L]azy command' })
+vim.keymap.set('n', '<leader>alc', vim.cmd.Lazy, { desc = '[a] [l]azy [c]ommand' })
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
