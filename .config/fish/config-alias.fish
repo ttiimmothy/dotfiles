@@ -21,17 +21,11 @@ function git
   end
 end
 function nrot
-  git ci -m "$argv[1]"
+  git co -m "$argv[1]"
   git push
 end
 function nrotwithc
-  git ci -m "$argv[1]" -m "$ALL_AUTHORS
-Co-authored-by: ttiimmothhy <timothytimothytimo0@gmail.com>"
-  git push
-end
-function nrotwithc-c
-  git ci -m "$argv[1]" -m "$ALL_AUTHORS
-Co-authored-by: ttiimmothy <timothytimothytimo6@gmail.com>"
+  git co -m "$argv[1]" -m "$ALL_AUTHORS"
   git push
 end
 function emback

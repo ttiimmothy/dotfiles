@@ -39,7 +39,7 @@
 	autoSetupRemote = true
 [alias]
 	pull-allow = pull --allow-unrelated-histories
-	ci = commit --allow-empty
+	co = commit --allow-empty
   a = add
   s = status
 [advice]
