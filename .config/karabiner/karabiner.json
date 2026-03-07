@@ -10,7 +10,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Open comet broswer by capslock+1, vscodium by capslock+2, ghostty by capslock+3, facetime by capslock+4, download folder by capslock+5, clock by capslock+6, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
+                        "description": "Open comet broswer by capslock+1, vscodium by capslock+2, ghostty by capslock+3, download folder by capslock+5, clock by capslock+6, kill process by capslock+7, clipboard history by capslock+8, search repositories by capslock+9, karabiner-elements by capslock+0(prerequisites:add the hotkey and install kill process, github in raycast)\nCapslock+left shift->capslock|capslock+left control->capslock",
                         "manipulators": [
                             {
                                 "from": {
@@ -78,21 +78,6 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": { "shell_command": "open '/Applications/Ghostty.app'" },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "4",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": { "shell_command": "open '/System/Applications/FaceTime.app'" },
                                 "type": "basic"
                             },
                             {
