@@ -342,11 +342,11 @@
                 },
                 {
                     "from": { "key_code": "f5" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "consumer_key_code": "rewind" }]
                 },
                 {
                     "from": { "key_code": "f6" },
-                    "to": [{ "key_code": "vk_none" }]
+                    "to": [{ "consumer_key_code": "fast_forward" }]
                 },
                 {
                     "from": { "key_code": "f7" },
