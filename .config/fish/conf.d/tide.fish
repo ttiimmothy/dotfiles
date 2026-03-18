@@ -31,8 +31,6 @@ set -g tide_node_color ffffff
 set -g tide_rustc_bg_color 838996
 set -g tide_cmd_duration_bg_color 276221
 set -g tide_cmd_duration_color ffffff
-set -g tide_cmd_duration_bg_color fac5a6
-set -g tide_cmd_duration_color 424242
 set -g tide_character_color fac5a6
 set -g tide_character_icon 
 set -g tide_pwd_color grey
