@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.4",
   "schemes" : [
     {
       "buttons" : {
@@ -34,6 +34,14 @@
             "command" : false,
             "control" : true,
             "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : "appExpose",
+            "button" : 2,
+            "command" : false,
+            "control" : true,
+            "option" : true,
             "shift" : false
           },
           {
