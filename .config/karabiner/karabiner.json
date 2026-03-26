@@ -212,7 +212,7 @@
                         ]
                     },
                     {
-                        "description": "Open quick calendar by function key(f7), query world time by function key(f8)(prerequisites:add the hotkey and install quick calendar and world clock in raycast)",
+                        "description": "Open quick calendar by function key(f7)(prerequisites:add the hotkey and install quick calendar in raycast)",
                         "manipulators": [
                             {
                                 "from": {
@@ -251,24 +251,6 @@
                                 },
                                 "to": {
                                     "key_code": "t",
-                                    "modifiers": ["left_control", "left_command"]
-                                },
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "caps_lock pressed",
-                                        "type": "variable_if",
-                                        "value": 0
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "f8",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": {
-                                    "key_code": "r",
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
