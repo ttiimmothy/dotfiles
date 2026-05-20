@@ -1,3 +1,0 @@
-{"id":"4ab3d585-1a1d-4002-83a9-e05b58e95ebc","timestamp":"2026-01-25T00:53:16.198Z","instructions":null,"git":{"commit_hash":"c9216d5a7a7a3454f38d7bdfa4f4194da6cae387","branch":"ui","repository_url":"git@github.com:ttiimmothy/ipa-pronunciation-coach.git"}}
-{"record_type":"state"}
-{"type":"message","id":null,"role":"user","content":[{"type":"input_text","text":"<environment_context>\nCurrent working directory: /Users/timoptimothy/Developer/github_repository/portfolio_project/ipa_pronunciation_coach/frontend\nApproval policy: on-request\nSandbox mode: read-only\nNetwork access: restricted\n</environment_context>"}]}
