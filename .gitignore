@@ -16,4 +16,6 @@ hosts.yml
 .zsh_history
 .local/
 .claude.json
+.codex/auth.json
+.codex/history.json*
 */karabiner/automatic_backups

@@ -1,0 +1,3 @@
+{"id":"c6f1bcae-dc98-4f77-bcce-2a8fa72cb80f","timestamp":"2025-08-25T17:44:03.101Z","instructions":null,"git":{"commit_hash":"15e5fbb2dee4a8e42809800d41bdec545fb385fc","branch":"main","repository_url":"git@github.com:ttiimmothy/dotfiles-stow.git"}}
+{"record_type":"state"}
+{"type":"message","id":null,"role":"user","content":[{"type":"input_text","text":"<environment_context>\nCurrent working directory: /Users/timoptimothy/dotfiles_stow\nApproval policy: on-request\nSandbox mode: read-only\nNetwork access: restricted\n</environment_context>"}]}

@@ -1,0 +1,4957 @@
+{
+  "schema_version": 2,
+  "tools": [
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__add_comment_to_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_add_comment_to_issue",
+        "title": "add_comment_to_issue",
+        "description": "Add a comment to a Linear issue.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to comment on.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "body": {
+              "description": "Comment body to post to the issue.",
+              "title": "Body",
+              "type": "string"
+            },
+            "parent_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional parent comment ID when replying in a thread.",
+              "title": "Parent Id"
+            }
+          },
+          "required": [
+            "issue_id",
+            "body"
+          ],
+          "title": "add_comment_to_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "add_comment_to_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "IssueComment",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "description": "Linear comment ID.",
+                  "default": {},
+                  "type": "string"
+                },
+                "body": {
+                  "title": "Body",
+                  "description": "Comment body text.",
+                  "default": {},
+                  "type": "string"
+                },
+                "createdAt": {
+                  "title": "Createdat",
+                  "description": "ISO 8601 timestamp when the comment was created.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "user": {
+                  "description": "Author of the comment.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "title": "TeamMember",
+                      "default": {},
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "title": "Id",
+                          "description": "Linear user ID.",
+                          "default": {},
+                          "type": "string"
+                        },
+                        "name": {
+                          "title": "Name",
+                          "description": "Display name of the team member.",
+                          "type": "anyOf",
+                          "anyOf": [
+                            {
+                              "default": {},
+                              "type": "string"
+                            },
+                            {
+                              "default": {},
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "email": {
+                          "title": "Email",
+                          "description": "Email address of the team member.",
+                          "type": "anyOf",
+                          "anyOf": [
+                            {
+                              "default": {},
+                              "type": "string"
+                            },
+                            {
+                              "default": {},
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "body"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_add_comment_to_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/add_comment_to_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__add_label_to_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_add_label_to_issue",
+        "title": "add_label_to_issue",
+        "description": "Attach a label to a Linear issue.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to update.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "label_id": {
+              "description": "Linear label ID to attach.",
+              "title": "Label Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id",
+            "label_id"
+          ],
+          "title": "add_label_to_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "add_label_to_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_add_label_to_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/add_label_to_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__add_url_attachment_to_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_add_url_attachment_to_issue",
+        "title": "add_url_attachment_to_issue",
+        "description": "Attach a URL as an attachment to a Linear issue.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to attach the URL to.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "url": {
+              "description": "URL to attach to the issue.",
+              "title": "Url",
+              "type": "string"
+            },
+            "title": {
+              "description": "Display title for the attachment.",
+              "title": "Title",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id",
+            "url",
+            "title"
+          ],
+          "title": "add_url_attachment_to_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "add_url_attachment_to_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_add_url_attachment_to_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/add_url_attachment_to_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__assign_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_assign_issue",
+        "title": "assign_issue",
+        "description": "Assign a Linear issue to a user.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to update.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "user_id": {
+              "description": "Linear user ID to assign.",
+              "title": "User Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id",
+            "user_id"
+          ],
+          "title": "assign_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "assign_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_assign_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/assign_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__create_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_create_issue",
+        "title": "create_issue",
+        "description": "Create a new issue in Linear.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "title": {
+              "description": "Issue title.",
+              "title": "Title",
+              "type": "string"
+            },
+            "team_id": {
+              "description": "Linear team ID that should own the issue.",
+              "title": "Team Id",
+              "type": "string"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional issue description.",
+              "title": "Description"
+            },
+            "assignee_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear user ID to assign.",
+              "title": "Assignee Id"
+            },
+            "label_ids": {
+              "anyOf": [
+                {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional label IDs to attach.",
+              "title": "Label Ids"
+            },
+            "project_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear project ID to link.",
+              "title": "Project Id"
+            },
+            "parent_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional parent issue ID for a sub-issue.",
+              "title": "Parent Id"
+            },
+            "priority": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Priority of the issue. 0 = No priority, 1 = Urgent, 2 = High, 3 = Normal, 4 = Low",
+              "title": "Priority"
+            },
+            "state_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear workflow state ID.",
+              "title": "State Id"
+            }
+          },
+          "required": [
+            "title",
+            "team_id"
+          ],
+          "title": "create_issue_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_create_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/create_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__create_label",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_create_label",
+        "title": "create_label",
+        "description": "Create a new label in Linear.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "label_name": {
+              "description": "Name for the new Linear label.",
+              "title": "Label Name",
+              "type": "string"
+            },
+            "team_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear team ID that should own the label.",
+              "title": "Team Id"
+            },
+            "color": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear label color.",
+              "title": "Color"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional description for the label.",
+              "title": "Description"
+            }
+          },
+          "required": [
+            "label_name"
+          ],
+          "title": "create_label_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "create_label_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "IssueLabel",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "description": "Linear label ID.",
+                  "default": {},
+                  "type": "string"
+                },
+                "name": {
+                  "title": "Name",
+                  "description": "Label name.",
+                  "default": {},
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "name"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_create_label",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/create_label",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__create_project",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_create_project",
+        "title": "create_project",
+        "description": "Create a new project in Linear.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "name": {
+              "description": "Name for the new Linear project.",
+              "title": "Name",
+              "type": "string"
+            },
+            "description": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional project description.",
+              "title": "Description"
+            },
+            "team_id": {
+              "description": "Linear team ID that should own the project.",
+              "title": "Team Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "team_id"
+          ],
+          "title": "create_project_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_create_project",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/create_project",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__fetch",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_fetch",
+        "title": "fetch",
+        "description": "Fetches an Issue object by issue ID.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID or issue identifier to fetch.",
+              "title": "Issue Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id"
+          ],
+          "title": "fetch_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_fetch",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/fetch",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_initiatives",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_initiatives",
+        "title": "get_initiatives",
+        "description": "Retrieve initiatives configured in Linear.",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_initiatives_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_initiatives_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "InitiativesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "initiatives": {
+                  "title": "Initiatives",
+                  "description": "Initiatives returned by the query.",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "Initiative",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "description": "Linear initiative ID.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "description": "Initiative name.",
+                        "default": {},
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "initiatives"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_initiatives",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_initiatives",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_issue",
+        "title": "get_issue",
+        "description": "Fetch a specific issue by its ID.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to fetch.",
+              "title": "Issue Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id"
+          ],
+          "title": "get_issue_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_issue_comments",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_issue_comments",
+        "title": "get_issue_comments",
+        "description": "Return the comments attached to a Linear issue.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to inspect.",
+              "title": "Issue Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id"
+          ],
+          "title": "get_issue_comments_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_issue_comments_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "IssueCommentsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "comments": {
+                  "title": "Comments",
+                  "description": "Comments returned for the requested issue.",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "IssueComment",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "description": "Linear comment ID.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "body": {
+                        "title": "Body",
+                        "description": "Comment body text.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "title": "Createdat",
+                        "description": "ISO 8601 timestamp when the comment was created.",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "default": {},
+                            "type": "string"
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "user": {
+                        "description": "Author of the comment.",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "title": "TeamMember",
+                            "default": {},
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "title": "Id",
+                                "description": "Linear user ID.",
+                                "default": {},
+                                "type": "string"
+                              },
+                              "name": {
+                                "title": "Name",
+                                "description": "Display name of the team member.",
+                                "type": "anyOf",
+                                "anyOf": [
+                                  {
+                                    "default": {},
+                                    "type": "string"
+                                  },
+                                  {
+                                    "default": {},
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "email": {
+                                "title": "Email",
+                                "description": "Email address of the team member.",
+                                "type": "anyOf",
+                                "anyOf": [
+                                  {
+                                    "default": {},
+                                    "type": "string"
+                                  },
+                                  {
+                                    "default": {},
+                                    "type": "null"
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "id"
+                            ]
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "body"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "comments"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_issue_comments",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_issue_comments",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_issue_labels",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_issue_labels",
+        "title": "get_issue_labels",
+        "description": "Return the labels attached to a Linear issue.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to inspect.",
+              "title": "Issue Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id"
+          ],
+          "title": "get_issue_labels_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_issue_labels_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "IssueLabelsResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "issues": {
+                  "title": "Issues",
+                  "description": "Labels returned for the requested issue.",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "IssueLabel",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "description": "Linear label ID.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "description": "Label name.",
+                        "default": {},
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "issues"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_issue_labels",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_issue_labels",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_label_id_by_name",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_label_id_by_name",
+        "title": "get_label_id_by_name",
+        "description": "Look up a Linear label ID by name.",
+        "inputSchema": {
+          "properties": {
+            "label_name": {
+              "description": "Linear label name to resolve.",
+              "title": "Label Name",
+              "type": "string"
+            },
+            "team_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear team ID to prefer first.",
+              "title": "Team Id"
+            }
+          },
+          "required": [
+            "label_name"
+          ],
+          "title": "get_label_id_by_name_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_label_id_by_name_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_label_id_by_name",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_label_id_by_name",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_profile",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_profile",
+        "title": "get_profile",
+        "description": "Fetch the current authenticated user's profile.",
+        "inputSchema": {
+          "properties": {},
+          "title": "get_profile_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_profile_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "Profile",
+              "description": "Many connectors (especially OAuth-based) act on behalf of a user.\nThis class represents the user's profile, which is typically retrieved from\nthe connector's API during the OAuth flow.\n\nImplementation details for different connectors vary, so we can't guarantee\nthat all fields will be present.",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "id": {
+                  "title": "Id",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "name": {
+                  "title": "Name",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "email": {
+                  "title": "Email",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "nickname": {
+                  "title": "Nickname",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                },
+                "picture": {
+                  "title": "Picture",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_profile",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_profile",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_project",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_project",
+        "title": "get_project",
+        "description": "Fetch a specific project by its ID.",
+        "inputSchema": {
+          "properties": {
+            "project_id": {
+              "description": "Linear project ID to fetch.",
+              "title": "Project Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "project_id"
+          ],
+          "title": "get_project_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_project",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_project",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_project_id_by_name",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_project_id_by_name",
+        "title": "get_project_id_by_name",
+        "description": "Look up a Linear project ID by name.",
+        "inputSchema": {
+          "properties": {
+            "project_name": {
+              "description": "Linear project name to resolve.",
+              "title": "Project Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "project_name"
+          ],
+          "title": "get_project_id_by_name_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_project_id_by_name_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_project_id_by_name",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_project_id_by_name",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_project_updates",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_project_updates",
+        "title": "get_project_updates",
+        "description": "Return the last 20 updates for a project, including author, health, and content.",
+        "inputSchema": {
+          "properties": {
+            "project_id": {
+              "description": "Linear project ID to inspect.",
+              "title": "Project Id",
+              "type": "string"
+            },
+            "page_size": {
+              "default": 20,
+              "description": "Maximum number of project updates to return.",
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Pagination cursor from a previous result page.",
+              "title": "Page Cursor"
+            }
+          },
+          "required": [
+            "project_id"
+          ],
+          "title": "get_project_updates_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_project_updates",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_project_updates",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_projects_by_initiative",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_projects_by_initiative",
+        "title": "get_projects_by_initiative",
+        "description": "List Linear projects that belong to a given initiative.",
+        "inputSchema": {
+          "properties": {
+            "initiative_id": {
+              "description": "Linear initiative ID to inspect.",
+              "title": "Initiative Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "initiative_id"
+          ],
+          "title": "get_projects_by_initiative_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_projects_by_initiative",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_projects_by_initiative",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_projects_by_team_id",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_projects_by_team_id",
+        "title": "get_projects_by_team_id",
+        "description": "Search projects for a given team ID. Optionally restrict to active (not completed) projects. Returns a page of matching projects and pagination info.",
+        "inputSchema": {
+          "properties": {
+            "team_id": {
+              "description": "Linear team ID to inspect.",
+              "title": "Team Id",
+              "type": "string"
+            },
+            "active_only": {
+              "default": false,
+              "description": "Whether to restrict results to active projects only.",
+              "title": "Active Only",
+              "type": "boolean"
+            },
+            "page_size": {
+              "default": 50,
+              "description": "Maximum number of projects to return.",
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Pagination cursor from a previous result page.",
+              "title": "Page Cursor"
+            }
+          },
+          "required": [
+            "team_id"
+          ],
+          "title": "get_projects_by_team_id_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_projects_by_team_id",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_projects_by_team_id",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_state_id_by_name",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_state_id_by_name",
+        "title": "get_state_id_by_name",
+        "description": "Return the ID for a Linear state with the given name.",
+        "inputSchema": {
+          "properties": {
+            "team_id": {
+              "description": "Linear team ID to inspect.",
+              "title": "Team Id",
+              "type": "string"
+            },
+            "state_name": {
+              "description": "Workflow state name to resolve.",
+              "title": "State Name",
+              "type": "string"
+            }
+          },
+          "required": [
+            "team_id",
+            "state_name"
+          ],
+          "title": "get_state_id_by_name_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_state_id_by_name_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_state_id_by_name",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_state_id_by_name",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_team_members",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_team_members",
+        "title": "get_team_members",
+        "description": "List members of a Linear team.",
+        "inputSchema": {
+          "properties": {
+            "team_id": {
+              "description": "Linear team ID to inspect.",
+              "title": "Team Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "team_id"
+          ],
+          "title": "get_team_members_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_team_members_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "TeamMembersResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "members": {
+                  "title": "Members",
+                  "description": "Members of the requested Linear team.",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "TeamMember",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "description": "Linear user ID.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "description": "Display name of the team member.",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "default": {},
+                            "type": "string"
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      },
+                      "email": {
+                        "title": "Email",
+                        "description": "Email address of the team member.",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "default": {},
+                            "type": "string"
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "members"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_team_members",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_team_members",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_team_states",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_team_states",
+        "title": "get_team_states",
+        "description": "Fetch workflow states for a Linear team.",
+        "inputSchema": {
+          "properties": {
+            "team_id": {
+              "description": "Linear team ID to inspect.",
+              "title": "Team Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "team_id"
+          ],
+          "title": "get_team_states_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_team_states_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "TeamStatesResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "states": {
+                  "title": "States",
+                  "description": "Workflow states configured for the requested team.",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "IssueState",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "description": "Linear workflow state ID.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "description": "Name of the workflow state.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "type": {
+                        "title": "Type",
+                        "description": "Workflow state category returned by Linear.",
+                        "default": {},
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "type"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "states"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_team_states",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_team_states",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__get_user_by_email",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_get_user_by_email",
+        "title": "get_user_by_email",
+        "description": "Find a Linear user by email address.",
+        "inputSchema": {
+          "properties": {
+            "email": {
+              "description": "Email address to resolve.",
+              "title": "Email",
+              "type": "string"
+            }
+          },
+          "required": [
+            "email"
+          ],
+          "title": "get_user_by_email_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "get_user_by_email_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "GetUserByEmailResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "user": {
+                  "description": "Linear user matching the email address, if found.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "title": "TeamMember",
+                      "default": {},
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "title": "Id",
+                          "description": "Linear user ID.",
+                          "default": {},
+                          "type": "string"
+                        },
+                        "name": {
+                          "title": "Name",
+                          "description": "Display name of the team member.",
+                          "type": "anyOf",
+                          "anyOf": [
+                            {
+                              "default": {},
+                              "type": "string"
+                            },
+                            {
+                              "default": {},
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "email": {
+                          "title": "Email",
+                          "description": "Email address of the team member.",
+                          "type": "anyOf",
+                          "anyOf": [
+                            {
+                              "default": {},
+                              "type": "string"
+                            },
+                            {
+                              "default": {},
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id"
+                      ]
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_get_user_by_email",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/get_user_by_email",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__list_issues_in_project",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_list_issues_in_project",
+        "title": "list_issues_in_project",
+        "description": "List issues belonging to a project. Optionally restrict to open issues only. Returns a page of issues and pagination info.",
+        "inputSchema": {
+          "properties": {
+            "project_id": {
+              "description": "Linear project ID to inspect.",
+              "title": "Project Id",
+              "type": "string"
+            },
+            "open_only": {
+              "default": false,
+              "description": "Whether to restrict results to open issues only.",
+              "title": "Open Only",
+              "type": "boolean"
+            },
+            "page_size": {
+              "default": 50,
+              "description": "Maximum number of issues to return.",
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Pagination cursor from a previous result page.",
+              "title": "Page Cursor"
+            }
+          },
+          "required": [
+            "project_id"
+          ],
+          "title": "list_issues_in_project_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_list_issues_in_project",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/list_issues_in_project",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__list_recent_tickets",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_list_recent_tickets",
+        "title": "list_recent_tickets",
+        "description": "Return the most recently updated issues for the viewer's teams.",
+        "inputSchema": {
+          "properties": {
+            "top_k": {
+              "default": 20,
+              "description": "Maximum number of issues to return.",
+              "title": "Top K",
+              "type": "integer"
+            }
+          },
+          "title": "list_recent_tickets_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_list_recent_tickets",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/list_recent_tickets",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__remove_label_from_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_remove_label_from_issue",
+        "title": "remove_label_from_issue",
+        "description": "Remove a label from a Linear issue.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to update.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "label_id": {
+              "description": "Linear label ID to remove.",
+              "title": "Label Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id",
+            "label_id"
+          ],
+          "title": "remove_label_from_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "remove_label_from_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_remove_label_from_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/remove_label_from_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__resolve_comment",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_resolve_comment",
+        "title": "resolve_comment",
+        "description": "Mark a Linear comment as resolved.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "comment_id": {
+              "description": "Linear comment ID to mark as resolved.",
+              "title": "Comment Id",
+              "type": "string"
+            },
+            "resolving_comment_id": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional resolving comment ID recorded by Linear.",
+              "title": "Resolving Comment Id"
+            }
+          },
+          "required": [
+            "comment_id"
+          ],
+          "title": "resolve_comment_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "resolve_comment_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_resolve_comment",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/resolve_comment",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__search",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_search",
+        "title": "search",
+        "description": "Search Linear issues. The ``filters`` dictionary accepts the following keys: ``user_id`` (call ``get_profile`` to obtain the ID of the current user), ``assigned_to_me`` (boolean), ``assignee_name``, ``assignee_id``, ``creator_name``, ``creator_id``, ``project_name``, ``project_id``, ``priority``(integer), ``team_id``, ``team_name``, ``state_id``, ``state_name``, and date fields: ``createdAt``,``updatedAt``, ``completedAt``, ``startedAt`` using ``[op, value]`` where ``op`` is one of ``eq``, ``neq``, ``lt``, ``lte``, ``gt``, ``gte``. Example: ``{\"user_id\": \"usr_123\", \"project_name\": \"Backend\", \"createdAt\": [\"gte\", \"2025-01-01\"]}``. ``query`` is a free-text search query. ``recency_days`` is ignored. ``topn`` is the number of results to return. If ``query`` is empty, the most recently updated issues are returned.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "description": "Free-text search query used to match issues, projects, and teams.",
+              "title": "Query",
+              "type": "string"
+            },
+            "topn": {
+              "default": 20,
+              "description": "Maximum number of issues to return.",
+              "title": "Topn",
+              "type": "integer"
+            },
+            "recency_days": {
+              "anyOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Unused compatibility parameter. Linear search ignores recency hints.",
+              "title": "Recency Days"
+            },
+            "filters": {
+              "anyOf": [
+                {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Structured Linear filters such as assignee, creator, project, team, state, priority, and date comparators.",
+              "title": "Filters"
+            },
+            "connector_scopes": {
+              "anyOf": [
+                {
+                  "additionalProperties": {
+                    "type": "string"
+                  },
+                  "type": "object"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional Linear scope hints encoded as canonical_handle -> display_name mappings.",
+              "title": "Connector Scopes"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_search",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/search",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__search_issues",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_search_issues",
+        "title": "search_issues",
+        "description": "Search issues by free-text query against title/description. Optionally restrict to open issues only. Returns a page of matching issues and pagination info. If ``query`` is empty, the most recently updated issues are returned. DO NOT USE THIS WITH call_api. For comprehensive filterable search use `search` instead.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "description": "Free-text issue search query.",
+              "title": "Query",
+              "type": "string"
+            },
+            "open_only": {
+              "default": false,
+              "description": "Whether to restrict results to open issues only.",
+              "title": "Open Only",
+              "type": "boolean"
+            },
+            "page_size": {
+              "default": 50,
+              "description": "Maximum number of issues to return.",
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Pagination cursor from a previous result page.",
+              "title": "Page Cursor"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_issues_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_search_issues",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/search_issues",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__search_issues_generic_filter",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_search_issues_generic_filter",
+        "title": "search_issues_generic_filter",
+        "description": "Search Linear issues using a raw GraphQL filter.",
+        "inputSchema": {
+          "properties": {
+            "issue_filter": {
+              "additionalProperties": true,
+              "description": "Raw Linear GraphQL filter object to apply. For supported fields and comparator semantics, see Linear's GraphQL docs at https://studio.apollographql.com/public/Linear-API/variant/current/schema/reference/inputs/IssueFilter and https://linear.app/developers/filtering. Typical shape: nested objects such as {'title': {'containsIgnoreCase': 'bug'}}, {'team': {'key': {'eq': 'ENG'}}}, {'project': {'id': {'eq': '<project-id>'}}}, {'state': {'name': {'eq': 'In Progress'}}}, {'completedAt': {'null': True}}, or {'and': [{'priority': {'lte': 2}}, {'assignee': {'email': {'eq': 'alice@example.com'}}}]}. Common top-level fields include title, description, team, project, state, labels, assignee, creator, priority, estimate, createdAt, updatedAt, startedAt, completedAt, and, or, parent, and children. This filter is passed through directly to Linear, so unsupported keys or invalid comparators will be rejected by Linear.",
+              "title": "Issue Filter",
+              "type": "object"
+            },
+            "page_size": {
+              "default": 50,
+              "description": "Maximum number of issues to return.",
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Pagination cursor from a previous result page.",
+              "title": "Page Cursor"
+            }
+          },
+          "required": [
+            "issue_filter"
+          ],
+          "title": "search_issues_generic_filter_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_search_issues_generic_filter",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/search_issues_generic_filter",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__search_projects",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_search_projects",
+        "title": "search_projects",
+        "description": "Search projects by name substring. Optionally restrict to active (not completed) projects. Returns a page of matching projects and pagination info.",
+        "inputSchema": {
+          "properties": {
+            "query": {
+              "description": "Free-text project search query.",
+              "title": "Query",
+              "type": "string"
+            },
+            "active_only": {
+              "default": false,
+              "description": "Whether to restrict results to active projects only.",
+              "title": "Active Only",
+              "type": "boolean"
+            },
+            "page_size": {
+              "default": 50,
+              "description": "Maximum number of projects to return.",
+              "title": "Page Size",
+              "type": "integer"
+            },
+            "page_cursor": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Pagination cursor from a previous result page.",
+              "title": "Page Cursor"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "title": "search_projects_input",
+          "type": "object"
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_search_projects",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/search_projects",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__search_teams",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_search_teams",
+        "title": "search_teams",
+        "description": "Search for Linear teams using a filter.",
+        "inputSchema": {
+          "$defs": {
+            "IDComparator": {
+              "description": "Comparator for the identifier.",
+              "properties": {
+                "eq": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Equal to",
+                  "title": "Eq"
+                },
+                "neq": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not equal to",
+                  "title": "Neq"
+                },
+                "in": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "In",
+                  "title": "In"
+                },
+                "nin": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not in",
+                  "title": "Nin"
+                }
+              },
+              "title": "IDComparator",
+              "type": "object"
+            },
+            "NullableStringComparator": {
+              "description": "Comparator for optional strings (includes null check).",
+              "properties": {
+                "eq": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Equal to",
+                  "title": "Eq"
+                },
+                "neq": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not equal to",
+                  "title": "Neq"
+                },
+                "in": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "In",
+                  "title": "In"
+                },
+                "nin": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not in",
+                  "title": "Nin"
+                },
+                "eqIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Equal to (case-insensitive)",
+                  "title": "Eqignorecase"
+                },
+                "neqIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not equal to (case-insensitive)",
+                  "title": "Neqignorecase"
+                },
+                "startsWith": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Starts with",
+                  "title": "Startswith"
+                },
+                "notEndsWith": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Does not end with",
+                  "title": "Notendswith"
+                },
+                "containsIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Contains (case-insensitive)",
+                  "title": "Containsignorecase"
+                },
+                "notContainsIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Does not contain (case-insensitive)",
+                  "title": "Notcontainsignorecase"
+                },
+                "null": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Is null",
+                  "title": "Null"
+                }
+              },
+              "title": "NullableStringComparator",
+              "type": "object"
+            },
+            "StringComparator": {
+              "description": "Comparator for strings (case-sensitive).",
+              "properties": {
+                "eq": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Equal to",
+                  "title": "Eq"
+                },
+                "neq": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not equal to",
+                  "title": "Neq"
+                },
+                "in": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "In",
+                  "title": "In"
+                },
+                "nin": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not in",
+                  "title": "Nin"
+                },
+                "eqIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Equal to (case-insensitive)",
+                  "title": "Eqignorecase"
+                },
+                "neqIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Not equal to (case-insensitive)",
+                  "title": "Neqignorecase"
+                },
+                "startsWith": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Starts with",
+                  "title": "Startswith"
+                },
+                "notEndsWith": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Does not end with",
+                  "title": "Notendswith"
+                },
+                "containsIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Contains (case-insensitive)",
+                  "title": "Containsignorecase"
+                },
+                "notContainsIgnoreCase": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Does not contain (case-insensitive)",
+                  "title": "Notcontainsignorecase"
+                }
+              },
+              "title": "StringComparator",
+              "type": "object"
+            },
+            "TeamFilter": {
+              "description": "Filters that the team must satisfy.",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for the identifier.",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        }
+                      },
+                      "title": "IDComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team ID"
+                },
+                "name": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for strings (case-sensitive).",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        },
+                        "eqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to (case-insensitive)",
+                          "title": "Eqignorecase"
+                        },
+                        "neqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to (case-insensitive)",
+                          "title": "Neqignorecase"
+                        },
+                        "startsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Starts with",
+                          "title": "Startswith"
+                        },
+                        "notEndsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not end with",
+                          "title": "Notendswith"
+                        },
+                        "containsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Contains (case-insensitive)",
+                          "title": "Containsignorecase"
+                        },
+                        "notContainsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not contain (case-insensitive)",
+                          "title": "Notcontainsignorecase"
+                        }
+                      },
+                      "title": "StringComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team name"
+                },
+                "key": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for strings (case-sensitive).",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        },
+                        "eqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to (case-insensitive)",
+                          "title": "Eqignorecase"
+                        },
+                        "neqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to (case-insensitive)",
+                          "title": "Neqignorecase"
+                        },
+                        "startsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Starts with",
+                          "title": "Startswith"
+                        },
+                        "notEndsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not end with",
+                          "title": "Notendswith"
+                        },
+                        "containsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Contains (case-insensitive)",
+                          "title": "Containsignorecase"
+                        },
+                        "notContainsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not contain (case-insensitive)",
+                          "title": "Notcontainsignorecase"
+                        }
+                      },
+                      "title": "StringComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team key"
+                },
+                "description": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for optional strings (includes null check).",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        },
+                        "eqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to (case-insensitive)",
+                          "title": "Eqignorecase"
+                        },
+                        "neqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to (case-insensitive)",
+                          "title": "Neqignorecase"
+                        },
+                        "startsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Starts with",
+                          "title": "Startswith"
+                        },
+                        "notEndsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not end with",
+                          "title": "Notendswith"
+                        },
+                        "containsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Contains (case-insensitive)",
+                          "title": "Containsignorecase"
+                        },
+                        "notContainsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not contain (case-insensitive)",
+                          "title": "Notcontainsignorecase"
+                        },
+                        "null": {
+                          "anyOf": [
+                            {
+                              "type": "boolean"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Is null",
+                          "title": "Null"
+                        }
+                      },
+                      "title": "NullableStringComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team description"
+                },
+                "or": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "$ref": "#/$defs/TeamFilter"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "At least one condition must match",
+                  "title": "Or"
+                },
+                "and": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "$ref": "#/$defs/TeamFilter"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "All conditions must match",
+                  "title": "And"
+                }
+              },
+              "title": "TeamFilter",
+              "type": "object"
+            }
+          },
+          "properties": {
+            "filter": {
+              "description": "Raw Linear GraphQL team filter.",
+              "properties": {
+                "id": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for the identifier.",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        }
+                      },
+                      "title": "IDComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team ID"
+                },
+                "name": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for strings (case-sensitive).",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        },
+                        "eqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to (case-insensitive)",
+                          "title": "Eqignorecase"
+                        },
+                        "neqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to (case-insensitive)",
+                          "title": "Neqignorecase"
+                        },
+                        "startsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Starts with",
+                          "title": "Startswith"
+                        },
+                        "notEndsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not end with",
+                          "title": "Notendswith"
+                        },
+                        "containsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Contains (case-insensitive)",
+                          "title": "Containsignorecase"
+                        },
+                        "notContainsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not contain (case-insensitive)",
+                          "title": "Notcontainsignorecase"
+                        }
+                      },
+                      "title": "StringComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team name"
+                },
+                "key": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for strings (case-sensitive).",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        },
+                        "eqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to (case-insensitive)",
+                          "title": "Eqignorecase"
+                        },
+                        "neqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to (case-insensitive)",
+                          "title": "Neqignorecase"
+                        },
+                        "startsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Starts with",
+                          "title": "Startswith"
+                        },
+                        "notEndsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not end with",
+                          "title": "Notendswith"
+                        },
+                        "containsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Contains (case-insensitive)",
+                          "title": "Containsignorecase"
+                        },
+                        "notContainsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not contain (case-insensitive)",
+                          "title": "Notcontainsignorecase"
+                        }
+                      },
+                      "title": "StringComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team key"
+                },
+                "description": {
+                  "anyOf": [
+                    {
+                      "description": "Comparator for optional strings (includes null check).",
+                      "properties": {
+                        "eq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to",
+                          "title": "Eq"
+                        },
+                        "neq": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to",
+                          "title": "Neq"
+                        },
+                        "in": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "In",
+                          "title": "In"
+                        },
+                        "nin": {
+                          "anyOf": [
+                            {
+                              "items": {
+                                "type": "string"
+                              },
+                              "type": "array"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not in",
+                          "title": "Nin"
+                        },
+                        "eqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Equal to (case-insensitive)",
+                          "title": "Eqignorecase"
+                        },
+                        "neqIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Not equal to (case-insensitive)",
+                          "title": "Neqignorecase"
+                        },
+                        "startsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Starts with",
+                          "title": "Startswith"
+                        },
+                        "notEndsWith": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not end with",
+                          "title": "Notendswith"
+                        },
+                        "containsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Contains (case-insensitive)",
+                          "title": "Containsignorecase"
+                        },
+                        "notContainsIgnoreCase": {
+                          "anyOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Does not contain (case-insensitive)",
+                          "title": "Notcontainsignorecase"
+                        },
+                        "null": {
+                          "anyOf": [
+                            {
+                              "type": "boolean"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ],
+                          "default": null,
+                          "description": "Is null",
+                          "title": "Null"
+                        }
+                      },
+                      "title": "NullableStringComparator",
+                      "type": "object"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Filter by team description"
+                },
+                "or": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "$ref": "#/$defs/TeamFilter"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "At least one condition must match",
+                  "title": "Or"
+                },
+                "and": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "$ref": "#/$defs/TeamFilter"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "All conditions must match",
+                  "title": "And"
+                }
+              },
+              "title": "TeamFilter",
+              "type": "object"
+            }
+          },
+          "required": [
+            "filter"
+          ],
+          "title": "search_teams_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "search_teams_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "IssueTeamConnection",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "nodes": {
+                  "title": "Nodes",
+                  "description": "Teams returned by the query.",
+                  "default": {},
+                  "type": "array",
+                  "items": {
+                    "title": "IssueTeam",
+                    "default": {},
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "title": "Id",
+                        "description": "Linear team ID.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "key": {
+                        "title": "Key",
+                        "description": "Short team key used in issue identifiers.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "name": {
+                        "title": "Name",
+                        "description": "Team name.",
+                        "default": {},
+                        "type": "string"
+                      },
+                      "description": {
+                        "title": "Description",
+                        "description": "Optional description of the team.",
+                        "type": "anyOf",
+                        "anyOf": [
+                          {
+                            "default": {},
+                            "type": "string"
+                          },
+                          {
+                            "default": {},
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "key",
+                      "name"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "nodes"
+              ]
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": true,
+          "destructiveHint": false,
+          "openWorldHint": false
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_search_teams",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/search_teams",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__set_issue_state",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_set_issue_state",
+        "title": "set_issue_state",
+        "description": "Move a Linear issue to a different state.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to update.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "state_id": {
+              "description": "Linear workflow state ID to apply.",
+              "title": "State Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id",
+            "state_id"
+          ],
+          "title": "set_issue_state_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "set_issue_state_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_set_issue_state",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/set_issue_state",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__unassign_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_unassign_issue",
+        "title": "unassign_issue",
+        "description": "Remove the assignee from a Linear issue.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to update.",
+              "title": "Issue Id",
+              "type": "string"
+            }
+          },
+          "required": [
+            "issue_id"
+          ],
+          "title": "unassign_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "unassign_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_unassign_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/unassign_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__update_issue",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_update_issue",
+        "title": "update_issue",
+        "description": "Update fields on a Linear issue.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "issue_id": {
+              "description": "Linear issue ID to update.",
+              "title": "Issue Id",
+              "type": "string"
+            },
+            "issue_update": {
+              "properties": {
+                "addedLabelIds": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Label IDs to add to the issue.",
+                  "title": "Addedlabelids"
+                },
+                "labelIds": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Complete set of label IDs to assign to the issue.",
+                  "title": "Labelids"
+                },
+                "assigneeId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "User ID to assign to the issue.",
+                  "title": "Assigneeid"
+                },
+                "description": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated issue description.",
+                  "title": "Description"
+                },
+                "estimate": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated story point estimate.",
+                  "title": "Estimate"
+                },
+                "priority": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated Linear priority value.",
+                  "title": "Priority"
+                },
+                "projectId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Project ID to associate with the issue.",
+                  "title": "Projectid"
+                },
+                "parentId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Parent issue ID for turning the issue into a sub-issue.",
+                  "title": "Parentid"
+                },
+                "removedLabelIds": {
+                  "anyOf": [
+                    {
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Label IDs to remove from the issue.",
+                  "title": "Removedlabelids"
+                },
+                "stateId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Workflow state ID to apply to the issue.",
+                  "title": "Stateid"
+                },
+                "teamId": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Team ID that should own the issue.",
+                  "title": "Teamid"
+                },
+                "title": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated issue title.",
+                  "title": "Title"
+                },
+                "trashed": {
+                  "anyOf": [
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Whether to move the issue to the trash.",
+                  "title": "Trashed"
+                }
+              },
+              "title": "IssueUpdate",
+              "type": "object",
+              "description": "Partial issue fields to update."
+            }
+          },
+          "required": [
+            "issue_id",
+            "issue_update"
+          ],
+          "title": "update_issue_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "update_issue_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_update_issue",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/update_issue",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    },
+    {
+      "server_name": "codex_apps",
+      "supports_parallel_tool_calls": false,
+      "server_origin": null,
+      "tool_name": "__update_project",
+      "tool_namespace": "mcp__codex_apps__linear__legacy",
+      "namespace_description": "Find and reference issues and projects.",
+      "tool": {
+        "name": "linear (legacy)_update_project",
+        "title": "update_project",
+        "description": "Update properties on a Linear project.\nThis action may fail because it needs an OAuth permission that was not requested when this connection was created. Reconnect to request the new permission.",
+        "inputSchema": {
+          "properties": {
+            "project_id": {
+              "description": "Linear project ID to update.",
+              "title": "Project Id",
+              "type": "string"
+            },
+            "update_fields": {
+              "properties": {
+                "color": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated project color.",
+                  "title": "Color"
+                },
+                "description": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated project description.",
+                  "title": "Description"
+                },
+                "content": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated project content or notes.",
+                  "title": "Content"
+                },
+                "priority": {
+                  "anyOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated project priority value.",
+                  "title": "Priority"
+                },
+                "name": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "default": null,
+                  "description": "Updated project name.",
+                  "title": "Name"
+                }
+              },
+              "title": "ProjectUpdateInput",
+              "type": "object",
+              "description": "Partial project fields to update."
+            }
+          },
+          "required": [
+            "project_id",
+            "update_fields"
+          ],
+          "title": "update_project_input",
+          "type": "object"
+        },
+        "outputSchema": {
+          "title": "update_project_output",
+          "default": {},
+          "type": "object",
+          "properties": {
+            "result": {
+              "title": "StringResponse",
+              "default": {},
+              "type": "object",
+              "properties": {
+                "value": {
+                  "title": "Value",
+                  "description": "String result returned by the action.",
+                  "type": "anyOf",
+                  "anyOf": [
+                    {
+                      "default": {},
+                      "type": "string"
+                    },
+                    {
+                      "default": {},
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "result"
+          ]
+        },
+        "annotations": {
+          "readOnlyHint": false,
+          "destructiveHint": true,
+          "openWorldHint": true
+        },
+        "_meta": {
+          "resource_name": "Linear (Legacy)_update_project",
+          "_codex_apps": {
+            "resource_uri": "/connector_686fad9b54914a35b75be6d06a0f6f31/link_68b201637424819180459510032b5538/update_project",
+            "contains_mcp_source": false
+          },
+          "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+          "connector_name": "Linear (Legacy)",
+          "connector_description": "Find and reference issues and projects.",
+          "link_id": "link_68b201637424819180459510032b5538"
+        }
+      },
+      "connector_id": "connector_686fad9b54914a35b75be6d06a0f6f31",
+      "connector_name": "Linear (Legacy)",
+      "plugin_display_names": []
+    }
+  ]
+}
