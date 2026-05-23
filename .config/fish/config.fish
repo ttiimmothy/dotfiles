@@ -8,3 +8,4 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 pyenv init - fish | source
 zoxide init fish | source
 export PGDATABASE=postgres
+export PGUSER=postgres
