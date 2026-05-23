@@ -17,6 +17,8 @@ hosts.yml
 .local/
 .claude.json
 .codex
+.gemini
 */karabiner/automatic_backups
 .antigravitycli
 .hermes
+.ollama
