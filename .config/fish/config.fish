@@ -7,6 +7,3 @@ end
 eval "$(/opt/homebrew/bin/brew shellenv)"
 pyenv init - fish | source
 zoxide init fish | source
-
-# Added by Antigravity CLI installer
-set -gx PATH "/Users/timoptimothy/.local/bin" $PATH
