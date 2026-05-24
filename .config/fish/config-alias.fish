@@ -36,3 +36,4 @@ end
 alias vim "nvim"
 alias cat "bat"
 alias d "clear"
+alias psql "psql -d postgres -U postgres"
