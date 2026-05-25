@@ -4,7 +4,11 @@ lla_1.png
 .vscode/settings.json
 .config/nvim/*.lua
 !.config/nvim/init.lua
-.config/fish
+.config/fish/completions
+.config/fish/conf.d/_tide_init.fish
+.config/fish/functions
+.config/fish/fish_plugins
+.config/fish/fish_variables
 .claude
 .ssh
 configstore

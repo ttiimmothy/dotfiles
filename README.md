@@ -178,7 +178,7 @@ chsh
 
 1. [homebrew](https://brew.sh/)
 1. [git](https://git-scm.com/download/mac)
-1. [node.js, `npm`](https://nodejs.org/en)
+1. [node.js, `npm`](https://nodejs.org/en) - use `fnm` install
 1. [`go`](https://go.dev/)
 1. (**I haven't used anymore**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
 1. (**I haven't used anymore**) [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
@@ -220,9 +220,19 @@ chsh
 
 `helix` **(optional, not used now)** (helix editor, binary path: **hx**)
 
+`postgresql`
+
 `cloudflared`
 
 `claude-code` **(optional)**
+
+`codex`
+
+`opencode` - install with `brew install anomalyco/tap/opencode`
+
+`fnm`
+
+`pyenv`
 
 ###### other softwares showing in the above image are default downloaded after installing `brew` and other softwares that mentioned above (like `luv` is installed itself after installing `neovim`), `don't` need to run `brew install $(software-name)`
 
