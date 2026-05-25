@@ -178,7 +178,7 @@ chsh
 
 1. [homebrew](https://brew.sh/)
 1. [git](https://git-scm.com/download/mac)
-1. [node.js, `npm`](https://nodejs.org/en) - use `fnm` install
+1. [node.js, `npm`](https://nodejs.org/en)
 1. (**I haven't installed**) [`go`](https://go.dev/)
 1. (**I haven't installed**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
 1. (**I haven't installed**) [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
@@ -224,13 +224,13 @@ chsh
 
 `cloudflared`
 
-`claude-code` **(optional)**
+`claude-code`
 
 `codex`
 
 `opencode` - install with `brew install anomalyco/tap/opencode`
 
-`fnm`
+`fnm` **(optional, I haven't installed, hermes-gateway can't read the node installed by `fnm` because node is only active when fish opens)**
 
 `pyenv`
 
