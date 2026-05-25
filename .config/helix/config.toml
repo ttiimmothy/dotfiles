@@ -1,4 +1,4 @@
-theme = "base16_transparent"
+theme = "iroaseta"
 [editor]
 line-number = "relative"
 mouse = false
