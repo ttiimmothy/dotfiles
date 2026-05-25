@@ -12,7 +12,10 @@ lla_1.png
 .claude
 .ssh
 configstore
-opencode
+opencode/node_modules
+opencode/.gitignore
+opencode/package.json
+opencode/package-lock.json
 raycast
 stripe
 hosts.yml
