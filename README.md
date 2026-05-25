@@ -218,7 +218,7 @@ chsh
 
 `chromium` **(optional, I haven't installed)**
 
-`helix` **(optional, I haven't installed)** (helix editor, binary path: **hx**)
+`helix` (helix editor, binary path: **hx**)
 
 `postgresql`
 
