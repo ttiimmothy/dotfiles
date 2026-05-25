@@ -20,7 +20,7 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 ### Requirements
 
 - a terminal that support true color and *undercurl*:
-  - [iterm](https://iterm2.com/) **(macOS, optional, not used now)**
+  - [iterm](https://iterm2.com/) **(macOS, optional, I haven't installed)**
   - [ghostty](https://ghostty.org/download)
 
 ## Shell setup
@@ -28,8 +28,8 @@ Dotfiles (stow) is for storing my dotfiles for setting up a new computer.
 
 ### ohmyzsh framework for zsh shell (optional for installing, fish shell is good enough to use)
 
-- (**not used**) [ohmyzsh](https://ohmyz.sh/)
-- (**not used**) [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
+- (**I haven't installed**) [ohmyzsh](https://ohmyz.sh/)
+- (**I haven't installed**) [powerlevel10k](https://github.com/romkatv/powerlevel10k) - In this repository, the **Nerd fonts** can be downloaded directly
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. It can be directly downloaded from the [files](#font-installation) below without using `homebrew`, so **Don't** do `brew install font-hack-nerd-font`. It will consume more storages by installing from `homebrew`.
 
 ### Fish shell
@@ -105,7 +105,7 @@ chsh
 
 ###### need to change the color because the default color is difficult to see when using `ll` or `lla` command
 
-### window size and font size (not used now)
+### window size and font size
 
 - window
   - `terminal` **258 * 87**
@@ -115,7 +115,7 @@ chsh
   - `terminal` **MesloLGS NF Regular `10`**
   - `iterm` **MesloLGS NF Regular `10`**
 
-### other configurations (not used now)
+### other configurations
 
 #### terminal
 
@@ -179,14 +179,14 @@ chsh
 1. [homebrew](https://brew.sh/)
 1. [git](https://git-scm.com/download/mac)
 1. [node.js, `npm`](https://nodejs.org/en) - use `fnm` install
-1. [`go`](https://go.dev/)
-1. (**I haven't used anymore**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
-1. (**I haven't used anymore**) [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
+1. (**I haven't installed**) [`go`](https://go.dev/)
+1. (**I haven't installed**) [pnpm](https://pnpm.io/installation) - use `brew install pnpm`
+1. (**I haven't installed**) [neofetch](https://github.com/dylanaraps/neofetch/wiki/Installation) - Use universal install `make PREFIX=$HOME/.local install`
 1. [`gpg`](https://www.gnupg.org/download/) (for **`--gpg-sign`** tag in git commit)
 1. [`stow`](https://www.gnu.org/software/stow/) - After installing `tar`, use command `./configure --prefix=$HOME/.local && make install`
 1. [Raycast](https://raycast.com/)
 1. [Karabiner-elements](https://karabiner-elements.pqrs.org/) - Keys modification
-1. (**Optional**) [iTerm](https://iterm2.com/)
+1. (**Optional, I haven't installed**) [iTerm](https://iterm2.com/)
 1. [`deno`](https://deno.com/)
 1. [Android Studio](https://developer.android.com/studio)
 1. [Docker Desktop](https://www.docker.com/)
@@ -214,11 +214,11 @@ chsh
 
 [`git-lfs (optional)`](https://git-lfs.com/)
 
-`iterm` **(optional, not used now)** (**it can be downloaded from the software homepage without homebrew**)
+`iterm` **(optional, I haven't installed)** (**it can be downloaded from the software homepage without homebrew**)
 
-`chromium` **(optional, not used now)**
+`chromium` **(optional, I haven't installed)**
 
-`helix` **(optional, not used now)** (helix editor, binary path: **hx**)
+`helix` **(optional, I haven't installed)** (helix editor, binary path: **hx**)
 
 `postgresql`
 
