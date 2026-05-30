@@ -12,10 +12,6 @@ function git
     end
   else if contains -- "$argv[1]" pull p-a p
     command git pull-allow $argv[2..-1]
-  else if test "$argv" = "."
-    command git a .
-  else if test "$argv" = "initi"
-    command git a . && nrot 'first init'
   else
     command git $argv
   end
@@ -36,4 +32,5 @@ end
 alias vim "nvim"
 alias cat "bat"
 alias d "clear"
+alias init "git a . && nrot 'first init'"
 alias psql "psql -d postgres -U postgres"
