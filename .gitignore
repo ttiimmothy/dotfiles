@@ -30,3 +30,4 @@ hosts.yml
 .hermes
 .ollama
 .gnupg
+.config/uv

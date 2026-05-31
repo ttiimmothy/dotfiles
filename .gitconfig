@@ -41,7 +41,6 @@
 	pull-allow = pull --allow-unrelated-histories
 	co = commit --allow-empty
   a = add
-  s = status
 [advice]
 	defaultBranchName = false
 [credential]
