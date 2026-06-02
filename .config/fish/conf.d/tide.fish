@@ -37,3 +37,4 @@ set -g tide_character_color fac5a6
 set -g tide_character_icon 
 set -g tide_pwd_color grey
 set -g tide_git_icon 
+set -g tide_cmd_duration_threshold 0
