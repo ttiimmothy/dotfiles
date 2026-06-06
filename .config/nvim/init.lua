@@ -11,7 +11,7 @@ vim.o.expandtab = true
 vim.o.wrap = false
 vim.o.mouse = "r"
 vim.o.showmode = false
-vim.o.clipboard = ''
+vim.o.clipboard = 'unnamedplus'
 vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
