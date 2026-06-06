@@ -11,7 +11,7 @@ vim.o.expandtab = true
 vim.o.wrap = false
 vim.o.mouse = "r"
 vim.o.showmode = false
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = ''
 vim.o.undofile = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
@@ -65,7 +65,6 @@ vim.keymap.set({"x","n"}, ".", '<Nop>')
 vim.keymap.set({"x","n"}, ",.", '<Nop>')
 vim.keymap.set({"x","n"}, "<S-c>", '<Nop>')
 vim.keymap.set({"x","n"}, "<S-d>", '<Nop>')
-vim.keymap.set({"x","n"}, 'ci', 'ci')
 -- NOTE: r in visual mode means replace the selected area with the typed character after r
 vim.keymap.set("x", "r", '<Nop>')
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[r]eplace [w]ord" })
