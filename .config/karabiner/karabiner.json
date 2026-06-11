@@ -324,11 +324,11 @@
                 },
                 {
                     "from": { "key_code": "f5" },
-                    "to": [{ "consumer_key_code": "rewind" }]
+                    "to": [{ "key_code": "f5" }]
                 },
                 {
                     "from": { "key_code": "f6" },
-                    "to": [{ "consumer_key_code": "fast_forward" }]
+                    "to": [{ "key_code": "f6" }]
                 },
                 {
                     "from": { "key_code": "f7" },
