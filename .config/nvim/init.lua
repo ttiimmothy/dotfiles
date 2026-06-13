@@ -41,8 +41,8 @@ vim.keymap.set('v', '<left>', '<Nop>')
 vim.keymap.set('v', '<right>', '<Nop>')
 vim.keymap.set('v', '<up>', '<Nop>')
 vim.keymap.set('v', '<down>', '<Nop>')
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", {silent = true})
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", {silent = true})
 -- for not storing the word that is replaced in the clipboard and store the origin yanked word
 vim.keymap.set("x", "<leader>p", [["_dP]])
 -- NOTE: v = visual+select mode
