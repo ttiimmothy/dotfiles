@@ -7,4 +7,3 @@ end
 eval "$(/opt/homebrew/bin/brew shellenv)"
 pyenv init - fish | source
 zoxide init fish | source
-source (dirname (status --current-filename))/config-env.fish

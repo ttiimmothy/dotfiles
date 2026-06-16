@@ -32,3 +32,4 @@ hosts.yml
 .gnupg
 .config/uv
 .config/fish/config-env.fish
+.config/anthropic
