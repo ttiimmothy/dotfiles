@@ -30,7 +30,7 @@ set -g tide_git_color_upstream ffffff
 set -g tide_node_color ffffff
 set -g tide_rustc_bg_color 46c3b4
 set -g tide_python_bg_color 273c6e
-set -g tide_docker_bg_color ff6361
+set -g tide_docker_bg_color ffd380
 set -g tide_cmd_duration_bg_color f1ddbf
 set -g tide_cmd_duration_color ffffff
 set -g tide_character_color fac5a6
