@@ -31,3 +31,4 @@ hosts.yml
 .ollama
 .gnupg
 .config/uv
+.config/fish/config-env.fish
