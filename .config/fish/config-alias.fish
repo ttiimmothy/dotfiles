@@ -16,6 +16,13 @@ function git
     command git $argv
   end
 end
+function brew 
+  if test (count $argv) -ge 1; and test $argv[1] = "upgrade"
+    yes | command brew upgrade $argv[2..-1]
+  else
+    command brew $argv
+  end 
+end
 function nrot
   git co -m "$argv[1]"
   git push
