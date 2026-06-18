@@ -17,7 +17,7 @@ function git
   end
 end
 function brew 
-  if test (count $argv) -ge 1; and test $argv[1] = "upgrade"
+  if test (count $argv) -ge 1; and contains -- "$argv[1]" upgrade u
     yes | command brew upgrade $argv[2..-1]
   else
     command brew $argv
