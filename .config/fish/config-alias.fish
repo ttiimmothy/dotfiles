@@ -10,7 +10,7 @@ function git
     else
       command git checkout -b "$branch_name"
     end
-  else if contains -- "$argv[1]" pull p-a p
+  else if test "$argv[1]" = pull -o "$argv[1]" = p-a -o "$argv[1]" = p
     command git pull-allow $argv[2..-1]
   else
     command git $argv
