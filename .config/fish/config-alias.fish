@@ -16,13 +16,6 @@ function git
     command git $argv
   end
 end
-function brew
-  if test "$argv[1]" = upgrade -o "$argv[1]" = u
-    env NONINTERACTIVE=1 yes | command brew upgrade $argv[2..-1]
-  else
-    command brew $argv
-  end 
-end
 function nrot
   git co -m "$argv[1]"
   git push
