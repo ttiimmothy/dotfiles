@@ -15,7 +15,7 @@ set -g tide_os_bg_color ff5500
 set -g tide_os_color ffffff
 set -g tide_pwd_bg_color 424242
 set -g tide_git_bg_color ff8800
-set -g tide_git_bg_color_urgent cc0000
+set -g tide_git_bg_color_urgent ff8800
 set -g tide_git_bg_color_unstable ff8800
 set -g tide_git_color_dirty ffffff
 set -g tide_git_color_branch ffffff
@@ -34,6 +34,7 @@ set -g tide_docker_bg_color ffd380
 set -g tide_cmd_duration_bg_color f1ddbf
 set -g tide_cmd_duration_color ffffff
 set -g tide_character_color fac5a6
+set -g tide_character_color_failure fac5a6
 set -g tide_character_icon 
 set -g tide_pwd_color grey
 set -g tide_git_icon 
