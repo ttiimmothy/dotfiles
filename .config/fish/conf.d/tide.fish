@@ -33,8 +33,8 @@ set -g tide_python_bg_color 273c6e
 set -g tide_docker_bg_color ffd380
 set -g tide_cmd_duration_bg_color f1ddbf
 set -g tide_cmd_duration_color ffffff
-set -g tide_character_color fac5a6
-set -g tide_character_color_failure fac5a6
+set -g tide_character_color f1ddbf
+set -g tide_character_color_failure f1ddbf
 set -g tide_character_icon 
 set -g tide_pwd_color grey
 set -g tide_git_icon 
