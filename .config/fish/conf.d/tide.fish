@@ -1,4 +1,4 @@
-set -g tide_right_prompt_items cmd_duration bun go node python ruby zig rustc crystal elixir kubectl aws terraform pulumi php gcloud private_mode nix_shell context vi_mode direnv distrobox toolbox jobs time newline git
+set -g tide_right_prompt_items cmd_duration bun go node python ruby zig rustc crystal elixir kubectl aws terraform pulumi php private_mode nix_shell context vi_mode direnv distrobox toolbox jobs time newline git
 set -g tide_left_prompt_items pwd os newline character
 
 set -g fish_color_command ffffff
