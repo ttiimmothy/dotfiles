@@ -3,14 +3,7 @@ Co-authored-by: claude <noreply@anthropic.com>
 Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>"
 
 function git
-  if test (count $argv) -eq 2; and test "$argv[1]" = "checkout"
-    set -l branch_name $argv[2]
-    if command git rev-parse --verify "$branch_name" >/dev/null 2>&1
-      command git checkout "$branch_name"
-    else
-      command git checkout -b "$branch_name"
-    end
-  else if test "$argv[1]" = pull -o "$argv[1]" = p-a -o "$argv[1]" = p
+  if test "$argv[1]" = pull -o "$argv[1]" = p-a -o "$argv[1]" = p
     command git pull-allow $argv[2..-1]
   else
     command git $argv
