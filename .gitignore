@@ -33,3 +33,6 @@ hosts.yml
 .config/uv
 .config/fish/config-env.fish
 .config/anthropic
+.config/gcloud
+.config/gws
+.config/gcloud-sdk
