@@ -4,7 +4,7 @@ Co-authored-by: hoipangcheung <hoipang1e06@gmail.com>"
 
 function git
   if test "$argv[1]" = pull -o "$argv[1]" = p-a -o "$argv[1]" = p
-    command git pull-allow $argv[2..-1]
+    command git pull-allow $argv[2..-1] -q
   else
     command git $argv
   end
