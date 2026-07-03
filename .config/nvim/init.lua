@@ -70,6 +70,7 @@ vim.keymap.set("x", "r", '<Nop>')
 vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[r]eplace [w]ord" })
 vim.keymap.set('n', '<leader>er', vim.cmd.Ex, { desc = '[E]xplo[r]e the directory' })
 vim.keymap.set('n', '<leader>alc', vim.cmd.Lazy, { desc = '[a] [l]azy [c]ommand' })
+vim.keymap.set('n', '<leader>mc', vim.cmd.Mason, { desc = '[m]ason [c]ommand' })
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
