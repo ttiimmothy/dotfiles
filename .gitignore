@@ -36,3 +36,5 @@ hosts.yml
 .config/gcloud
 .config/gws
 .config/gcloud-sdk
+.psql_history
+
