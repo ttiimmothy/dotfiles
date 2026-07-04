@@ -304,9 +304,9 @@ require("lazy").setup({
     end,
   },
   { -- NOTE: replace tsserver with typescript-tools.nvim
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
+    -- "pmizio/typescript-tools.nvim",
+    -- dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    -- opts = {},
   },
   { -- Autoformat
     'stevearc/conform.nvim',
