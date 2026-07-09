@@ -21,6 +21,13 @@ function emback
   set -l default_branch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
   git checkout $default_branch && git p origin $default_branch
 end
+function uv
+  if test "$argv[1]" = venv
+    command uv venv venv $argv[2..-1]
+  else
+    command uv $args
+  end
+end
 
 alias vim "nvim"
 alias cat "bat"

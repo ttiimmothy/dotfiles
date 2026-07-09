@@ -12,3 +12,5 @@ end
 source ~/.config/fish/config-env.fish
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_REQUIRE_TAP_TRUST=1
+set -gx UV_PROJECT_ENVIRONMENT venv
+
