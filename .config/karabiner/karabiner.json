@@ -228,7 +228,7 @@
                         ]
                     },
                     {
-                        "description": "Open storage(in settings) by function key(f4)",
+                        "description": "Open keyboard by function key(f4), storage by function key(f5)",
                         "manipulators": [
                             {
                                 "from": {
@@ -270,6 +270,24 @@
                                     "modifiers": ["left_control", "left_command"]
                                 },
                                 "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock pressed",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "f5",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": {
+                                    "key_code": "a",
+                                    "modifiers": ["left_control", "left_command"]
+                                },
+                                "type": "basic"
                             }
                         ]
                     }
@@ -294,7 +312,7 @@
                 },
                 {
                     "from": { "key_code": "f5" },
-                    "to": [{ "key_code": "f5" }]
+                    "to": [{ "key_code": "vk_none" }]
                 },
                 {
                     "from": { "key_code": "f6" },
