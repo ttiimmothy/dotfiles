@@ -26,6 +26,12 @@ function uv
     command uv venv venv $argv[2..-1]
   else if test "$argv[1]" = init
     command uv init --bare $argv[2..-1]
+  else if test "$argv[1]" = add -o "$argv[1]" = sync
+    if contains -- --active $argv
+      command uv $argv
+    else
+      command uv $argv[1] --active $argv[2..-1]
+    end
   else
     command uv $argv
   end
@@ -35,6 +41,12 @@ function v
     command uv venv venv $argv[2..-1]
   else if test "$argv[1]" = init
     command uv init --bare $argv[2..-1]
+  else if test "$argv[1]" = add -o "$argv[1]" = sync
+    if contains -- --active $argv
+      command uv $argv
+    else
+      command uv $argv[1] --active $argv[2..-1]
+    end
   else
     command uv $argv
   end
@@ -45,4 +57,4 @@ alias cat "bat"
 alias d "clear"
 alias init "git a . && nrot 'first init'"
 alias psql "psql -d postgres -U postgres"
-alias sor "source ~/.config/fish/config.fish"
+alias sro "source ~/.config/fish/config.fish"
