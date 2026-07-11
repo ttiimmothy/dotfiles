@@ -444,7 +444,7 @@ require("lazy").setup({
     event = "VimEnter",
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'vim', 'vimdoc' },
       sync_install = false,
       auto_install = true,
       highlight = {
