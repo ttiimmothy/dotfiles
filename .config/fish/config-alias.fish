@@ -27,7 +27,7 @@ function uv
   else if test "$argv[1]" = init
     command uv init --bare $argv[2..-1]
   else if test "$argv[1]" = add -o "$argv[1]" = sync
-    if contains -- --active $argv
+    if contains -- --active $argv; or contains -- -a $argv
       command uv $argv
     else
       command uv $argv[1] --active $argv[2..-1]
@@ -42,7 +42,7 @@ function v
   else if test "$argv[1]" = init
     command uv init --bare $argv[2..-1]
   else if test "$argv[1]" = add -o "$argv[1]" = sync
-    if contains -- --active $argv
+    if contains -- --active $argv; or contains -- -a $argv
       command uv $argv
     else
       command uv $argv[1] --active $argv[2..-1]
