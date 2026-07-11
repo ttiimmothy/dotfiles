@@ -25,7 +25,7 @@ function uv
   if test "$argv[1]" = venv
     command uv venv venv $argv[2..-1]
   else if test "$argv[1]" = init
-    command uv init --bare $argv[2...-1]
+    command uv init --bare $argv[2..-1]
   else
     command uv $argv
   end
@@ -34,7 +34,7 @@ function v
   if test "$argv[1]" = venv
     command uv venv venv $argv[2..-1]
   else if test "$argv[1]" = init
-    command uv init --bare $argv[2...-1]
+    command uv init --bare $argv[2..-1]
   else
     command uv $argv
   end
