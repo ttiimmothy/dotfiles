@@ -439,26 +439,26 @@ require("lazy").setup({
       })
     end,
   },
-  { -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    event = "VimEnter",
-    build = ':TSUpdate',
-    opts = {
-      -- ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
-      ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'vim', 'vimdoc' },
-      sync_install = false,
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = { 'ruby' },
-      },
-    },
-    config = function(_, opts)
-      -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-      local TS = require("nvim-treesitter")
-			TS.setup(opts)
-    end
-  }
+  -- { -- Highlight, edit, and navigate code
+  --   'nvim-treesitter/nvim-treesitter',
+  --   event = "VimEnter",
+  --   build = ':TSUpdate',
+  --   opts = {
+  --     ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+  --     -- ensure_installed = { 'bash', 'c', 'html', "javascript", "typescript", "java", "go", 'lua', 'luadoc', 'vim', 'vimdoc' },
+  --     sync_install = false,
+  --     auto_install = true,
+  --     highlight = {
+  --       enable = true,
+  --       additional_vim_regex_highlighting = { 'ruby' },
+  --     },
+  --   },
+  --   config = function(_, opts)
+  --     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+  --     local TS = require("nvim-treesitter")
+		-- 	TS.setup(opts)
+  --   end
+  -- }
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
