@@ -10,12 +10,13 @@ function git
   end
 end
 function nrot
-  git co -m "$argv[1]"
-  git push
-end
-function nrotwithc
-  git co -m "$argv[1]" -m "$ALL_AUTHORS"
-  git push
+  if test (count $argv) -ge 3; and test "$argv[1]" = with; and test "$argv[2]" = c if test "$argv[1]" = with and test "argv[2]" = c
+    git co -m "$argv[3]" -m "$ALL_AUTHORS"
+    git push
+  else
+    git co -m "$argv[1]"
+    git push
+  end
 end
 function emback
   set -l default_branch (git remote show origin | sed -n '/HEAD branch/s/.*: //p')
