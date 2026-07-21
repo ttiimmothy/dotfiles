@@ -59,6 +59,6 @@ alias d "clear"
 alias init "git a . && nrot 'first init'"
 alias psql "psql -d postgres -U postgres"
 alias sro "source ~/.config/fish/config.fish"
-alias upall "brew update -y && v self update"
+alias upall "brew upgrade -y && v self update"
 alias cby "pmset -g batt | grep -i internal | cat"
 
