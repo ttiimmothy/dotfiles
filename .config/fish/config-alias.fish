@@ -52,13 +52,6 @@ function v
     command uv $argv
   end
 end
-function brew
-  if test "$argv[1]" = upgrade
-    command brew upgrade (brew leaves | grep -v '^fish$') $argv[2..-1]
-  else
-    command brew $argv
-  end
-end
 
 alias vim "nvim"
 alias cat "bat"
