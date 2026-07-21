@@ -61,4 +61,6 @@ alias psql "psql -d postgres -U postgres"
 alias sro "source ~/.config/fish/config.fish"
 alias upall "brew upgrade -y && v self update"
 alias cby "pmset -g batt | grep -i internal | cat --style=changes,header,snip,grid"
+alias unhide "chflags nohidden ~/Music ~/Public ~/Movies ~/Pictures ~/Applications ~/Documents"
+alias hide "chflags hidden ~/Music ~/Public ~/Movies ~/Pictures ~/Applications ~/Documents" 
 
