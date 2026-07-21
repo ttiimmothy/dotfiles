@@ -53,7 +53,7 @@ function v
   end
 end
 
-alias vim "nvim"
+alias vim "nvim"; alias nim "nvim"
 alias cat "bat"
 alias d "clear"
 alias init "git a . && nrot 'first init'"
