@@ -60,5 +60,5 @@ alias init "git a . && nrot 'first init'"
 alias psql "psql -d postgres -U postgres"
 alias sro "source ~/.config/fish/config.fish"
 alias upall "brew upgrade -y && v self update"
-alias cby "pmset -g batt | grep -i internal | cat"
+alias cby "pmset -g batt | grep -i internal | cat --style=changes,header,snip,grid"
 
