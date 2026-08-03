@@ -3,6 +3,5 @@ if status is-interactive
   source (dirname (status --current-filename))/config-alias.fish
   source (dirname (status --current-filename))/config-export.fish
   set -g fish_greeting
-  alias lla "eza -alg --icons"
+  alias lla "eza -alg --icons auto"
 end
-
