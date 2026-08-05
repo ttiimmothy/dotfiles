@@ -53,15 +53,13 @@ function v
   end
 end
 
-alias vim "nvim"; alias nim "nvim"
+alias vim "nvim"
 alias cat "bat"
 alias d "clear"
 alias init "git a . && nrot 'first init'"
 alias psql "psql -d postgres -U postgres"
 alias sro "source ~/.config/fish/config.fish"
 alias upall "brew cleanup && brew upgrade -y && v self update"
-alias ewb "brew ls | cat"
 alias cby "pmset -g batt | grep -i internal | cat --style=changes,header,snip,grid"
-alias unhide "chflags nohidden ~/Music ~/Public ~/Movies ~/Pictures ~/Applications ~/Documents ~/Desktop"
-alias hide "chflags hidden ~/Music ~/Public ~/Movies ~/Pictures ~/Applications ~/Documents ~/Desktop" 
-
+# alias unhide "chflags nohidden ~/Music ~/Public ~/Movies ~/Pictures ~/Applications ~/Documents ~/Desktop"
+# alias hide "chflags hidden ~/Music ~/Public ~/Movies ~/Pictures ~/Applications ~/Documents ~/Desktop" 
